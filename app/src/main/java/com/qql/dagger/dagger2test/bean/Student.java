@@ -10,13 +10,19 @@ import io.realm.annotations.Required;
  */
 
 public class Student extends RealmObject {
-    /** 学号*/
+    /**
+     * 学号
+     */
     @PrimaryKey
     private int num;
-    /** 姓名*/
+    /**
+     * 姓名
+     */
     @Required
     private String name;
-    /** 年龄*/
+    /**
+     * 年龄
+     */
     private int age;
 
     @Ignore   //表示忽视项,数据库不会存储该字段
@@ -66,5 +72,10 @@ public class Student extends RealmObject {
 
     public void setHasGrilFriend(boolean hasGrilFriend) {
         this.hasGrilFriend = hasGrilFriend;
+    }
+
+    @Override
+    public String toString() {
+        return "num:" + num + " name:" + name + " age:" + age + " hasGrilFriend:" + hasGrilFriend;
     }
 }

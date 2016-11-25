@@ -27,7 +27,7 @@ public class StuDaoImpl implements StuDao {
     @Override
     public void insert(Student student) throws SQLException {
         mRealm.beginTransaction();
-        mRealm.copyFromRealm(student);
+        mRealm.copyToRealm(student);
         mRealm.commitTransaction();
     }
 

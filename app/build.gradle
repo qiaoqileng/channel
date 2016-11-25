@@ -7,7 +7,7 @@ android {
     buildToolsVersion "25.0.0"
     defaultConfig {
         applicationId "com.qql.dagger.dagger2test"
-        minSdkVersion 21
+        minSdkVersion 19
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -20,7 +20,7 @@ android {
         }
     }
     dataBinding{
-        true
+        enabled = true
     }
 }
 

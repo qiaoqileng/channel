@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.qql.dagger.dagger2test"
+<manifest package="com.qql.dagger.recommend"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-sdk android:minSdkVersion="19"></uses-sdk>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES"/>
+
     <application
+        android:name="com.qql.dagger.recommend.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:name=".App"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name="com.qql.dagger.recommend.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -18,4 +25,10 @@
         </activity>
     </application>
 
+    <meta-data
+        android:name="UMENG_APPKEY"
+        android:value="583be16aaed179599700077d"/>
+    <meta-data
+        android:name="UMENG_CHANNEL"
+        android:value="Channel ID"/>
 </manifest>

@@ -1,6 +1,6 @@
-package com.qql.dagger.dagger2test.dao.inter;
+package com.qql.dagger.recommend.dao.inter;
 
-import com.qql.dagger.dagger2test.bean.Student;
+import com.qql.dagger.recommend.bean.Student;
 
 import java.sql.SQLException;
 import java.util.List;

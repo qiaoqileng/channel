@@ -1,10 +1,10 @@
-package com.qql.dagger.dagger2test.dao.daoimpl;
+package com.qql.dagger.recommend.dao.daoimpl;
 
 import android.content.Context;
 
-import com.qql.dagger.dagger2test.bean.Student;
-import com.qql.dagger.dagger2test.dao.RealmUtils;
-import com.qql.dagger.dagger2test.dao.inter.StuDao;
+import com.qql.dagger.recommend.bean.Student;
+import com.qql.dagger.recommend.dao.RealmUtils;
+import com.qql.dagger.recommend.dao.inter.StuDao;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -20,8 +20,8 @@ import io.realm.Sort;
 public class StuDaoImpl implements StuDao {
     private Realm mRealm;
 
-    public StuDaoImpl() {
-        this.mRealm = RealmUtils.getInstance().getRealm();
+    public StuDaoImpl(Context context) {
+        this.mRealm = RealmUtils.getRealm(context);
     }
 
     @Override

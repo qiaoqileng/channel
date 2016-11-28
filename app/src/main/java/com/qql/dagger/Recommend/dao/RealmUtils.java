@@ -1,8 +1,8 @@
-package com.qql.dagger.dagger2test.dao;
+package com.qql.dagger.recommend.dao;
 
 import android.content.Context;
 
-import com.qql.dagger.dagger2test.App;
+import com.qql.dagger.recommend.App;
 
 import io.realm.Realm;
 import io.realm.RealmConfiguration;
@@ -12,7 +12,7 @@ import io.realm.RealmConfiguration;
  */
 public class RealmUtils {
     private static RealmUtils mInstance;
-    private String realName = "myRealm.realm";
+    private static String realName = "myRealm.realm";
 
     public static RealmUtils getInstance() {
         if (mInstance == null) {
@@ -30,7 +30,7 @@ public class RealmUtils {
      *
      * @return
      */
-    public Realm getRealm() {
-        return Realm.getInstance(new RealmConfiguration.Builder(App.getInstance()).name(realName).build());
+    public static Realm getRealm(Context context) {
+        return Realm.getInstance(new RealmConfiguration.Builder(context).name(realName).build());
     }
 }

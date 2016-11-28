@@ -1,4 +1,4 @@
-package com.qql.dagger.dagger2test;
+package com.qql.dagger.recommend;
 
 import org.junit.Test;
 

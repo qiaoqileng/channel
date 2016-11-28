@@ -1,4 +1,4 @@
-package com.qql.dagger.dagger2test.bean;
+package com.qql.dagger.recommend.bean;
 
 import io.realm.RealmObject;
 import io.realm.annotations.Ignore;

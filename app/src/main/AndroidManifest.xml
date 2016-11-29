@@ -2,7 +2,6 @@
 <manifest package="com.qql.dagger.recommend"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-sdk android:minSdkVersion="19"></uses-sdk>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -27,7 +26,7 @@
 
     <meta-data
         android:name="UMENG_APPKEY"
-        android:value="583be16aaed179599700077d"/>
+        android:value="${umeng_appkey}"/>
     <meta-data
         android:name="UMENG_CHANNEL"
         android:value="Channel ID"/>

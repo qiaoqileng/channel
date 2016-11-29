@@ -3,7 +3,6 @@ package com.qql.dagger.recommend.dao.daoimpl;
 import android.content.Context;
 
 import com.qql.dagger.recommend.bean.Student;
-import com.qql.dagger.recommend.dao.RealmUtils;
 import com.qql.dagger.recommend.dao.inter.StuDao;
 
 import java.sql.SQLException;
@@ -18,14 +17,10 @@ import io.realm.Sort;
  */
 
 public class StuDaoImpl implements StuDao {
-    private Realm mRealm;
-
-    public StuDaoImpl(Context context) {
-        this.mRealm = RealmUtils.getRealm(context);
-    }
 
     @Override
     public void insert(Student student) throws SQLException {
+        Realm mRealm = Realm.getDefaultInstance();
         mRealm.beginTransaction();
         mRealm.copyToRealm(student);
         mRealm.commitTransaction();
@@ -33,6 +28,7 @@ public class StuDaoImpl implements StuDao {
 
     @Override
     public List<Student> getAllStudent() throws SQLException {
+        Realm mRealm = Realm.getDefaultInstance();
         mRealm.beginTransaction();
         RealmResults<Student> students = mRealm.where(Student.class).findAll();
         students.sort("name", Sort.DESCENDING);
@@ -42,6 +38,7 @@ public class StuDaoImpl implements StuDao {
 
     @Override
     public Student updateStudent(Student student) throws SQLException {
+        Realm mRealm = Realm.getDefaultInstance();
         mRealm.beginTransaction();
         student = mRealm.copyToRealmOrUpdate(student);
         mRealm.commitTransaction();
@@ -50,6 +47,7 @@ public class StuDaoImpl implements StuDao {
 
     @Override
     public void updateStudent(String name1, String name2) throws SQLException {
+        Realm mRealm = Realm.getDefaultInstance();
         mRealm.beginTransaction();
         mRealm.where(Student.class).equalTo("name",name1).findFirst().setName(name2);
         mRealm.commitTransaction();
@@ -57,6 +55,7 @@ public class StuDaoImpl implements StuDao {
 
     @Override
     public void deleteStudent(int id) throws SQLException {
+        Realm mRealm = Realm.getDefaultInstance();
         mRealm.beginTransaction();
         mRealm.where(Student.class).equalTo("id",id).findFirst().deleteFromRealm();
         mRealm.commitTransaction();
@@ -64,6 +63,7 @@ public class StuDaoImpl implements StuDao {
 
     @Override
     public void insertStudentAsync(final Student student) throws SQLException {
+        Realm mRealm = Realm.getDefaultInstance();
         mRealm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -77,6 +77,7 @@ public class StuDaoImpl implements StuDao {
 
     @Override
     public Student findByNameOrAge(String name1, int age1) throws SQLException {
+        Realm mRealm = Realm.getDefaultInstance();
         mRealm.beginTransaction();
         Student student = mRealm.where(Student.class).equalTo("name",name1).or().equalTo("age",age1).findFirst();
         mRealm.commitTransaction();
@@ -85,6 +86,7 @@ public class StuDaoImpl implements StuDao {
 
     @Override
     public void deleteAll() throws SQLException {
+        Realm mRealm = Realm.getDefaultInstance();
         mRealm.beginTransaction();
         mRealm.where(Student.class).findAll().deleteAllFromRealm();
         mRealm.commitTransaction();
@@ -92,8 +94,9 @@ public class StuDaoImpl implements StuDao {
 
     @Override
     public void closeRealm() {
-        if (mRealm != null && !mRealm.isClosed()) {
-            this.mRealm.close();
-        }
+//        Realm mRealm = Realm.getDefaultInstance();
+//        if (mRealm != null && !mRealm.isClosed()) {
+//            mRealm.close();
+//        }
     }
 }

@@ -11,9 +11,11 @@ import android.view.View;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.adapter.RecyclerAdapter;
 import com.qql.dagger.recommend.bean.Student;
+import com.qql.dagger.recommend.dao.daoimpl.StuDaoImpl;
 import com.qql.dagger.recommend.dao.inter.StuDao;
 import com.qql.dagger.recommend.databinding.ActivityMainBinding;
 import com.qql.dagger.recommend.inter.DaggerDaoStuComponent;
+import com.qql.dagger.recommend.module.StuDaoModule;
 import com.qql.dagger.recommend.utils.LogUtil;
 
 import java.sql.SQLException;
@@ -41,8 +43,8 @@ public class MainActivity extends UMActivity {
         binding.setListener(new ClickListener());
         LogUtil.d("主线程:" + android.os.Process.myPid());
         recyclerView = binding.recyclerView;
-        testDatas();
-//        showList();
+//        testDatas();
+        showList();
     }
 
     private void showList() {
@@ -53,7 +55,7 @@ public class MainActivity extends UMActivity {
                 subscriber.onNext(getData());
             }
         }).observeOn(AndroidSchedulers.mainThread())
-                .subscribeOn(Schedulers.io())
+//                .subscribeOn(Schedulers.io())
                 .subscribe(new Observer<List<Student>>() {
                     @Override
                     public void onCompleted() {
@@ -103,7 +105,7 @@ public class MainActivity extends UMActivity {
     @Nullable
     private List<Student> getData() {
         try {
-            DaggerDaoStuComponent.builder().build().inject(this);
+            DaggerDaoStuComponent.builder().stuDaoModule(getStuDaoModule()).build().inject(this);
             return dao.getAllStudent();
         } catch (Exception e) {
             e.printStackTrace();
@@ -113,11 +115,16 @@ public class MainActivity extends UMActivity {
 
     private void setData(Student student) {
         try {
-            DaggerDaoStuComponent.builder().build().inject(this);
+//            DaggerDaoStuComponent.builder().stuDaoModule(getStuDaoModule()).build().inject(this);
+            dao = new StuDaoImpl();
             dao.insert(student);
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+
+    private StuDaoModule getStuDaoModule(){
+        return new StuDaoModule();
     }
 
     @Override

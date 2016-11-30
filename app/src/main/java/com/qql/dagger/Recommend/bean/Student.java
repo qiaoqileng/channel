@@ -25,8 +25,14 @@ public class Student extends RealmObject {
      */
     private int age;
 
+    private int height;
+
     @Ignore   //表示忽视项,数据库不会存储该字段
     private boolean hasGrilFriend;//是否有女朋友
+    /**
+     * 头像
+     */
+    private String url;
 
     public Student() {
     }
@@ -40,6 +46,27 @@ public class Student extends RealmObject {
         this.num = num;
         this.name = name;
         this.age = age;
+    }
+
+    public Student(int num, String name, String url) {
+        this.num = num;
+        this.name = name;
+        this.url = url;
+    }
+
+    public Student(int num, String name, int age, String url) {
+        this.num = num;
+        this.name = name;
+        this.age = age;
+        this.url = url;
+    }
+
+    public int getHeight() {
+        return height;
+    }
+
+    public void setHeight(int height) {
+        this.height = height;
     }
 
     public int getNum() {
@@ -74,8 +101,16 @@ public class Student extends RealmObject {
         this.hasGrilFriend = hasGrilFriend;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
     @Override
     public String toString() {
-        return "num:" + num + " name:" + name + " age:" + age + " hasGrilFriend:" + hasGrilFriend;
+        return "num:" + num + " name:" + name + " age:" + age + " hasGrilFriend:" + hasGrilFriend + " height:" + height;
     }
 }

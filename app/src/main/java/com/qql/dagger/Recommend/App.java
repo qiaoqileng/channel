@@ -3,7 +3,11 @@ package com.qql.dagger.recommend;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.content.Context;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.WindowManager;
 
+import com.bumptech.glide.Glide;
 import com.umeng.analytics.MobclickAgent;
 
 import io.realm.Realm;
@@ -14,6 +18,12 @@ import io.realm.RealmConfiguration;
  */
 
 public class App extends Application {
+
+    public static int SCREEN_WIDTH = -1;
+    public static int SCREEN_HEIGHT = -1;
+    public static float DIMEN_RATE = -1.0F;
+    public static int DIMEN_DPI = -1;
+
     private static App instance;
     private static String realName = "myRealm.realm";
 
@@ -25,10 +35,41 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+        //初始化屏幕宽高
+        getScreenSize();
+        //友盟参数初始化
+        initUMConfig();
+        //数据库初始化
+        initDB();
+
+    }
+
+    public void getScreenSize() {
+        WindowManager windowManager = (WindowManager) this.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dm = new DisplayMetrics();
+        Display display = windowManager.getDefaultDisplay();
+        display.getMetrics(dm);
+        DIMEN_RATE = dm.density / 1.0F;
+        DIMEN_DPI = dm.densityDpi;
+        SCREEN_WIDTH = dm.widthPixels;
+        SCREEN_HEIGHT = dm.heightPixels;
+        if (SCREEN_WIDTH > SCREEN_HEIGHT) {
+            int t = SCREEN_HEIGHT;
+            SCREEN_HEIGHT = SCREEN_WIDTH;
+            SCREEN_WIDTH = t;
+        }
+    }
+
+    private void initUMConfig() {
         //友盟统计使用activity和fragment混合统计
-//        MobclickAgent.openActivityDurationTrack(true);
-//        MobclickAgent.startWithConfigure(new MobclickAgent.UMAnalyticsConfig(this,"583be16aaed179599700077d","channelId"));
+        //MobclickAgent.openActivityDurationTrack(true);
+        //友盟错误日志捕获
+        MobclickAgent.setCatchUncaughtExceptions(true);
+        //场景设置
         MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL);
+    }
+
+    private void initDB() {
         RealmConfiguration configuration = new RealmConfiguration.Builder(this).name(realName).build();
         Realm.setDefaultConfiguration(configuration);
     }

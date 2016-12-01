@@ -12,16 +12,14 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
+import com.green.dao.output.Student;
 import com.qql.dagger.recommend.App;
 import com.qql.dagger.recommend.BR;
 import com.qql.dagger.recommend.R;
-import com.qql.dagger.recommend.bean.Student;
 import com.qql.dagger.recommend.databinding.ItemStudentBinding;
 import com.qql.dagger.recommend.utils.LogUtil;
 
 import java.util.List;
-
-import io.realm.Realm;
 
 /**
  * Created by qiao on 2016/11/25.
@@ -79,10 +77,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<BindingViewHolder> {
                                     int width = resource.getWidth();
                                     int height = resource.getHeight();
                                     int realHeight = (App.SCREEN_WIDTH / 2) * height / width;
-                                    Realm remlm = Realm.getDefaultInstance();
-                                    remlm.beginTransaction();
                                     student.setHeight(realHeight);
-                                    remlm.commitTransaction();
                                     ViewGroup.LayoutParams lp = binding.imageView.getLayoutParams();
                                     lp.height = realHeight;
                                 }

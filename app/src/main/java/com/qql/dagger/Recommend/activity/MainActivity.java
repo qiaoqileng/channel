@@ -7,30 +7,22 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
+import com.green.dao.output.Student;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.adapter.RecyclerAdapter;
-import com.qql.dagger.recommend.adapter.decoration.SpacesItemDecoration;
-import com.qql.dagger.recommend.bean.Student;
-import com.qql.dagger.recommend.dao.inter.StuDao;
 import com.qql.dagger.recommend.databinding.ActivityMainBinding;
-import com.qql.dagger.recommend.inter.DaggerDaoStuComponent;
-import com.qql.dagger.recommend.module.StuDaoModule;
 import com.qql.dagger.recommend.utils.LogUtil;
 
 import java.sql.SQLException;
 import java.util.List;
 
-import javax.inject.Inject;
-
 import rx.Observable;
 import rx.Observer;
 import rx.Subscriber;
 import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 public class MainActivity extends UMActivity {
-    @Inject
-    StuDao dao;
+
     ActivityMainBinding binding;
     private RecyclerView recyclerView;
     private String[] testUrl = {
@@ -114,7 +106,11 @@ public class MainActivity extends UMActivity {
 
                     @Override
                     public void onNext(String url) {
-                        Student student = new Student(i, "qql" + i, i + 18, url);
+                        Student student = new Student();
+                        student.setUrl(url);
+                        student.setAge(18+i);
+                        student.setName("qql"+i);
+                        student.setHasGrilFriend(true);
                         i++;
                         LogUtil.d("onNext()  student:" + student);
                         setData(student);
@@ -126,8 +122,7 @@ public class MainActivity extends UMActivity {
     @Nullable
     private List<Student> getData() {
         try {
-            DaggerDaoStuComponent.builder().build().inject(this);
-            return dao.getAllStudent();
+//            return dao.getAllStudent();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -136,19 +131,10 @@ public class MainActivity extends UMActivity {
 
     private void setData(Student student) {
         try {
-            DaggerDaoStuComponent.builder().build().inject(this);
-            dao.insert(student);
-        } catch (SQLException e) {
+//            dao.insert(student);
+        } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    protected void onDestroy() {
-        if (dao != null) {
-            dao.closeRealm();
-        }
-        super.onDestroy();
     }
 
     public class ClickListener {

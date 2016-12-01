@@ -1,10 +1,9 @@
-package com.qql.dagger.recommend.component;
+package com.qql.dagger.recommend;
 
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 
-import com.qql.dagger.recommend.App;
 import com.qql.dagger.recommend.utils.LogUtil;
 import com.qql.dagger.recommend.utils.ToastUtil;
 

@@ -7,11 +7,10 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
-import com.bumptech.glide.Glide;
+import com.qql.dagger.recommend.component.AppComponent;
+import com.qql.dagger.recommend.component.DaggerAppComponent;
+import com.qql.dagger.recommend.module.AppModule;
 import com.umeng.analytics.MobclickAgent;
-
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
 
 /**
  * Created by qiao on 2016/11/23.
@@ -70,8 +69,12 @@ public class App extends Application {
     }
 
     private void initDB() {
-        RealmConfiguration configuration = new RealmConfiguration.Builder(this).name(realName).build();
-        Realm.setDefaultConfiguration(configuration);
+    }
+
+    public static AppComponent getAppComponent(){
+        return DaggerAppComponent.builder()
+                .appModule(new AppModule(instance))
+                .build();
     }
 
     public void exitApp() {

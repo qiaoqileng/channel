@@ -8,7 +8,7 @@
 
         <variable
             name="student"
-            type="com.qql.dagger.recommend.bean.Student"/>
+            type="com.green.dao.output.Student"/>
     </data>
 
     <android.support.v7.widget.CardView

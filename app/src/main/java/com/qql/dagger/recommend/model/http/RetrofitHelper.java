@@ -3,6 +3,7 @@ package com.qql.dagger.recommend.model.http;
 
 import com.qql.dagger.recommend.BuildConfig;
 import com.qql.dagger.recommend.Constants;
+import com.qql.dagger.recommend.model.bean.GankItemBean;
 import com.qql.dagger.recommend.utils.SystemUtil;
 
 import java.io.File;
@@ -20,6 +21,7 @@ import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
 
 /**
  * Created by codeest on 2016/8/3.
@@ -28,10 +30,11 @@ public class RetrofitHelper {
 
     private static OkHttpClient okHttpClient = null;
     private static MyApis myApiService = null;
-
+    private static GankApis gankApiService = null;
     private void init() {
         initOkHttp();
-        myApiService = getMyApiService();
+//        myApiService = getMyApiService();
+        gankApiService = getGankApiService();
     }
 
     public RetrofitHelper() {
@@ -98,5 +101,19 @@ public class RetrofitHelper {
                 .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
         return myRetrofit.create(MyApis.class);
+    }
+
+    private static GankApis getGankApiService() {
+        Retrofit gankRetrofit = new Retrofit.Builder()
+                .baseUrl(GankApis.HOST)
+                .client(okHttpClient)
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .build();
+        return gankRetrofit.create(GankApis.class);
+    }
+
+    public Observable<GankHttpResponse<List<GankItemBean>>> fetchGirlList(int num, int page) {
+        return gankApiService.getGirlList(num, page);
     }
 }

@@ -12,11 +12,11 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
-import com.green.dao.output.Student;
 import com.qql.dagger.recommend.App;
 import com.qql.dagger.recommend.BR;
 import com.qql.dagger.recommend.R;
-import com.qql.dagger.recommend.databinding.ItemStudentBinding;
+import com.qql.dagger.recommend.databinding.ItemGirlBinding;
+import com.qql.dagger.recommend.model.bean.GankItemBean;
 import com.qql.dagger.recommend.utils.LogUtil;
 
 import java.util.List;
@@ -27,11 +27,11 @@ import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<BindingViewHolder> {
     private Context context;
-    private List<Student> students;
+    private List<GankItemBean> GankItemBeans;
 
-    public RecyclerAdapter(Context context, List<Student> students) {
+    public RecyclerAdapter(Context context, List<GankItemBean> GankItemBeans) {
         this.context = context;
-        this.students = students;
+        this.GankItemBeans = GankItemBeans;
     }
 
     /**
@@ -43,41 +43,41 @@ public class RecyclerAdapter extends RecyclerView.Adapter<BindingViewHolder> {
      */
     @Override
     public int getItemViewType(int position) {
-        return Math.round((float) App.SCREEN_WIDTH / (float) students.get(position).getHeight() * 10f);
+        return Math.round((float) App.SCREEN_WIDTH / (float) GankItemBeans.get(position).getHeight() * 10f);
     }
 
     @Override
     public BindingViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ViewDataBinding binding;
         binding = DataBindingUtil.inflate(LayoutInflater.from(context),
-                R.layout.item_student, parent, false);
+                R.layout.item_girl, parent, false);
         return new BindingViewHolder(binding);
     }
 
     @Override
     public void onBindViewHolder(final BindingViewHolder holder, int position) {
-        final Student student = students.get(position);
+        final GankItemBean GankItemBean = GankItemBeans.get(position);
 
-        if (holder.getBinding() instanceof ItemStudentBinding) {
-//            Glide.with(context).load(student.getUrl())
+        if (holder.getBinding() instanceof ItemGirlBinding) {
+//            Glide.with(context).load(GankItemBean.getUrl())
 //                    .asBitmap()
-//                    .into(((ItemStudentBinding) holder.getBinding()).imageView);
-            final ItemStudentBinding binding = (ItemStudentBinding) holder.getBinding();
-            if (student.getHeight() > 0) {
+//                    .into(((ItemGankItemBeanBinding) holder.getBinding()).imageView);
+            final ItemGirlBinding binding = (ItemGirlBinding) holder.getBinding();
+            if (GankItemBean.getHeight() > 0) {
                 ViewGroup.LayoutParams layoutParams = binding.imageView.getLayoutParams();
-                layoutParams.height = student.getHeight();
+                layoutParams.height = GankItemBean.getHeight();
             }
 
-            Glide.with(context).load(student.getUrl()).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
+            Glide.with(context).load(GankItemBean.getUrl()).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(new SimpleTarget<Bitmap>(App.SCREEN_WIDTH / 2, App.SCREEN_WIDTH / 2) {
                         @Override
                         public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                             if(holder.getAdapterPosition() != RecyclerView.NO_POSITION) {
-                                if (student.getHeight() <= 0) {
+                                if (GankItemBean.getHeight() <= 0) {
                                     int width = resource.getWidth();
                                     int height = resource.getHeight();
                                     int realHeight = (App.SCREEN_WIDTH / 2) * height / width;
-                                    student.setHeight(realHeight);
+                                    GankItemBean.setHeight(realHeight);
                                     ViewGroup.LayoutParams lp = binding.imageView.getLayoutParams();
                                     lp.height = realHeight;
                                 }
@@ -86,13 +86,13 @@ public class RecyclerAdapter extends RecyclerView.Adapter<BindingViewHolder> {
                         }
                     });
         }
-        holder.getBinding().setVariable(BR.student, student);
+        holder.getBinding().setVariable(BR.girl, GankItemBean);
         holder.getBinding().executePendingBindings();
-        LogUtil.d(position+": "+student.toString());
+        LogUtil.d(position+": "+GankItemBean.toString());
     }
 
     @Override
     public int getItemCount() {
-        return students == null ? 0 : students.size();
+        return GankItemBeans == null ? 0 : GankItemBeans.size();
     }
 }

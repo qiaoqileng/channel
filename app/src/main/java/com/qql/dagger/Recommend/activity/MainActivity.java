@@ -1,140 +1,116 @@
 package com.qql.dagger.recommend.activity;
 
-import android.databinding.DataBindingUtil;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 
-import com.green.dao.output.Student;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.adapter.RecyclerAdapter;
+import com.qql.dagger.recommend.base.BaseActivity;
 import com.qql.dagger.recommend.databinding.ActivityMainBinding;
+import com.qql.dagger.recommend.model.bean.GankItemBean;
+import com.qql.dagger.recommend.presenter.GirlPresenter;
+import com.qql.dagger.recommend.presenter.contract.GirlContract;
 import com.qql.dagger.recommend.utils.LogUtil;
+import com.qql.dagger.recommend.utils.SnackbarUtil;
 
-import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
-import rx.Observable;
-import rx.Observer;
-import rx.Subscriber;
-import rx.android.schedulers.AndroidSchedulers;
+public class MainActivity extends BaseActivity<GirlPresenter> implements GirlContract.View{
 
-public class MainActivity extends UMActivity {
-
-    ActivityMainBinding binding;
+    private static final int SPAN_COUNT = 2;
     private RecyclerView recyclerView;
-    private String[] testUrl = {
-            "https://ss1.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/image/h%3D200/sign=7b0b6a60972f070840052d00d925b865/d62a6059252dd42ad4e979840a3b5bb5c9eab839.jpg",
-            "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3245622106,3393111959&fm=116&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3360982095,837156739&fm=116&gp=0.jpg",
-            "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=2572418635,526691847&fm=111&gp=0.jpg",
-            "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=155835295,818460970&fm=111&gp=0.jpg",
-            "http://img0.imgtn.bdimg.com/it/u=4024270163,1453867343&fm=11&gp=0.jpg",
-            "http://img1.imgtn.bdimg.com/it/u=2320358549,4024875240&fm=11&gp=0.jpg",
-            "http://img4.imgtn.bdimg.com/it/u=1645933247,1801190051&fm=11&gp=0.jpg",
-            "http://img1.imgtn.bdimg.com/it/u=1140917331,2673036058&fm=23&gp=0.jpg",
-            "http://img0.imgtn.bdimg.com/it/u=1216701244,3400018650&fm=23&gp=0.jpg",
-    };
     int i = 0;
     private RecyclerAdapter adapter;
+    private ArrayList<GankItemBean> mList;
+    private StaggeredGridLayoutManager mStaggeredGridLayoutManager;
+    private RecyclerAdapter mAdapter;
+    private RecyclerView rvGirlContent;
+    private SwipeRefreshLayout swipeRefresh;
+    private boolean isLoadingMore = false;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setListener(new ClickListener());
-        LogUtil.d("主线程:" + android.os.Process.myPid());
-        recyclerView = binding.recyclerView;
-
-//        testDatas();
-        showList();
+    protected void initInject() {
+        getActivityComponent().inject(this);
     }
 
-    private void showList() {
-        Observable.create(new Observable.OnSubscribe<List<Student>>() {
+    @Override
+    protected int getLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initEventAndData() {
+        mList = new ArrayList<GankItemBean>();
+        mAdapter = new RecyclerAdapter(mContext, mList);
+        mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(SPAN_COUNT,StaggeredGridLayoutManager.VERTICAL);
+        mStaggeredGridLayoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
+        rvGirlContent = ((ActivityMainBinding)binding).recyclerView;
+        swipeRefresh = ((ActivityMainBinding)binding).swipeRefresh;
+        rvGirlContent.setLayoutManager(mStaggeredGridLayoutManager);
+        rvGirlContent.setAdapter(mAdapter);
+        swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
-            public void call(Subscriber<? super List<Student>> subscriber) {
-                LogUtil.d("call线程:" + android.os.Process.myPid());
-                subscriber.onNext(getData());
+            public void onRefresh() {
+                mPresenter.getGirlData();
             }
-        }).observeOn(AndroidSchedulers.mainThread())
-//                .subscribeOn(Schedulers.io())
-                .subscribe(new Observer<List<Student>>() {
-                    @Override
-                    public void onCompleted() {
+        });
+        rvGirlContent.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+                int[] visibleItems = mStaggeredGridLayoutManager.findLastVisibleItemPositions(null);
+                int lastItem = Math.max(visibleItems[0],visibleItems[1]);
+                if (lastItem > mAdapter.getItemCount() - 5 && !isLoadingMore && dy > 0 ) {
+                    isLoadingMore = true;
+                    mPresenter.getMoreGirlData();
+                }
+            }
+        });
 
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-
-                    }
-
-                    @Override
-                    public void onNext(List<Student> students) {
-                        LogUtil.d("onNext线程:" + android.os.Process.myPid());
-                        initAdapter(students);
-                    }
-                });
-
+//        mAdapter.setOnItemClickListener(new GirlAdapter.OnItemClickListener() {
+//            @Override
+//            public void onItemClickListener(int position, View shareView) {
+//                Intent intent = new Intent();
+//                intent.setClass(mContext, GirlDetailActivity.class);
+//                intent.putExtra("url",mList.get(position).getUrl());
+//                intent.putExtra("id",mList.get(position).get_id());
+//                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(mActivity, shareView, "shareView");
+//                mContext.startActivity(intent,options.toBundle());
+//            }
+//        });
+//        ivProgress.start();
+        mPresenter.getGirlData();
     }
-
-    private void initAdapter(List<Student> students) {
-        StaggeredGridLayoutManager staggeredGridLayoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
-        staggeredGridLayoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
-        recyclerView.setLayoutManager(staggeredGridLayoutManager);
-//        recyclerView.addItemDecoration(new SpacesItemDecoration(16));
-        adapter = new RecyclerAdapter(this, students);
-        recyclerView.setAdapter(adapter);
-    }
-
-    private void testDatas() {
-
-        Observable.from(testUrl)
-                .subscribe(new Observer<String>() {
-                    @Override
-                    public void onCompleted() {
-                        LogUtil.d("onCompleted");
-                    }
-
-                    @Override
-                    public void onError(Throwable e) {
-                        LogUtil.printException("onerror", e);
-                    }
-
-                    @Override
-                    public void onNext(String url) {
-                        Student student = new Student();
-                        student.setUrl(url);
-                        student.setAge(18+i);
-                        student.setName("qql"+i);
-                        student.setHasGrilFriend(true);
-                        i++;
-                        LogUtil.d("onNext()  student:" + student);
-                        setData(student);
-                    }
-
-                });
-    }
-
-    @Nullable
-    private List<Student> getData() {
-        try {
-//            return dao.getAllStudent();
-        } catch (Exception e) {
-            e.printStackTrace();
+    @Override
+    public void showContent(List<GankItemBean> list) {
+        if (swipeRefresh.isRefreshing()) {
+            swipeRefresh.setRefreshing(false);
+        } else {
         }
-        return null;
+        mList.clear();
+        mList.addAll(list);
+        mAdapter.notifyDataSetChanged();
     }
 
-    private void setData(Student student) {
-        try {
-//            dao.insert(student);
-        } catch (Exception e) {
-            e.printStackTrace();
+    @Override
+    public void showMoreContent(List<GankItemBean> list) {
+        isLoadingMore = false;
+        mList.addAll(list);
+        for(int i =mList.size() - GirlPresenter.NUM_OF_PAGE ; i < mList.size(); i++) {    //使用notifyDataSetChanged已加载的图片会有闪烁，遂使用inserted逐个插入
+            mAdapter.notifyItemInserted(i);
         }
+    }
+
+    @Override
+    public void showError(String msg) {
+        if (swipeRefresh.isRefreshing()) {
+            swipeRefresh.setRefreshing(false);
+        } else {
+        }
+        SnackbarUtil.showShort(rvGirlContent,msg);
     }
 
     public class ClickListener {

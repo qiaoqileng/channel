@@ -1,5 +1,6 @@
 package com.qql.dagger.recommend.activity;
 
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -14,6 +15,7 @@ import com.qql.dagger.recommend.presenter.GirlPresenter;
 import com.qql.dagger.recommend.presenter.contract.GirlContract;
 import com.qql.dagger.recommend.utils.LogUtil;
 import com.qql.dagger.recommend.utils.SnackbarUtil;
+import com.qql.dagger.recommend.BR;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,19 +23,18 @@ import java.util.List;
 public class MainActivity extends BaseActivity<GirlPresenter> implements GirlContract.View{
 
     private static final int SPAN_COUNT = 2;
-    private RecyclerView recyclerView;
-    int i = 0;
-    private RecyclerAdapter adapter;
     private ArrayList<GankItemBean> mList;
     private StaggeredGridLayoutManager mStaggeredGridLayoutManager;
     private RecyclerAdapter mAdapter;
     private RecyclerView rvGirlContent;
     private SwipeRefreshLayout swipeRefresh;
+    private FloatingActionButton toTop;
     private boolean isLoadingMore = false;
 
     @Override
     protected void initInject() {
         getActivityComponent().inject(this);
+        binding.setVariable(BR.listener,new ClickListener());
     }
 
     @Override
@@ -43,12 +44,14 @@ public class MainActivity extends BaseActivity<GirlPresenter> implements GirlCon
 
     @Override
     protected void initEventAndData() {
+        rvGirlContent = ((ActivityMainBinding)binding).recyclerView;
+        swipeRefresh = ((ActivityMainBinding)binding).swipeRefresh;
+        toTop = ((ActivityMainBinding)binding).toTop;
+
         mList = new ArrayList<GankItemBean>();
         mAdapter = new RecyclerAdapter(mContext, mList);
         mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(SPAN_COUNT,StaggeredGridLayoutManager.VERTICAL);
         mStaggeredGridLayoutManager.setGapStrategy(StaggeredGridLayoutManager.GAP_HANDLING_NONE);
-        rvGirlContent = ((ActivityMainBinding)binding).recyclerView;
-        swipeRefresh = ((ActivityMainBinding)binding).swipeRefresh;
         rvGirlContent.setLayoutManager(mStaggeredGridLayoutManager);
         rvGirlContent.setAdapter(mAdapter);
         swipeRefresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -122,6 +125,12 @@ public class MainActivity extends BaseActivity<GirlPresenter> implements GirlCon
 
         public void deleteItem(View view) {
             // TODO: 2016/11/28
+        }
+
+        public void toTop(View view){
+            if (rvGirlContent != null) {
+                rvGirlContent.scrollToPosition(0);
+            }
         }
     }
 }

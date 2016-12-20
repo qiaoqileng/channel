@@ -1,4 +1,4 @@
-package com.qql.dagger.recommend.activity;
+package com.qql.dagger.recommend.base;
 
 import android.support.v7.app.AppCompatActivity;
 

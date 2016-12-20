@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.qql.dagger.recommend.App;
-import com.qql.dagger.recommend.activity.UMActivity;
 import com.qql.dagger.recommend.component.ActivityComponent;
 import com.qql.dagger.recommend.component.DaggerActivityComponent;
 import com.qql.dagger.recommend.module.ActivityModule;

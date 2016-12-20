@@ -6,6 +6,7 @@ import android.databinding.ViewDataBinding;
 import android.graphics.Bitmap;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.bumptech.glide.Glide;
@@ -28,6 +29,7 @@ import java.util.List;
 public class RecyclerAdapter extends RecyclerView.Adapter<BindingViewHolder> {
     private Context context;
     private List<GankItemBean> GankItemBeans;
+    private OnItemClickListener onItemClickListener;
 
     public RecyclerAdapter(Context context, List<GankItemBean> GankItemBeans) {
         this.context = context;
@@ -55,7 +57,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<BindingViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(final BindingViewHolder holder, int position) {
+    public void onBindViewHolder(final BindingViewHolder holder, final int position) {
         final GankItemBean GankItemBean = GankItemBeans.get(position);
 
         if (holder.getBinding() instanceof ItemGirlBinding) {
@@ -85,14 +87,28 @@ public class RecyclerAdapter extends RecyclerView.Adapter<BindingViewHolder> {
                             }
                         }
                     });
+            ((ItemGirlBinding) holder.getBinding()).imageView.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+                    onItemClickListener.onItemClickListener(position,view);
+                }
+            });
         }
         holder.getBinding().setVariable(BR.girl, GankItemBean);
         holder.getBinding().executePendingBindings();
-        LogUtil.d(position+": "+GankItemBean.toString());
     }
 
     @Override
     public int getItemCount() {
         return GankItemBeans == null ? 0 : GankItemBeans.size();
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        this.onItemClickListener = listener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClickListener(int position, View shareView);
     }
 }

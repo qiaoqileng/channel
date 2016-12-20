@@ -1,5 +1,9 @@
 package com.qql.dagger.recommend.activity;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
+import android.media.Image;
+import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
@@ -73,17 +77,22 @@ public class MainActivity extends BaseActivity<GirlPresenter> implements GirlCon
             }
         });
 
-//        mAdapter.setOnItemClickListener(new GirlAdapter.OnItemClickListener() {
-//            @Override
-//            public void onItemClickListener(int position, View shareView) {
-//                Intent intent = new Intent();
-//                intent.setClass(mContext, GirlDetailActivity.class);
-//                intent.putExtra("url",mList.get(position).getUrl());
-//                intent.putExtra("id",mList.get(position).get_id());
-//                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(mActivity, shareView, "shareView");
-//                mContext.startActivity(intent,options.toBundle());
-//            }
-//        });
+        mAdapter.setOnItemClickListener(new RecyclerAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClickListener(int position, View shareView) {
+                Intent intent = new Intent();
+                intent.setClass(mContext, ImageDetailActivity.class);
+                intent.putExtra("url",mList.get(position).getUrl());
+                intent.putExtra("id",mList.get(position).get_id());
+                if (Build.VERSION.SDK_INT >= 21){
+                    ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, shareView, "shareView");
+                    mContext.startActivity(intent,options.toBundle());
+                } else {
+                    mContext.startActivity(intent);
+                }
+
+            }
+        });
 //        ivProgress.start();
         mPresenter.getGirlData();
     }

@@ -22,7 +22,7 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-
+        <activity android:name="com.qql.dagger.recommend.activity.ImageDetailActivity"/>
 
         <meta-metadata
             android:name="UMENG_APPKEY"

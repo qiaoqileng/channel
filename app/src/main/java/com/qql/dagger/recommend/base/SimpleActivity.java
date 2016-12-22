@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.widget.Toolbar;
 import android.text.Layout;
 import android.text.TextUtils;
@@ -31,6 +32,8 @@ public abstract class SimpleActivity extends SupportActivity {
     FrameLayout content;
     @BindView(R.id.toolbar)
     protected Toolbar toolBar;
+    @BindView(R.id.fab)
+    protected FloatingActionButton fab;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +43,13 @@ public abstract class SimpleActivity extends SupportActivity {
         content = (FrameLayout) findViewById(R.id.content_demo);
         content.addView(view);
         mUnBinder = ButterKnife.bind(this);
+
+        attachPresent();
+
         initEventAndData();
+    }
+
+    protected void attachPresent() {
     }
 
     protected void setToolBar(String title) {

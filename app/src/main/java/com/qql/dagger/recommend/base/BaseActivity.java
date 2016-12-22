@@ -27,47 +27,17 @@ import butterknife.Unbinder;
  * Created by codeest on 2016/8/2.
  * MVP activity基类
  */
-public abstract class BaseActivity<T extends BasePresenter> extends UMActivity implements BaseView{
+public abstract class BaseActivity<T extends BasePresenter> extends SimpleActivity implements BaseView{
 
     @Inject
     protected T mPresenter;
-    protected Activity mContext;
-    private Unbinder binder;
-    FrameLayout content;
-    @BindView(R.id.toolbar)
-    protected Toolbar toolbar;
-    @BindView(R.id.fab)
-    protected FloatingActionButton fab;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_toolbar);
-
-        mContext = this;
-        View view = LayoutInflater.from(this).inflate(getLayout(),null);
-        content = (FrameLayout) findViewById(R.id.content_demo);
-        content.addView(view);
-        binder = ButterKnife.bind(this);
-
+    protected void attachPresent() {
         initInject();
         if (mPresenter != null)
             mPresenter.attachView(this);
         setToolBar("");
-        initEventAndData();
-    }
-
-    protected void setToolBar(String title) {
-        toolbar.setTitle(TextUtils.isEmpty(title)?getString(R.string.app_name):title);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressedSupport();
-            }
-        });
     }
 
     protected ActivityComponent getActivityComponent(){
@@ -81,7 +51,6 @@ public abstract class BaseActivity<T extends BasePresenter> extends UMActivity i
         super.onDestroy();
         if (mPresenter != null)
             mPresenter.detachView();
-        binder.unbind();
     }
 
     @Override

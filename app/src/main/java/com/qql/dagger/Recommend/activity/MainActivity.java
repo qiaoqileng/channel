@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 public class MainActivity extends BaseActivity<GirlPresenter> implements GirlContract.View {
 
@@ -34,8 +35,6 @@ public class MainActivity extends BaseActivity<GirlPresenter> implements GirlCon
     RecyclerView rvGirlContent;
     @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout swipeRefresh;
-    @BindView(R.id.toTop)
-    FloatingActionButton toTop;
     private boolean isLoadingMore = false;
 
     @Override
@@ -50,6 +49,8 @@ public class MainActivity extends BaseActivity<GirlPresenter> implements GirlCon
 
     @Override
     protected void initEventAndData() {
+        fab.setVisibility(View.VISIBLE);
+
         mList = new ArrayList<GankItemBean>();
         mAdapter = new RecyclerAdapter(mContext, mList);
         mStaggeredGridLayoutManager = new StaggeredGridLayoutManager(SPAN_COUNT, StaggeredGridLayoutManager.VERTICAL);
@@ -124,6 +125,7 @@ public class MainActivity extends BaseActivity<GirlPresenter> implements GirlCon
         SnackbarUtil.showShort(rvGirlContent, msg);
     }
 
+    @OnClick(R.id.fab)
     public void toTop(View view) {
         if (rvGirlContent != null) {
             rvGirlContent.scrollToPosition(0);

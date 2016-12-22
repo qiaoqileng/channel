@@ -1,27 +1,13 @@
 package com.qql.dagger.recommend.base;
 
-import android.app.Activity;
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatDelegate;
-import android.support.v7.widget.Toolbar;
-import android.text.TextUtils;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.FrameLayout;
 
 import com.qql.dagger.recommend.App;
-import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.component.ActivityComponent;
 import com.qql.dagger.recommend.component.DaggerActivityComponent;
 import com.qql.dagger.recommend.module.ActivityModule;
 
 import javax.inject.Inject;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.Unbinder;
 
 /**
  * Created by codeest on 2016/8/2.

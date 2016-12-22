@@ -4,6 +4,7 @@ package com.qql.dagger.recommend.model.http;
 import com.qql.dagger.recommend.BuildConfig;
 import com.qql.dagger.recommend.Constants;
 import com.qql.dagger.recommend.model.bean.GankItemBean;
+import com.qql.dagger.recommend.model.bean.VersionBean;
 import com.qql.dagger.recommend.utils.SystemUtil;
 
 import java.io.File;
@@ -33,7 +34,7 @@ public class RetrofitHelper {
     private static GankApis gankApiService = null;
     private void init() {
         initOkHttp();
-//        myApiService = getMyApiService();
+        myApiService = getMyApiService();
         gankApiService = getGankApiService();
     }
 
@@ -115,5 +116,8 @@ public class RetrofitHelper {
 
     public Observable<GankHttpResponse<List<GankItemBean>>> fetchGirlList(int num, int page) {
         return gankApiService.getGirlList(num, page);
+    }
+    public Observable<MyHttpResponse<VersionBean>> fetchVersionInfo() {
+        return myApiService.getVersionInfo();
     }
 }

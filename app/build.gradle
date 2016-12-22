@@ -8,7 +8,7 @@ android {
     buildToolsVersion '23.0.3'
     defaultConfig {
         applicationId "com.qql.dagger.recommend"
-        minSdkVersion 19
+        minSdkVersion 17
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -24,9 +24,6 @@ android {
             manifestPlaceholders = [umeng_appkey:"583be16aaed179599700077d"]
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
-    }
-    dataBinding{
-        enabled = true
     }
     lintOptions {
         abortOnError false

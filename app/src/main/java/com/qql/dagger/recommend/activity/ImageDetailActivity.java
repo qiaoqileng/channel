@@ -38,7 +38,7 @@ public class ImageDetailActivity extends SimpleActivity {
 
     @Override
     protected void initEventAndData() {
-//        setToolBar(toolBar,"");
+        setToolBar("");
         Intent intent = getIntent();
         url = intent.getExtras().getString("url");
         id = intent.getExtras().getString("id");
@@ -59,8 +59,10 @@ public class ImageDetailActivity extends SimpleActivity {
         if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
             pop();
         } else {
-            if (Build.VERSION.SDK_INT >= 21){
+            if (Build.VERSION.SDK_INT >= 21) {
                 finishAfterTransition();
+            }else {
+                finish();
             }
         }
     }

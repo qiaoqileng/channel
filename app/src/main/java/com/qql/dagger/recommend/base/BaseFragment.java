@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,14 +18,13 @@ import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import me.yokeyword.fragmentation.SupportFragment;
 
 /**
  * Created by codeest on 2016/8/2.
  * MVP Fragment基类
  */
-public abstract class BaseFragment<T extends BasePresenter> extends SupportFragment implements BaseView{
-
+public abstract class BaseFragment<T extends BasePresenter> extends Fragment implements BaseView{
+    static final String FRAGMENTATION_STATE_SAVE_IS_HIDDEN = "fragmentation_state_save_status";
     @Inject
     protected T mPresenter;
     protected View mView;
@@ -32,6 +32,7 @@ public abstract class BaseFragment<T extends BasePresenter> extends SupportFragm
     protected Context mContext;
     private Unbinder mUnBinder;
     protected boolean isInited = false;
+    private boolean mIsHidden = true;   // 用于记录Fragment show/hide 状态
 
     @Override
     public void onAttach(Context context) {
@@ -70,11 +71,26 @@ public abstract class BaseFragment<T extends BasePresenter> extends SupportFragm
                 initEventAndData();
             }
         } else {
-            if (!isSupportHidden()) {
+            if (!mIsHidden) {
                 isInited = true;
                 initEventAndData();
             }
         }
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (savedInstanceState != null) {
+            mIsHidden = savedInstanceState.getBoolean(FRAGMENTATION_STATE_SAVE_IS_HIDDEN);
+        }
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean(FRAGMENTATION_STATE_SAVE_IS_HIDDEN, isHidden());
     }
 
     @Override

@@ -1,31 +1,28 @@
 package com.qql.dagger.recommend.base;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.text.Layout;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 
 import com.qql.dagger.recommend.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import me.yokeyword.fragmentation.SupportActivity;
 
 /**
  * Created by codeest on 16/8/11.
  * 无MVP的activity基类
  */
 
-public abstract class SimpleActivity extends SupportActivity {
+public abstract class SimpleActivity extends UMActivity {
 
     protected Activity mContext;
     private Unbinder mUnBinder;
@@ -37,7 +34,7 @@ public abstract class SimpleActivity extends SupportActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_base_toolbar);
+        setContentView(hasToolBar()?R.layout.activity_base_toolbar:R.layout.activity_no_toolbar);
         mContext = this;
         View view = LayoutInflater.from(this).inflate(getLayout(),null);
         content = (FrameLayout) findViewById(R.id.content_demo);
@@ -49,10 +46,17 @@ public abstract class SimpleActivity extends SupportActivity {
         initEventAndData();
     }
 
+    protected boolean hasToolBar(){
+        return true;
+    }
+
     protected void attachPresent() {
     }
 
     protected void setToolBar(String title) {
+        if (toolBar == null) {
+            return;
+        }
         setSupportActionBar(toolBar);
         toolBar.setTitle(TextUtils.isEmpty(title)?getString(R.string.app_name):title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -60,7 +64,9 @@ public abstract class SimpleActivity extends SupportActivity {
         toolBar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onBackPressedSupport();
+                //TODO activity和fragment的返回处理
+                finish();
+//                onBackPressedSupport();
             }
         });
     }

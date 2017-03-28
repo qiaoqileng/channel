@@ -11,6 +11,7 @@ import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.base.BaseActivity;
 import com.qql.dagger.recommend.fragment.HomeFragment;
+import com.qql.dagger.recommend.fragment.MyFragment;
 import com.qql.dagger.recommend.fragment.SimpleCardFragment;
 import com.qql.dagger.recommend.model.entity.TabEntity;
 import com.qql.dagger.recommend.presenter.MainPresenter;
@@ -31,14 +32,19 @@ public class HomeActivity extends BaseActivity<MainPresenter> implements MainCon
     @BindView(R.id.vp)
     ViewPager viewPager;
     private ArrayList<Fragment> mFragments = new ArrayList<>();
-    private String[] mTitles = {"首页", "消息", "联系人", "更多"};
+    private String[] mTitles = {"首页", "消息", "我的"};
     private ArrayList<CustomTabEntity> mTabEntities = new ArrayList<>();
     private int[] mIconUnselectIds = {
             R.mipmap.tab_home_unselect, R.mipmap.tab_speech_unselect,
-            R.mipmap.tab_contact_unselect, R.mipmap.tab_more_unselect};
+            R.mipmap.tab_contact_unselect};
     private int[] mIconSelectIds = {
             R.mipmap.tab_home_select, R.mipmap.tab_speech_select,
-            R.mipmap.tab_contact_select, R.mipmap.tab_more_select};
+            R.mipmap.tab_contact_select};
+
+    @Override
+    protected boolean hasToolBar() {
+        return false;
+    }
 
     @Override
     protected void initInject() {
@@ -53,9 +59,11 @@ public class HomeActivity extends BaseActivity<MainPresenter> implements MainCon
     @Override
     protected void initEventAndData() {
         for (String title : mTitles) {
-            if ("首页".equals(title)){
+            if (mTitles[0].equals(title)){
                 mFragments.add(new HomeFragment());
-            }else {
+            } else if (mTitles[mTitles.length-1].equals(title)){
+                mFragments.add(new MyFragment());
+            } else {
                 mFragments.add(SimpleCardFragment.getInstance("Switch ViewPager " + title));
             }
         }

@@ -54,16 +54,16 @@ public class ImageDetailActivity extends SimpleActivity {
         }
     }
 
-    @Override
-    public void onBackPressedSupport() {
-        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
-            pop();
-        } else {
-            if (Build.VERSION.SDK_INT >= 21) {
-                finishAfterTransition();
-            }else {
-                finish();
-            }
-        }
-    }
+//    @Override
+//    public void onBackPressedSupport() {
+//        if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
+//            pop();
+//        } else {
+//            if (Build.VERSION.SDK_INT >= 21) {
+//                finishAfterTransition();
+//            }else {
+//                finish();
+//            }
+//        }
+//    }
 }

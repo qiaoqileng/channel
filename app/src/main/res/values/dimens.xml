@@ -9,4 +9,9 @@
     <dimen name="content_padding">8dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+
+    <dimen name="text_larger">22sp</dimen>
+
+    <dimen name="margin_long">20dp</dimen>
+    <dimen name="margin_very_long">30dp</dimen>
 </resources>

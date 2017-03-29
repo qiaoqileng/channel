@@ -34,7 +34,7 @@ public abstract class SimpleActivity extends UMActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(hasToolBar()?R.layout.activity_base_toolbar:R.layout.activity_no_toolbar);
+        setContentView(R.layout.activity_base_toolbar);
         mContext = this;
         View view = LayoutInflater.from(this).inflate(getLayout(),null);
         content = (FrameLayout) findViewById(R.id.content_demo);
@@ -44,6 +44,15 @@ public abstract class SimpleActivity extends UMActivity {
         attachPresent();
 
         initEventAndData();
+
+        visiableToolbar();
+    }
+
+    private void visiableToolbar() {
+        if (!hasToolBar()) {
+            toolBar.setVisibility(View.GONE);
+            fab.setVisibility(View.GONE);
+        }
     }
 
     protected boolean hasToolBar(){

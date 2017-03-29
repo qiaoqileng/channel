@@ -12,43 +12,42 @@
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:statusBarScrim="@android:color/transparent"
             app:expandedTitleMarginEnd="64dp"
-            app:expandedTitleMarginStart="48dp"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed">
-
-            <ImageView
-                android:id="@+id/main.backdrop"
-                android:layout_width="wrap_content"
-                android:layout_height="300dp"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/wings_by_yurevart"
-                app:layout_collapseMode="parallax"/>
+            app:expandedTitleMarginStart="78dp"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:statusBarScrim="@android:color/transparent">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
+                android:background="@color/colorPrimary"
                 app:layout_collapseMode="pin"/>
+
+            <ImageView
+                android:id="@+id/main.backdrop"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/wings_by_yurevart"
+                app:layout_collapseMode="parallax"
+                />
+
+            <ImageView
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|start"
+                android:layout_margin="@dimen/margin_very_long"
+                android:src="@mipmap/login"
+                />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
-    <android.support.v4.widget.NestedScrollView
-
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="50dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/title_activity_demo"
-            android:textSize="20sp"/>
-
-    </android.support.v4.widget.NestedScrollView>
+    <include layout="@layout/content_scrolling"/>
 
 </android.support.design.widget.CoordinatorLayout>

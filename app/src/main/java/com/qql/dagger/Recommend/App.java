@@ -7,9 +7,12 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
+import com.alibaba.baichuan.android.trade.AlibcTradeSDK;
+import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
 import com.qql.dagger.recommend.component.AppComponent;
 import com.qql.dagger.recommend.component.DaggerAppComponent;
 import com.qql.dagger.recommend.module.AppModule;
+import com.qql.dagger.recommend.utils.ToastUtil;
 import com.umeng.analytics.MobclickAgent;
 
 /**
@@ -41,6 +44,17 @@ public class App extends Application {
         //数据库初始化
         initDB();
 
+        AlibcTradeSDK.asyncInit(this, new AlibcTradeInitCallback() {
+            @Override
+            public void onSuccess() {
+                ToastUtil.show("sdk init success");
+            }
+
+            @Override
+            public void onFailure(int i, String s) {
+                ToastUtil.show("failure: "+s);
+            }
+        });
     }
 
     public void getScreenSize() {

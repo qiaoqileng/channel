@@ -8,6 +8,16 @@ public class GankHttpResponse<T> {
     private boolean error;
     private T results;
 
+    public String getErrorMessage() {
+        return errorMessage;
+    }
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    private String errorMessage;
+
     public T getResults() {
         return results;
     }

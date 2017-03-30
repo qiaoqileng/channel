@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/login"
+        android:id="@+id/img_category"
+        />
+    <com.qql.dagger.recommend.view.TextViewTypeFace
+        style="@style/text_category_item_title"
+        app:type_face="moda"
+        android:background="@drawable/background_card"
+        android:padding="@dimen/margin_little_short"
+        android:id="@+id/txt_category"
+        />
+</FrameLayout>

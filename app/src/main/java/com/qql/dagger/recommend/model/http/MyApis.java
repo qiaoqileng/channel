@@ -20,5 +20,5 @@ public interface MyApis {
      * @return
      */
     @GET("version")
-    Observable<MyHttpResponse<VersionBean>> getVersionInfo();
+    Observable<GankHttpResponse<VersionBean>> getVersionInfo();
 }

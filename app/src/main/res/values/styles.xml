@@ -22,4 +22,20 @@
 
     <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
 
+    
+    <style name="text_category_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_little_big</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:layout_gravity">center_horizontal</item>
+    </style>
+    <style name="text_category_item_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_normal</item>
+        <item name="android:textColor">@color/text_black</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
 </resources>

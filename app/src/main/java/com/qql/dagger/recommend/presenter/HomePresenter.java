@@ -2,12 +2,19 @@ package com.qql.dagger.recommend.presenter;
 
 import com.qql.dagger.recommend.base.RxPresenter;
 import com.qql.dagger.recommend.model.bean.BannerBean;
+import com.qql.dagger.recommend.model.bean.CategoryBean;
+import com.qql.dagger.recommend.model.http.GankHttpResponse;
 import com.qql.dagger.recommend.model.http.RetrofitHelper;
 import com.qql.dagger.recommend.presenter.contract.HomeContract;
+import com.qql.dagger.recommend.utils.RxUtil;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
+
+import rx.Subscription;
+import rx.functions.Action1;
 
 /**
  * Created by qql on 2016/12/22.
@@ -24,16 +31,39 @@ public class HomePresenter extends RxPresenter<HomeContract.View> implements Hom
 
     @Override
     public void getDailyBanners() {
-        mView.showDailyBanners(initTestDatas());
+        Subscription rxSubscription = mRetrofitHelper.getBanners()
+                .compose(RxUtil.<GankHttpResponse<List<BannerBean>>>rxSchedulerHelper())
+                .compose(RxUtil.<List<BannerBean>>handleResult())
+                .subscribe(new Action1<List<BannerBean>>() {
+                    @Override
+                    public void call(List<BannerBean> gankItemBeen) {
+                        mView.showDailyBanners(gankItemBeen);
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        mView.showError("加载更多数据失败ヽ(≧Д≦)ノ");
+                    }
+                });
+        addSubscrebe(rxSubscription);
     }
 
-    private ArrayList<BannerBean> initTestDatas() {
-        ArrayList<BannerBean> banners = new ArrayList<BannerBean>();
-        banners.add(new BannerBean(0,"http://img2.3lian.com/2014/f2/37/d/40.jpg"));
-        banners.add(new BannerBean(0,"http://img2.3lian.com/2014/f2/37/d/39.jpg"));
-        banners.add(new BannerBean(0,"http://www.8kmm.com/UploadFiles/2012/8/201208140920132659.jpg"));
-        banners.add(new BannerBean(0,"http://f.hiphotos.baidu.com/image/h%3D200/sign=1478eb74d5a20cf45990f9df460b4b0c/d058ccbf6c81800a5422e5fdb43533fa838b4779.jpg"));
-        banners.add(new BannerBean(0,"http://f.hiphotos.baidu.com/image/pic/item/09fa513d269759ee50f1971ab6fb43166c22dfba.jpg"));
-        return banners;
+    @Override
+    public void getCategory() {
+        Subscription rxSubscription = mRetrofitHelper.getCategories()
+                .compose(RxUtil.<GankHttpResponse<List<CategoryBean>>>rxSchedulerHelper())
+                .compose(RxUtil.<List<CategoryBean>>handleResult())
+                .subscribe(new Action1<List<CategoryBean>>() {
+                    @Override
+                    public void call(List<CategoryBean> gankItemBeen) {
+                        mView.showCategory(gankItemBeen);
+                    }
+                }, new Action1<Throwable>() {
+                    @Override
+                    public void call(Throwable throwable) {
+                        mView.showError("加载更多数据失败ヽ(≧Д≦)ノ");
+                    }
+                });
+        addSubscrebe(rxSubscription);
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/toast_bg"
+    android:padding="@dimen/margin_normal"
+    android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="wrap_content">
+    <com.qql.dagger.recommend.view.TextViewTypeFace
+        style="@style/text_category_title"
+        app:type_face="moda"
+        android:text="@string/text_category"
+        android:layout_marginBottom="@dimen/margin_normal"
+        />
+    <com.qql.dagger.recommend.view.AutoHeightGridView
+        android:id="@+id/gridview"
+        android:layout_width="match_parent"
+        android:verticalSpacing="@dimen/margin_little_short"
+        android:horizontalSpacing="@dimen/margin_little_short"
+        android:numColumns="3"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

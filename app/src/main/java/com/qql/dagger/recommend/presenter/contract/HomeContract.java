@@ -3,8 +3,9 @@ package com.qql.dagger.recommend.presenter.contract;
 import com.qql.dagger.recommend.base.BasePresenter;
 import com.qql.dagger.recommend.base.BaseView;
 import com.qql.dagger.recommend.model.bean.BannerBean;
+import com.qql.dagger.recommend.model.bean.CategoryBean;
 
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by qql on 2016/12/22.
@@ -13,12 +14,14 @@ import java.util.ArrayList;
 public interface HomeContract {
     interface View extends BaseView {
 
-        void showDailyBanners(ArrayList<BannerBean> banners);
+        void showDailyBanners(List<BannerBean> banners);
+
+        void showCategory(List<CategoryBean> categories);
     }
 
     interface Presenter extends BasePresenter<HomeContract.View> {
 
         void getDailyBanners();
-
+        void getCategory();
     }
 }

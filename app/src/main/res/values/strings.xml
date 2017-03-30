@@ -85,6 +85,7 @@
     <string name="title_login">登录</string>
     <string name="error_sdk_init">淘宝控件初始化失败</string>
     <string name="text_click_search">Search</string>
+    <string name="text_category">分类</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

@@ -2,6 +2,7 @@ package com.qql.dagger.recommend.presenter;
 
 import com.qql.dagger.recommend.base.RxPresenter;
 import com.qql.dagger.recommend.model.bean.VersionBean;
+import com.qql.dagger.recommend.model.http.GankHttpResponse;
 import com.qql.dagger.recommend.model.http.MyHttpResponse;
 import com.qql.dagger.recommend.model.http.RetrofitHelper;
 import com.qql.dagger.recommend.presenter.contract.MainContract;
@@ -28,7 +29,7 @@ public class MainPresenter extends RxPresenter<MainContract.View> implements Mai
     @Override
     public void checkVersion(final String currentVersion) {
         Subscription rxSubscription = mRetrofitHelper.fetchVersionInfo()
-                .compose(RxUtil.<MyHttpResponse<VersionBean>>rxSchedulerHelper())
+                .compose(RxUtil.<GankHttpResponse<VersionBean>>rxSchedulerHelper())
                 .compose(RxUtil.<VersionBean>handleMyResult())
                 .filter(new Func1<VersionBean, Boolean>() {
                     @Override

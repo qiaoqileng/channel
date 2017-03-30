@@ -1,16 +1,24 @@
 package com.qql.dagger.recommend.model.http;
 
 
+import android.support.annotation.NonNull;
+
 import com.qql.dagger.recommend.BuildConfig;
 import com.qql.dagger.recommend.Constants;
+import com.qql.dagger.recommend.model.bean.BannerBean;
+import com.qql.dagger.recommend.model.bean.CategoryBean;
 import com.qql.dagger.recommend.model.bean.GankItemBean;
 import com.qql.dagger.recommend.model.bean.VersionBean;
 import com.qql.dagger.recommend.utils.SystemUtil;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import okhttp3.Cache;
 import okhttp3.CacheControl;
@@ -23,6 +31,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 import rx.Observable;
+import rx.functions.Func1;
 
 /**
  * Created by codeest on 2016/8/3.
@@ -117,7 +126,48 @@ public class RetrofitHelper {
     public Observable<GankHttpResponse<List<GankItemBean>>> fetchGirlList(int num, int page) {
         return gankApiService.getGirlList(num, page);
     }
-    public Observable<MyHttpResponse<VersionBean>> fetchVersionInfo() {
+    public Observable<GankHttpResponse<VersionBean>> fetchVersionInfo() {
         return myApiService.getVersionInfo();
+    }
+
+    public Observable<GankHttpResponse<List<BannerBean>>> getBanners(){
+        //TODO 这里后台写接口返回，先上测试数据
+        ArrayList<BannerBean> banners = new ArrayList<BannerBean>();
+        banners.add(new BannerBean(0,"http://img2.3lian.com/2014/f2/37/d/40.jpg"));
+        banners.add(new BannerBean(0,"http://img2.3lian.com/2014/f2/37/d/39.jpg"));
+        banners.add(new BannerBean(0,"http://img4.imgtn.bdimg.com/it/u=958691974,197794884&fm=23&gp=0.jpg"));
+        banners.add(new BannerBean(0,"http://f.hiphotos.baidu.com/image/h%3D200/sign=1478eb74d5a20cf45990f9df460b4b0c/d058ccbf6c81800a5422e5fdb43533fa838b4779.jpg"));
+        banners.add(new BannerBean(0,"http://f.hiphotos.baidu.com/image/pic/item/09fa513d269759ee50f1971ab6fb43166c22dfba.jpg"));
+        GankHttpResponse<List<BannerBean>> response = new GankHttpResponse<List<BannerBean>>();
+        response.setResults(banners);
+        response.setError(false);
+        Observable<GankHttpResponse<List<BannerBean>>> responseObservable = Observable.just(response).flatMap(new Func1<GankHttpResponse<List<BannerBean>>, Observable<GankHttpResponse<List<BannerBean>>>>() {
+            @Override
+            public Observable<GankHttpResponse<List<BannerBean>>> call(GankHttpResponse<List<BannerBean>> listMyHttpResponse) {
+                return Observable.just(listMyHttpResponse);
+            }
+        });
+        return responseObservable;
+    }
+
+    public Observable<GankHttpResponse<List<CategoryBean>>> getCategories(){
+        //TODO 这里后台写接口返回，先上测试数据
+        ArrayList<CategoryBean> banners = new ArrayList<CategoryBean>();
+        banners.add(new CategoryBean("桌/几","http://img2.3lian.com/2014/f2/37/d/40.jpg"));
+        banners.add(new CategoryBean("坐具","http://img2.3lian.com/2014/f2/37/d/39.jpg"));
+        banners.add(new CategoryBean("柜/架","http://img4.imgtn.bdimg.com/it/u=958691974,197794884&fm=23&gp=0.jpg"));
+        banners.add(new CategoryBean("床","http://f.hiphotos.baidu.com/image/h%3D200/sign=1478eb74d5a20cf45990f9df460b4b0c/d058ccbf6c81800a5422e5fdb43533fa838b4779.jpg"));
+        banners.add(new CategoryBean("餐厨","http://f.hiphotos.baidu.com/image/pic/item/09fa513d269759ee50f1971ab6fb43166c22dfba.jpg"));
+        GankHttpResponse<List<CategoryBean>> response = new GankHttpResponse<List<CategoryBean>>();
+        response.setResults(banners);
+        response.setError(false);
+        Observable<GankHttpResponse<List<CategoryBean>>> responseObservable = Observable.just(response).flatMap(new Func1<GankHttpResponse<List<CategoryBean>>,
+                        Observable<GankHttpResponse<List<CategoryBean>>>>() {
+            @Override
+            public Observable<GankHttpResponse<List<CategoryBean>>> call(GankHttpResponse<List<CategoryBean>> listMyHttpResponse) {
+                return Observable.just(listMyHttpResponse);
+            }
+        });
+        return responseObservable;
     }
 }

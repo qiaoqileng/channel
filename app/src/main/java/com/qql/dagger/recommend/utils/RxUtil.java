@@ -1,8 +1,10 @@
 package com.qql.dagger.recommend.utils;
 
 
+import android.text.TextUtils;
+
 import com.qql.dagger.recommend.model.http.GankHttpResponse;
-import com.qql.dagger.recommend.model.http.MyHttpResponse;
+import com.qql.dagger.recommend.model.http.GankHttpResponse;
 
 import rx.Observable;
 import rx.Subscriber;
@@ -77,17 +79,17 @@ public class RxUtil {
      * @param <T>
      * @return
      */
-    public static <T> Observable.Transformer<MyHttpResponse<T>, T> handleMyResult() {   //compose判断结果
-        return new Observable.Transformer<MyHttpResponse<T>, T>() {
+    public static <T> Observable.Transformer<GankHttpResponse<T>, T> handleMyResult() {   //compose判断结果
+        return new Observable.Transformer<GankHttpResponse<T>, T>() {
             @Override
-            public Observable<T> call(Observable<MyHttpResponse<T>> httpResponseObservable) {
-                return httpResponseObservable.flatMap(new Func1<MyHttpResponse<T>, Observable<T>>() {
+            public Observable<T> call(Observable<GankHttpResponse<T>> httpResponseObservable) {
+                return httpResponseObservable.flatMap(new Func1<GankHttpResponse<T>, Observable<T>>() {
                     @Override
-                    public Observable<T> call(MyHttpResponse<T> tMyHttpResponse) {
-                        if(tMyHttpResponse.getCode() == 200) {
-                            return createData(tMyHttpResponse.getData());
+                    public Observable<T> call(GankHttpResponse<T> tMyHttpResponse) {
+                        if(!tMyHttpResponse.getError()) {
+                            return createData(tMyHttpResponse.getResults());
                         } else {
-                            return Observable.error(new Exception("服务器返回error"));
+                            return Observable.error(new Exception("服务器返回error"+(TextUtils.isEmpty(tMyHttpResponse.getErrorMessage())?"":tMyHttpResponse.getErrorMessage())));
                         }
                     }
                 });

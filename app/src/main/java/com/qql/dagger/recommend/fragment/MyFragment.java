@@ -86,6 +86,7 @@ public class MyFragment extends Fragment {
         mToolbar.inflateMenu(R.menu.menu_scrolling);
         mToolbar.bringToFront();
         //通过CollapsingToolbarLayout修改字体颜色
+        mCollapsingToolbarLayout.setTitle("登录");
         mCollapsingToolbarLayout.setExpandedTitleColor(Color.WHITE);//设置还没收缩时状态下字体颜色
         mCollapsingToolbarLayout.setCollapsedTitleTextColor(Color.WHITE);//设置收缩后Toolbar上字体的颜色
         mCollapsingToolbarLayout.setCollapsedTitleGravity(Gravity.CENTER);

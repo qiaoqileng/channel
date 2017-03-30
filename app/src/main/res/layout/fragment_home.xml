@@ -66,7 +66,9 @@
                     android:id="@+id/convenientBanner"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
+                    android:layout_marginBottom="@dimen/margin_little_short"
                     app:canLoop="true"/>
+                <include layout="@layout/item_category"/>
             </LinearLayout>
         </ScrollView>
     </android.support.v4.widget.SwipeRefreshLayout>

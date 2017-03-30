@@ -10,8 +10,13 @@
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="text_margin">16dp</dimen>
 
+    <dimen name="text_normal">14sp</dimen>
+    <dimen name="text_little_big">16sp</dimen>
     <dimen name="text_larger">22sp</dimen>
 
     <dimen name="margin_long">20dp</dimen>
     <dimen name="margin_very_long">30dp</dimen>
+    <dimen name="margin_normal">10dp</dimen>
+    <dimen name="margin_little_long">15dp</dimen>
+    <dimen name="margin_little_short">5dp</dimen>
 </resources>

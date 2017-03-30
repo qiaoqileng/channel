@@ -1,26 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<android.support.v4.widget.SwipeRefreshLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/swipe_refresh"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
+    android:orientation="vertical">
 
-    <ScrollView
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/toast_bg">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-            <com.bigkoo.convenientbanner.ConvenientBanner
-                android:id="@+id/convenientBanner"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                app:canLoop="true"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin_little_short"
+            android:background="@drawable/background_card"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="13dp"
+            android:paddingLeft="@dimen/margin_normal"
+            android:paddingRight="@dimen/margin_normal"
+            android:paddingTop="@dimen/margin_normal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/search"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_little_short"
+                android:layout_weight="1"
+                android:text="@string/text_click_search"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_normal"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/voice"/>
         </LinearLayout>
-    </ScrollView>
-</android.support.v4.widget.SwipeRefreshLayout>
+
+    </FrameLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    android:id="@+id/convenientBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    app:canLoop="true"/>
+            </LinearLayout>
+        </ScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.qql.dagger.recommend.fragment;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ali.auth.third.core.callback.LoginCallback;
@@ -37,6 +39,7 @@ import com.qql.dagger.recommend.presenter.HomePresenter;
 import com.qql.dagger.recommend.presenter.contract.HomeContract;
 import com.qql.dagger.recommend.tansform.GlideCircleTransform;
 import com.qql.dagger.recommend.tansform.GlideRoundTransform;
+import com.qql.dagger.recommend.utils.LogUtil;
 import com.qql.dagger.recommend.utils.SnackbarUtil;
 import com.qql.dagger.recommend.utils.ToastUtil;
 
@@ -57,6 +60,8 @@ public class MyFragment extends Fragment {
     CollapsingToolbarLayout mCollapsingToolbarLayout;
     @BindView(R.id.login)
     ImageView imageView;
+    @BindView(R.id.lager_text)
+    TextView textView;
     private View view;
     private Session user = null;
 
@@ -86,7 +91,7 @@ public class MyFragment extends Fragment {
         mCollapsingToolbarLayout.setCollapsedTitleGravity(Gravity.CENTER);
         mCollapsingToolbarLayout.setCollapsedTitleTextAppearance(android.R.style.TextAppearance_DialogWindowTitle);
         mCollapsingToolbarLayout.setExpandedTitleTextAppearance(android.R.style.TextAppearance_DialogWindowTitle);
-        refresh();
+        showLogin(true);
         super.onViewCreated(view, savedInstanceState);
     }
 
@@ -94,26 +99,29 @@ public class MyFragment extends Fragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login:
-                showLogin(view);
+                showLogin(true);
                 break;
         }
     }
-    public void showLogin(View view) {
+
+    public void showLogin(boolean isRefresh) {
         if (!AlibcLogin.getInstance().isLogin()) {
             AlibcLogin.getInstance().showLogin(getActivity(), new AlibcLoginCallback() {
                 @Override
                 public void onSuccess() {
-                    ToastUtil.show("success");
+                    LogUtil.d("login success");
                 }
 
                 @Override
                 public void onFailure(int i, String s) {
-                    ToastUtil.show("failure");
+                    LogUtil.d("login failed because of " + s);
                 }
             });
         }
         user  = AlibcLogin.getInstance().getSession();
-        refresh();
+        if (isRefresh) {
+            refresh();
+        }
     }
 
     private void refresh(){

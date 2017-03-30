@@ -12,6 +12,7 @@ import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
 import com.qql.dagger.recommend.component.AppComponent;
 import com.qql.dagger.recommend.component.DaggerAppComponent;
 import com.qql.dagger.recommend.module.AppModule;
+import com.qql.dagger.recommend.utils.LogUtil;
 import com.qql.dagger.recommend.utils.ToastUtil;
 import com.umeng.analytics.MobclickAgent;
 
@@ -47,12 +48,13 @@ public class App extends Application {
         AlibcTradeSDK.asyncInit(this, new AlibcTradeInitCallback() {
             @Override
             public void onSuccess() {
-                ToastUtil.show("sdk init success");
+                LogUtil.d("sdk init success");
             }
 
             @Override
             public void onFailure(int i, String s) {
-                ToastUtil.show("failure: "+s);
+                LogUtil.d("sdk init failed for " + s);
+                ToastUtil.show(R.string.error_sdk_init);
             }
         });
     }

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="textType">
+        <attr name="type_face" format="enum">
+            <enum name="normal" value="0"/>
+            <enum name="moda" value="1"/>
+        </attr>
+    </declare-styleable>
+</resources>

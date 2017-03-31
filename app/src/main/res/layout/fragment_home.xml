@@ -29,6 +29,7 @@
                 android:src="@mipmap/search"/>
 
             <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/search"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin_little_short"
@@ -38,6 +39,7 @@
                 android:textSize="@dimen/text_normal"/>
 
             <ImageView
+                android:id="@+id/voice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/voice"/>
@@ -66,7 +68,7 @@
                     android:id="@+id/convenientBanner"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:layout_marginBottom="@dimen/margin_little_short"
+                    android:layout_marginBottom="@dimen/margin_normal"
                     app:canLoop="true"/>
                 <include layout="@layout/item_category"/>
             </LinearLayout>

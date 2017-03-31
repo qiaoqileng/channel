@@ -12,7 +12,6 @@
         />
     <com.qql.dagger.recommend.view.TextViewTypeFace
         style="@style/text_category_item_title"
-        app:type_face="moda"
         android:background="@drawable/background_card"
         android:padding="@dimen/margin_little_short"
         android:id="@+id/txt_category"

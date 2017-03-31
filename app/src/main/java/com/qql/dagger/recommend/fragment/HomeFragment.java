@@ -1,5 +1,9 @@
 package com.qql.dagger.recommend.fragment;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.view.View;
 import android.widget.GridView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
@@ -20,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by qql on 2016/12/22.
@@ -30,6 +35,8 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     ConvenientBanner convenientBanner;
     @BindView(R.id.gridview)
     GridView gridView;
+    @BindView(R.id.swipe_refresh)
+    SwipeRefreshLayout refreshLayout;
     @Override
     protected void initInject() {
         getFragmentComponent().inject(this);
@@ -38,6 +45,18 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     @Override
     protected int getLayoutId() {
         return R.layout.fragment_home;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                initEventAndData();
+                refreshLayout.setRefreshing(false);
+            }
+        });
     }
 
     @Override
@@ -75,6 +94,18 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
                 SnackbarUtil.show(convenientBanner,"第"+position+"个");
             }
         });
+    }
+
+    @OnClick({R.id.search,R.id.voice})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.search:
+                //TODO S
+                break;
+            case R.id.voice:
+                //TODO to be continue
+                break;
+        }
     }
 
     // 开始自动翻页

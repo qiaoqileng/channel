@@ -7,7 +7,6 @@
     android:layout_width="match_parent" android:layout_height="wrap_content">
     <com.qql.dagger.recommend.view.TextViewTypeFace
         style="@style/text_category_title"
-        app:type_face="moda"
         android:text="@string/text_category"
         android:layout_marginBottom="@dimen/margin_normal"
         />

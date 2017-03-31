@@ -3,6 +3,7 @@ package com.qql.dagger.recommend.component;
 import android.app.Activity;
 
 
+import com.qql.dagger.recommend.activity.BBListActivity;
 import com.qql.dagger.recommend.activity.HomeActivity;
 import com.qql.dagger.recommend.activity.ImageDetailActivity;
 import com.qql.dagger.recommend.activity.MainActivity;
@@ -27,4 +28,6 @@ public interface ActivityComponent {
     void inject(ImageDetailActivity activity);
 
     void inject(HomeActivity activity);
+
+    void inject(BBListActivity activity);
 }

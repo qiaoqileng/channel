@@ -35,7 +35,7 @@
             android:value="unknown"/>
 
         <activity
-            android:name=".activity.ScrollingActivity"
+            android:name=".activity.BBListActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>

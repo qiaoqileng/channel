@@ -10,14 +10,14 @@ import android.view.View;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.base.BaseActivity;
 import com.qql.dagger.recommend.model.bean.BBBean;
+import com.qql.dagger.recommend.presenter.BBPresenter;
 import com.qql.dagger.recommend.presenter.MainPresenter;
 import com.qql.dagger.recommend.presenter.contract.BBListContract;
 import com.qql.dagger.recommend.presenter.contract.MainContract;
 
 import java.util.List;
 
-public class BBListActivity extends BaseActivity<BBListContract.Presenter> implements BBListContract.View{
-
+public class BBListActivity extends BaseActivity<BBPresenter> implements BBListContract.View{
 
     @Override
     protected void initInject() {

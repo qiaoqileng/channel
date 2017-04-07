@@ -10,6 +10,7 @@ import android.view.View;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.base.BaseActivity;
 import com.qql.dagger.recommend.model.bean.BBBean;
+import com.qql.dagger.recommend.model.bean.CategoryBean;
 import com.qql.dagger.recommend.presenter.BBPresenter;
 import com.qql.dagger.recommend.presenter.MainPresenter;
 import com.qql.dagger.recommend.presenter.contract.BBListContract;
@@ -31,11 +32,16 @@ public class BBListActivity extends BaseActivity<BBPresenter> implements BBListC
 
     @Override
     protected void initEventAndData() {
-
+        mPresenter.getCategories();
     }
 
     @Override
     public void showBBList(List<BBBean> bbs) {
+
+    }
+
+    @Override
+    public void showCategories(List<CategoryBean> categories) {
 
     }
 

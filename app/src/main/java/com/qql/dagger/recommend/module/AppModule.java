@@ -4,6 +4,7 @@ package com.qql.dagger.recommend.module;
 import com.green.dao.GreenDaoManager;
 import com.qql.dagger.recommend.App;
 import com.qql.dagger.recommend.annotation.ContextLife;
+import com.qql.dagger.recommend.cache.DataCache;
 import com.qql.dagger.recommend.model.http.RetrofitHelper;
 
 import javax.inject.Singleton;
@@ -40,5 +41,12 @@ public class AppModule {
     @Singleton
     GreenDaoManager provideGreenDaoManager() {
         return new GreenDaoManager(application);
+    }
+
+
+    @Provides
+    @Singleton
+    DataCache provideDataCache() {
+        return new DataCache(application);
     }
 }

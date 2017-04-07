@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 
 import com.qql.dagger.recommend.BuildConfig;
 import com.qql.dagger.recommend.Constants;
+import com.qql.dagger.recommend.model.bean.BBBean;
 import com.qql.dagger.recommend.model.bean.BannerBean;
 import com.qql.dagger.recommend.model.bean.CategoryBean;
 import com.qql.dagger.recommend.model.bean.GankItemBean;
@@ -15,6 +16,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
@@ -165,6 +167,27 @@ public class RetrofitHelper {
                         Observable<GankHttpResponse<List<CategoryBean>>>>() {
             @Override
             public Observable<GankHttpResponse<List<CategoryBean>>> call(GankHttpResponse<List<CategoryBean>> listMyHttpResponse) {
+                return Observable.just(listMyHttpResponse);
+            }
+        });
+        return responseObservable;
+    }
+
+    public Observable<GankHttpResponse<List<BBBean>>> getBBList(Map<String,String> params){
+        //TODO 这里后台写接口返回，先上测试数据
+        ArrayList<BBBean> banners = new ArrayList<BBBean>();
+        banners.add(new BBBean(0,"进击的巨人","http://img2.3lian.com/2014/f2/37/d/40.jpg",4,56,48));
+        banners.add(new BBBean(1,"打打酱油","http://img2.3lian.com/2014/f2/37/d/39.jpg",3,16,58));
+        banners.add(new BBBean(2,"大汉情缘","http://img4.imgtn.bdimg.com/it/u=958691974,197794884&fm=23&gp=0.jpg",1,11,123));
+        banners.add(new BBBean(3,"埃德加","http://f.hiphotos.baidu.com/image/h%3D200/sign=1478eb74d5a20cf45990f9df460b4b0c/d058ccbf6c81800a5422e5fdb43533fa838b4779.jpg",4,156,248));
+        banners.add(new BBBean(4,"大手大脚","http://f.hiphotos.baidu.com/image/pic/item/09fa513d269759ee50f1971ab6fb43166c22dfba.jpg",4,526,411));
+        GankHttpResponse<List<BBBean>> response = new GankHttpResponse<List<BBBean>>();
+        response.setResults(banners);
+        response.setError(false);
+        Observable<GankHttpResponse<List<BBBean>>> responseObservable = Observable.just(response).flatMap(new Func1<GankHttpResponse<List<BBBean>>,
+                Observable<GankHttpResponse<List<BBBean>>>>() {
+            @Override
+            public Observable<GankHttpResponse<List<BBBean>>> call(GankHttpResponse<List<BBBean>> listMyHttpResponse) {
                 return Observable.just(listMyHttpResponse);
             }
         });

@@ -1,6 +1,7 @@
 package com.qql.dagger.recommend.presenter;
 
 import com.qql.dagger.recommend.base.RxPresenter;
+import com.qql.dagger.recommend.cache.DataCache;
 import com.qql.dagger.recommend.model.bean.BannerBean;
 import com.qql.dagger.recommend.model.bean.CategoryBean;
 import com.qql.dagger.recommend.model.http.GankHttpResponse;
@@ -23,10 +24,11 @@ import rx.functions.Action1;
 public class HomePresenter extends RxPresenter<HomeContract.View> implements HomeContract.Presenter {
 
     private final RetrofitHelper mRetrofitHelper;
-
+    private final DataCache dataCache;
     @Inject
-    public HomePresenter(RetrofitHelper mRetrofitHelper) {
+    public HomePresenter(RetrofitHelper mRetrofitHelper,DataCache dataCache) {
         this.mRetrofitHelper = mRetrofitHelper;
+        this.dataCache = dataCache;
     }
 
     @Override
@@ -50,20 +52,25 @@ public class HomePresenter extends RxPresenter<HomeContract.View> implements Hom
 
     @Override
     public void getCategory() {
-        Subscription rxSubscription = mRetrofitHelper.getCategories()
-                .compose(RxUtil.<GankHttpResponse<List<CategoryBean>>>rxSchedulerHelper())
-                .compose(RxUtil.<List<CategoryBean>>handleResult())
-                .subscribe(new Action1<List<CategoryBean>>() {
-                    @Override
-                    public void call(List<CategoryBean> gankItemBeen) {
-                        mView.showCategory(gankItemBeen);
-                    }
-                }, new Action1<Throwable>() {
-                    @Override
-                    public void call(Throwable throwable) {
-                        mView.showError("加载更多数据失败ヽ(≧Д≦)ノ");
-                    }
-                });
-        addSubscrebe(rxSubscription);
+        if (dataCache.isCategoryEmpty()) {
+            Subscription rxSubscription = mRetrofitHelper.getCategories()
+                    .compose(RxUtil.<GankHttpResponse<List<CategoryBean>>>rxSchedulerHelper())
+                    .compose(RxUtil.<List<CategoryBean>>handleResult())
+                    .subscribe(new Action1<List<CategoryBean>>() {
+                        @Override
+                        public void call(List<CategoryBean> gankItemBeen) {
+                            dataCache.setCategories(gankItemBeen);
+                            mView.showCategory(gankItemBeen);
+                        }
+                    }, new Action1<Throwable>() {
+                        @Override
+                        public void call(Throwable throwable) {
+                            mView.showError("加载更多数据失败ヽ(≧Д≦)ノ");
+                        }
+                    });
+            addSubscrebe(rxSubscription);
+        } else {
+            mView.showCategory(dataCache.getCategories());
+        }
     }
 }

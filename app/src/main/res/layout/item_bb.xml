@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:padding="@dimen/margin_normal"
+    android:layout_height="@dimen/item_height">
+
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_marginRight="@dimen/margin_normal"
+        android:layout_width="@dimen/item_img_height"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <com.qql.dagger.recommend.view.TextViewTypeFace
+            android:id="@+id/bb_name"
+            style="@style/text_category_title"
+            android:layout_width="match_parent"
+            android:gravity="start|center_vertical"
+            android:text="優衣庫"/>
+        <RatingBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numStars="5"
+            android:rating="5"
+            android:stepSize="1"
+            style="?android:ratingBarStyleIndicator"/>
+    </LinearLayout>
+</LinearLayout>

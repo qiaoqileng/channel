@@ -5,6 +5,7 @@ import android.content.Context;
 import com.green.dao.GreenDaoManager;
 import com.qql.dagger.recommend.App;
 import com.qql.dagger.recommend.annotation.ContextLife;
+import com.qql.dagger.recommend.cache.DataCache;
 import com.qql.dagger.recommend.model.http.RetrofitHelper;
 import com.qql.dagger.recommend.module.AppModule;
 import com.qql.dagger.recommend.repository.UserRepository;
@@ -28,4 +29,5 @@ public interface AppComponent {
 
     GreenDaoManager provideGreenDaoManager();    //提供数据库帮助类
 
+    DataCache provideDataCache();    //提供缓存类
 }

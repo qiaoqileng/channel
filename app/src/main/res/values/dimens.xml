@@ -19,4 +19,7 @@
     <dimen name="margin_normal">10dp</dimen>
     <dimen name="margin_little_long">15dp</dimen>
     <dimen name="margin_little_short">5dp</dimen>
+
+    <dimen name="item_height">120dp</dimen>
+    <dimen name="item_img_height">100dp</dimen>
 </resources>

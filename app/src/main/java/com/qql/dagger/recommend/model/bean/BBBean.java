@@ -13,17 +13,27 @@ public class BBBean {
     private int score;
     private long praise;
     private long collections;
+    private long follow;
 
     public BBBean() {
     }
 
-    public BBBean(long id, String name, String mainImgUrl, int score, long praise, long collections) {
+    public BBBean(long id, String name, String mainImgUrl, int score, long praise, long collections,long follow) {
         this.id = id;
         this.name = name;
         this.mainImgUrl = mainImgUrl;
         this.score = score;
         this.praise = praise;
         this.collections = collections;
+        this.follow = follow;
+    }
+
+    public long getFollow() {
+        return follow;
+    }
+
+    public void setFollow(long follow) {
+        this.follow = follow;
     }
 
     public int getScore() {

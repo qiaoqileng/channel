@@ -1,15 +1,18 @@
 package com.qql.dagger.recommend.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
 import com.qql.dagger.recommend.R;
+import com.qql.dagger.recommend.activity.BBListActivity;
 import com.qql.dagger.recommend.adapter.CategoryAdapter;
 import com.qql.dagger.recommend.animotion.ZoomInTransformer;
 import com.qql.dagger.recommend.base.BaseFragment;
@@ -101,6 +104,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         switch (view.getId()) {
             case R.id.search:
                 //TODO S
+                startActivity(new Intent(getActivity(), BBListActivity.class));
                 break;
             case R.id.voice:
                 //TODO to be continue

@@ -22,4 +22,5 @@
 
     <dimen name="item_height">120dp</dimen>
     <dimen name="item_img_height">100dp</dimen>
+    <dimen name="item_bb_bottom">35dp</dimen>
 </resources>

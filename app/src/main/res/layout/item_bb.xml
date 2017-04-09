@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:padding="@dimen/margin_normal"
+    android:background="@drawable/dialog_toast_bg"
     android:layout_height="@dimen/item_height">
 
     <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/bb_img"
         android:layout_marginRight="@dimen/margin_normal"
         android:layout_width="@dimen/item_img_height"
         android:layout_height="match_parent"
@@ -22,11 +24,52 @@
             android:gravity="start|center_vertical"
             android:text="優衣庫"/>
         <RatingBar
-            android:layout_width="match_parent"
+            android:id="@+id/bb_score"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:numStars="5"
-            android:rating="5"
+            android:rating="2"
+            android:max="5"
             android:stepSize="1"
             style="?android:ratingBarStyleIndicator"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/item_bb_bottom"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/text_item_bottom"
+                android:id="@+id/follow"
+                android:text="2"
+                android:drawableLeft="@mipmap/follow"
+                />
+            </FrameLayout>
+            <include layout="@layout/line_vertical"/>
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/text_item_bottom"
+                android:id="@+id/collect"
+                android:drawableLeft="@mipmap/collect"
+                android:text="112"
+                /></FrameLayout>
+            <include layout="@layout/line_vertical"/>
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+            <android.support.v7.widget.AppCompatTextView
+                style="@style/text_item_bottom"
+                android:id="@+id/praise"
+                android:text="122"
+                android:drawableLeft="@mipmap/praise"
+                /></FrameLayout>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

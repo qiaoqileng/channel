@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
 import com.bigkoo.convenientbanner.listener.OnItemClickListener;
+import com.qql.dagger.recommend.KeySet;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.activity.BBListActivity;
 import com.qql.dagger.recommend.adapter.CategoryAdapter;
@@ -74,12 +76,19 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     }
 
     @Override
-    public void showCategory(List<CategoryBean> categories) {
+    public void showCategory(final List<CategoryBean> categories) {
         //TODO 显示分类
         if (categories == null || categories.size() == 0){
             return;
         }
         gridView.setAdapter(new CategoryAdapter(categories,getActivity()));
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                CategoryBean categoryBean = categories.get(i);
+                toBBList(categoryBean.getId());
+            }
+        });
     }
 
     private void initBanners(List<BannerBean> banners){
@@ -99,12 +108,24 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         });
     }
 
+    private void toBBList(long categoryId){
+        Intent intent = new Intent(getActivity(), BBListActivity.class);
+        if (categoryId != -1){
+            intent.putExtra(KeySet.KEY_CATEGORY_ID,categoryId);
+        }
+        startActivity(intent);
+    }
+
+    private void toBBList(){
+        toBBList(-1);
+    }
+
     @OnClick({R.id.search,R.id.voice})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.search:
                 //TODO S
-                startActivity(new Intent(getActivity(), BBListActivity.class));
+                toBBList();
                 break;
             case R.id.voice:
                 //TODO to be continue

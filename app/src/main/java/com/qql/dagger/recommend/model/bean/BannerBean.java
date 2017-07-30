@@ -5,22 +5,22 @@ package com.qql.dagger.recommend.model.bean;
  */
 
 public class BannerBean {
-    private int id;
+    private long id;
     /**
      * 图片地址
      */
     private String imageUrl;
 
-    public BannerBean(int id, String imageUrl) {
+    public BannerBean(long id, String imageUrl) {
         this.id = id;
         this.imageUrl = imageUrl;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

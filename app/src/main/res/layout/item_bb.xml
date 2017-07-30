@@ -3,7 +3,7 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:padding="@dimen/margin_normal"
     android:background="@drawable/dialog_toast_bg"
-    android:layout_height="@dimen/item_height">
+    android:layout_height="wrap_content">
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/bb_img"

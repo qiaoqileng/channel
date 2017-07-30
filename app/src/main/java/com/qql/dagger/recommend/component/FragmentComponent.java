@@ -5,6 +5,7 @@ import android.app.Activity;
 import com.qql.dagger.recommend.annotation.FragmentScope;
 import com.qql.dagger.recommend.base.BaseFragment;
 import com.qql.dagger.recommend.base.BasePresenter;
+import com.qql.dagger.recommend.fragment.BookSelfFragment;
 import com.qql.dagger.recommend.fragment.HomeFragment;
 import com.qql.dagger.recommend.module.FragmentModule;
 
@@ -21,4 +22,5 @@ public interface FragmentComponent {
 
     void inject(HomeFragment fragment);
 
+    void inject(BookSelfFragment fragment);
 }

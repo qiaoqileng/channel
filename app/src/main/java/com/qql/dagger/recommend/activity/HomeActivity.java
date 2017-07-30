@@ -10,6 +10,7 @@ import com.flyco.tablayout.listener.CustomTabEntity;
 import com.flyco.tablayout.listener.OnTabSelectListener;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.base.BaseActivity;
+import com.qql.dagger.recommend.fragment.BookSelfFragment;
 import com.qql.dagger.recommend.fragment.HomeFragment;
 import com.qql.dagger.recommend.fragment.MyFragment;
 import com.qql.dagger.recommend.fragment.SimpleCardFragment;
@@ -60,7 +61,7 @@ public class HomeActivity extends BaseActivity<MainPresenter> implements MainCon
     protected void initEventAndData() {
         for (String title : mTitles) {
             if (mTitles[0].equals(title)){
-                mFragments.add(new HomeFragment());
+                mFragments.add(new BookSelfFragment());
             } else if (mTitles[mTitles.length-1].equals(title)){
                 mFragments.add(new MyFragment());
             } else {

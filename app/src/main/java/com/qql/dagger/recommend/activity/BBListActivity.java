@@ -1,5 +1,6 @@
 package com.qql.dagger.recommend.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.qql.dagger.recommend.KeySet;
@@ -33,7 +35,7 @@ public class BBListActivity extends BaseActivity<BBPresenter> implements BBListC
     ListView listView;
     @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout swipeRefreshLayout;
-    private int currentCategoryId;
+    private long currentCategoryId;
 
     @Override
     protected void initInject() {
@@ -57,13 +59,19 @@ public class BBListActivity extends BaseActivity<BBPresenter> implements BBListC
     }
 
     private void initIntentData() {
-        currentCategoryId = getIntent().getIntExtra(KeySet.KEY_CATEGORY_ID,-1);
+        currentCategoryId = getIntent().getLongExtra(KeySet.KEY_CATEGORY_ID,-1);
     }
 
     @Override
     public void showBBList(List<BBBean> bbs) {
         BBAdapter adapter = new BBAdapter(this,bbs);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                startActivity(new Intent(BBListActivity.this,BBDetailActivity.class));
+            }
+        });
     }
 
     @Override

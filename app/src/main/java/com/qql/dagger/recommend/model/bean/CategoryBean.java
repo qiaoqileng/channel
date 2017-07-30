@@ -5,7 +5,7 @@ package com.qql.dagger.recommend.model.bean;
  */
 
 public class CategoryBean {
-    private int id;
+    private long id;
     private String url;
     private String title;
 
@@ -14,11 +14,11 @@ public class CategoryBean {
         this.title = title;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

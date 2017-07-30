@@ -7,13 +7,9 @@ import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.WindowManager;
 
-import com.alibaba.baichuan.android.trade.AlibcTradeSDK;
-import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
 import com.qql.dagger.recommend.component.AppComponent;
 import com.qql.dagger.recommend.component.DaggerAppComponent;
 import com.qql.dagger.recommend.module.AppModule;
-import com.qql.dagger.recommend.utils.LogUtil;
-import com.qql.dagger.recommend.utils.ToastUtil;
 import com.umeng.analytics.MobclickAgent;
 
 /**
@@ -28,7 +24,6 @@ public class App extends Application {
     public static int DIMEN_DPI = -1;
 
     private static App instance;
-    private static String realName = "myRealm.realm";
 
     public static App getInstance() {
         return instance;
@@ -45,18 +40,6 @@ public class App extends Application {
         //数据库初始化
         initDB();
 
-        AlibcTradeSDK.asyncInit(this, new AlibcTradeInitCallback() {
-            @Override
-            public void onSuccess() {
-                LogUtil.d("sdk init success");
-            }
-
-            @Override
-            public void onFailure(int i, String s) {
-                LogUtil.d("sdk init failed for " + s);
-                ToastUtil.show(R.string.error_sdk_init);
-            }
-        });
     }
 
     public void getScreenSize() {

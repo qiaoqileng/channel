@@ -8,7 +8,6 @@ import com.qql.dagger.recommend.activity.HomeActivity;
 import com.qql.dagger.recommend.activity.ImageDetailActivity;
 import com.qql.dagger.recommend.activity.MainActivity;
 import com.qql.dagger.recommend.annotation.ActivityScope;
-import com.qql.dagger.recommend.base.BaseActivity;
 import com.qql.dagger.recommend.module.ActivityModule;
 
 import dagger.Component;
@@ -30,4 +29,5 @@ public interface ActivityComponent {
     void inject(HomeActivity activity);
 
     void inject(BBListActivity activity);
+
 }

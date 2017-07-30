@@ -2,6 +2,9 @@ package com.qql.dagger.recommend.utils;
 
 import android.util.Log;
 
+import com.qql.dagger.recommend.App;
+import com.qql.dagger.recommend.Constants;
+
 /**
  * Created by qiao on 2016/11/25.
  */
@@ -11,6 +14,8 @@ public class LogUtil {
     private static final boolean isDebug = true;
 
     private static final int stackLevel = 4;
+
+    public static final String TAG = Constants.PKG_NAME;
 
     public static void v(Object... msg) {
         printLog(Log.VERBOSE, msg);
@@ -81,6 +86,12 @@ public class LogUtil {
     public static void printException(String msg, Throwable e) {
         if (isDebug) {
             DEFAULT_LOGHANDLER.publish("Log_StackTrace", Log.ERROR, msg + '\n' + Log.getStackTraceString(e));
+        }
+    }
+
+    public static void printException(Throwable e) {
+        if (isDebug) {
+            DEFAULT_LOGHANDLER.publish("Log_StackTrace", Log.ERROR, TAG + '\n' + Log.getStackTraceString(e));
         }
     }
 

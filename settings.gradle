@@ -1,1 +1,1 @@
-include ':app', ':lib-greendao-generator'
+include ':app', ':lib-greendao-generator',":grid-library"

@@ -29,7 +29,10 @@ import android.view.ViewGroup;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
+import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.qql.dagger.recommend.R;
@@ -117,6 +120,32 @@ public class DraggableGridView extends ViewGroup implements View.OnTouchListener
         super.removeViewAt(index);
         newPositions.remove(index);
     };
+
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        int rw = MeasureSpec.getSize(widthMeasureSpec);
+        int rh = MeasureSpec.getSize(heightMeasureSpec);
+
+        childSize = (rw - 2 * padding) / 3;
+
+        int childCount = this.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View child = this.getChildAt(i);
+            //this.measureChild(child, widthMeasureSpec, heightMeasureSpec);
+
+            LinearLayout.LayoutParams lParams = (LinearLayout.LayoutParams) child.getLayoutParams();
+            lParams.leftMargin = (i % 3) * (childSize + padding);
+            lParams.topMargin = (i / 3) * (childSize + padding);
+        }
+
+        int vw = rw;
+        int vh = rh;
+        if (childCount < 3) {
+            vw = childCount * (childSize + padding);
+        }
+        vh = ((childCount + 3) / 3) * (childSize + padding);
+        setMeasuredDimension(vw, vh);
+    }
 
     //LAYOUT
     @Override

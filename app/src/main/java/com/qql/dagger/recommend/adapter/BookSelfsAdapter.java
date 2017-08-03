@@ -78,6 +78,11 @@ public class BookSelfsAdapter extends RecyclerView.Adapter<BookSelfsAdapter.MyVi
     }
 
     @Override
+    public long getItemId(int position) {
+        return books.get(position).getId();
+    }
+
+    @Override
     public void onMoveItem(int fromPosition, int toPosition) {
         LogUtil.d("onMoveItem: " + " fromPosition= " +  fromPosition + " toPosition=" + toPosition);
         if (fromPosition == toPosition) {

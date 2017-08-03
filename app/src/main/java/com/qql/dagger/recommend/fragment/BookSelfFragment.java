@@ -5,6 +5,7 @@ import android.os.Build;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
 
 import com.green.dao.output.Book;
 import com.h6ah4i.android.widget.advrecyclerview.animator.DraggableItemAnimator;
@@ -66,18 +67,16 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
 
         // drag & drop manager
         mRecyclerViewDragDropManager = new RecyclerViewDragDropManager();
-        mRecyclerViewDragDropManager.setDraggingItemShadowDrawable(
-                (NinePatchDrawable) ContextCompat.getDrawable(getContext(), R.drawable.material_shadow_z3));
+//        mRecyclerViewDragDropManager.setDraggingItemShadowDrawable(
+//                (NinePatchDrawable) ContextCompat.getDrawable(getContext(), R.drawable.material_shadow_z3));
         // Start dragging after long press
         mRecyclerViewDragDropManager.setInitiateOnLongPress(true);
         mRecyclerViewDragDropManager.setInitiateOnMove(false);
         mRecyclerViewDragDropManager.setLongPressTimeout(750);
-
         // setup dragging item effects (NOTE: DraggableItemAnimator is required)
         mRecyclerViewDragDropManager.setDragStartItemAnimationDuration(250);
         mRecyclerViewDragDropManager.setDraggingItemAlpha(0.8f);
         mRecyclerViewDragDropManager.setDraggingItemScale(1.3f);
-        mRecyclerViewDragDropManager.setDraggingItemRotation(15.0f);
 
         //adapter
         adapter = new BookSelfsAdapter(books);
@@ -89,15 +88,6 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mWrappedAdapter);  // requires *wrapped* adapter
         mRecyclerView.setItemAnimator(animator);
-
-        // additional decorations
-        //noinspection StatementWithEmptyBody
-        if (supportsViewElevation()) {
-            // Lollipop or later has native drop shadow feature. ItemShadowDecorator is not required.
-        } else {
-            mRecyclerView.addItemDecoration(new ItemShadowDecorator((NinePatchDrawable) ContextCompat.getDrawable(getContext(), R.drawable.material_shadow_z1)));
-        }
-
         mRecyclerViewDragDropManager.attachRecyclerView(mRecyclerView);
     }
 
@@ -105,10 +95,6 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
     public void onPause() {
         mRecyclerViewDragDropManager.cancelDrag();
         super.onPause();
-    }
-
-    private boolean supportsViewElevation() {
-        return (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP);
     }
 
     @Override

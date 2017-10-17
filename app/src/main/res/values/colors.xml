@@ -7,4 +7,6 @@
     <color name="white">#ffffff</color>
 
     <color name="text_black">#333333</color>
+    <color name="light_line">#F9F9F9</color>
+    <color name="search_color">#FAFAFA</color>
 </resources>

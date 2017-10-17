@@ -5,18 +5,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.green.dao.output.Book;
+import com.green.dao.output.MyBook;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemAdapter;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.ItemDraggableRange;
-import com.h6ah4i.android.widget.advrecyclerview.draggable.RecyclerViewDragDropManager;
 import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemViewHolder;
-import com.qql.dagger.recommend.App;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.utils.CommonUtils;
 import com.qql.dagger.recommend.utils.LogUtil;
@@ -31,11 +28,11 @@ import butterknife.ButterKnife;
  */
 
 public class BookSelfsAdapter extends RecyclerView.Adapter<BookSelfsAdapter.MyViewHolder>
-        implements DraggableItemAdapter<BookSelfsAdapter.MyViewHolder> {
-    private List<Book> books;
+        implements DraggableItemAdapter<BookSelfsAdapter.MyViewHolder>, View.OnClickListener {
+    private List<MyBook> myBooks;
     private Context context;
-    public BookSelfsAdapter(List<Book> books) {
-        this.books = books;
+    public BookSelfsAdapter(List<MyBook> myBooks) {
+        this.myBooks = myBooks;
         setHasStableIds(true);
     }
 
@@ -49,20 +46,22 @@ public class BookSelfsAdapter extends RecyclerView.Adapter<BookSelfsAdapter.MyVi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        Book book = books.get(position);
-        if (book != null) {
-            holder.bookTitle.setText(book.getTitle());
-            holder.title.setText(book.getTitle());
-//            holder.format.setText(book.getFormats());
-            holder.readRate.setText("已读"+ book.getRead_rate() + "%");
-            Glide.with(context).load(book.getCover_url()).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
+        MyBook myBook = myBooks.get(position);
+        if (myBook != null) {
+            holder.bookTitle.setText(myBook.getTitle());
+            holder.title.setText(myBook.getTitle());
+//            holder.format.setText(myBook.getFormats());
+            holder.readRate.setText("已读"+ myBook.getRead_rate() + "%");
+            holder.cover.setTag(position);
+            holder.cover.setOnClickListener(this);
+            Glide.with(context).load(myBook.getCover_url()).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.cover);
         }
     }
 
     @Override
     public int getItemCount() {
-        return books==null?0:books.size();
+        return myBooks ==null?0: myBooks.size();
     }
 
     @Override
@@ -79,7 +78,7 @@ public class BookSelfsAdapter extends RecyclerView.Adapter<BookSelfsAdapter.MyVi
 
     @Override
     public long getItemId(int position) {
-        return books.get(position).getId();
+        return myBooks.get(position).getId();
     }
 
     @Override
@@ -88,7 +87,7 @@ public class BookSelfsAdapter extends RecyclerView.Adapter<BookSelfsAdapter.MyVi
         if (fromPosition == toPosition) {
             return;
         }
-        CommonUtils.move(books,fromPosition, toPosition);
+        CommonUtils.move(myBooks,fromPosition, toPosition);
         notifyItemMoved(fromPosition, toPosition);
     }
 
@@ -96,6 +95,17 @@ public class BookSelfsAdapter extends RecyclerView.Adapter<BookSelfsAdapter.MyVi
     public boolean onCheckCanDrop(int draggingPosition, int dropPosition) {
         LogUtil.d("onCheckCanDrop: " + " draggingPosition= " +  draggingPosition + " dropPosition=" + dropPosition);
         return true;
+    }
+
+    @Override
+    public void onClick(View v) {
+        try{
+            int position = (int) v.getTag();
+            MyBook myBook = myBooks.get(position);
+
+        }catch (Exception e){
+            LogUtil.printException(e);
+        }
     }
 
     static class MyViewHolder extends AbstractDraggableItemViewHolder {

@@ -1,36 +1,31 @@
 package com.qql.dagger.recommend.fragment;
 
-import android.graphics.drawable.NinePatchDrawable;
-import android.os.Build;
-import android.support.v4.content.ContextCompat;
+import android.content.Intent;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.MotionEvent;
+import android.view.View;
 
-import com.green.dao.output.Book;
+import com.green.dao.output.MyBook;
 import com.h6ah4i.android.widget.advrecyclerview.animator.DraggableItemAnimator;
 import com.h6ah4i.android.widget.advrecyclerview.animator.GeneralItemAnimator;
-import com.h6ah4i.android.widget.advrecyclerview.decoration.ItemShadowDecorator;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.RecyclerViewDragDropManager;
 import com.h6ah4i.android.widget.advrecyclerview.utils.WrapperAdapterUtils;
 import com.qql.dagger.recommend.Constants;
 import com.qql.dagger.recommend.R;
-import com.qql.dagger.recommend.adapter.BookSelfAdapter;
 import com.qql.dagger.recommend.adapter.BookSelfsAdapter;
 import com.qql.dagger.recommend.base.BaseFragment;
 import com.qql.dagger.recommend.presenter.BookSelfPresenter;
 import com.qql.dagger.recommend.presenter.contract.BookSelfContract;
-import com.qql.dagger.recommend.utils.LogUtil;
-import com.qql.dagger.recommend.view.DraggableGridView;
-import com.qql.dagger.recommend.view.MainGroupView;
-import com.qql.dagger.recommend.view.OnRearrangeListener;
 
-import java.util.ArrayList;
+import org.geometerplus.android.fbreader.library.LibraryActivity;
+import org.geometerplus.android.fbreader.library.LibrarySearchActivity;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by qql on 2017/7/29.
@@ -41,7 +36,7 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
 //    DraggableGridView draggableGridView;
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    private List<Book> books;
+    private List<MyBook> myBooks;
     private GridLayoutManager mLayoutManager;
     private RecyclerViewDragDropManager mRecyclerViewDragDropManager;
     private BookSelfsAdapter adapter;
@@ -54,8 +49,8 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
     }
 
     @Override
-    public void showBookSelfList(List<Book> bbs) {
-        books = bbs;
+    public void showBookSelfList(List<MyBook> bbs) {
+        myBooks = bbs;
         initView();
 //        adapter = new BookSelfAdapter(getActivity(),bbs);
 //        draggableGridView.setAdapter(adapter);
@@ -79,7 +74,7 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
         mRecyclerViewDragDropManager.setDraggingItemScale(1.3f);
 
         //adapter
-        adapter = new BookSelfsAdapter(books);
+        adapter = new BookSelfsAdapter(myBooks);
 
         mWrappedAdapter = mRecyclerViewDragDropManager.createWrappedAdapter(adapter);      // wrap for dragging
 
@@ -124,8 +119,8 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
 //        draggableGridView.setOnRearrangeListener(new OnRearrangeListener() {
 //            public void onRearrange(int oldIndex, int newIndex) {
 //                try {
-//                    Book word = books.remove(oldIndex);
-//                    books.add(newIndex, word);
+//                    MyBook word = myBooks.remove(oldIndex);
+//                    myBooks.add(newIndex, word);
 //                }catch (Exception e){
 //                    LogUtil.printException(e);
 //                }
@@ -153,13 +148,26 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
 
     private void testBooks(){
         for(int i=0;i<10;i++){
-            Book book = new Book();
-            book.setUser_id("qql");
-            book.setAuthor("鲁迅");
-            book.setCover_url("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2790062669,1046332026&fm=117&gp=0.jpg");
-            book.setRead_rate(i*10d);
-            book.setTitle("狂人日记" + i);
-            mPresenter.insertBook(book);
+            MyBook myBook = new MyBook();
+            myBook.setUser_id("qql");
+            myBook.setAuthor("鲁迅");
+            myBook.setCover_url("https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2790062669,1046332026&fm=117&gp=0.jpg");
+            myBook.setRead_rate(i*10d);
+            myBook.setTitle("狂人日记" + i);
+            mPresenter.insertBook(myBook);
+        }
+    }
+
+    @OnClick({R.id.search,R.id.menu})
+    public void onClick(View view){
+        int id = view.getId();
+        if (R.id.search == id){
+            // TODO: 2017/10/2 搜索逻辑
+            startActivity(new Intent(getActivity(), LibrarySearchActivity.class));
+        } else if (R.id.menu == id){
+            // TODO: 2017/10/2 菜单逻辑
+            startActivity(new Intent(getActivity(), LibraryActivity.class));
+
         }
     }
 

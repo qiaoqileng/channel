@@ -12,6 +12,7 @@
 *    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 *    See the License for the specific language governing permissions and
 *    limitations under the License.
+*    书架的grid库，可能以后需要改成文件夹形式
 */
 
 apply plugin: 'com.android.library'
@@ -52,6 +53,9 @@ android {
             shrinkResources false
             consumerProguardFiles 'proguard-rules.pro'
         }
+    }
+    lintOptions {
+        abortOnError false
     }
 }
 

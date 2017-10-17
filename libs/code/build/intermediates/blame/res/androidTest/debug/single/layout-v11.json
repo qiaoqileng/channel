@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v11\\afc_settings_sort_view.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout-v11\\afc_settings_sort_view.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout-v11\\afc_file_chooser.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout-v11\\afc_file_chooser.xml"
+    }
+]

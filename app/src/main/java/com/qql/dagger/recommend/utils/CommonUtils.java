@@ -1,6 +1,6 @@
 package com.qql.dagger.recommend.utils;
 
-import com.green.dao.output.Book;
+import com.green.dao.output.MyBook;
 
 import java.util.List;
 
@@ -10,13 +10,13 @@ import java.util.List;
 
 public class CommonUtils {
 
-    public static void move(List<Book> books,int fromPosition, int toPosition){
-        if (fromPosition == toPosition || books == null || books.size() < 1) {
+    public static void move(List<MyBook> myBooks, int fromPosition, int toPosition){
+        if (fromPosition == toPosition || myBooks == null || myBooks.size() < 1) {
             return;
         }
 
-        final Book item = books.remove(fromPosition);
+        final MyBook item = myBooks.remove(fromPosition);
 
-        books.add(toPosition, item);
+        myBooks.add(toPosition, item);
     }
 }

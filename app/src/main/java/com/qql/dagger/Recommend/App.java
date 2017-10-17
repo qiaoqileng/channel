@@ -12,11 +12,13 @@ import com.qql.dagger.recommend.component.DaggerAppComponent;
 import com.qql.dagger.recommend.module.AppModule;
 import com.umeng.analytics.MobclickAgent;
 
+import org.geometerplus.android.fbreader.FBReaderApplication;
+
 /**
  * Created by qiao on 2016/11/23.
  */
 
-public class App extends Application {
+public class App extends FBReaderApplication {
 
     public static int SCREEN_WIDTH = -1;
     public static int SCREEN_HEIGHT = -1;

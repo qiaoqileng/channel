@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\afc_simple_text_input_view.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout\\afc_simple_text_input_view.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\afc_file_item.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout\\afc_file_item.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\afc_file_chooser.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout\\afc_file_chooser.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\afc_settings_sort_view.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout\\afc_settings_sort_view.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\afc_button_location.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout\\afc_button_location.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\afc_context_menu_view.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout\\afc_context_menu_view.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\afc_context_menu_tiem.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout\\afc_context_menu_tiem.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\afc_listview_files.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout\\afc_listview_files.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\afc_gridview_files.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\debug\\res\\layout\\afc_gridview_files.xml"
+    }
+]

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable-v21\\selector_button_lollipop.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\98085ceed5e233e8571208c1d0f28328774de508\\output\\res\\drawable-v21\\selector_button_lollipop.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable-v21\\selector_button_standard.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\98085ceed5e233e8571208c1d0f28328774de508\\output\\res\\drawable-v21\\selector_button_standard.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable-v21\\selector_button_kitkat.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\98085ceed5e233e8571208c1d0f28328774de508\\output\\res\\drawable-v21\\selector_button_kitkat.xml"
+    }
+]

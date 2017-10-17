@@ -1,10 +1,9 @@
 package com.qql.dagger.recommend.presenter;
 
 import com.green.dao.GreenDaoManager;
-import com.green.dao.output.Book;
-import com.green.dao.output.BookDao;
+import com.green.dao.output.MyBook;
+import com.green.dao.output.MyBookDao;
 import com.qql.dagger.recommend.base.RxPresenter;
-import com.qql.dagger.recommend.cache.DataCache;
 import com.qql.dagger.recommend.model.http.RetrofitHelper;
 import com.qql.dagger.recommend.presenter.contract.BookSelfContract;
 import com.qql.dagger.recommend.utils.LogUtil;
@@ -37,15 +36,15 @@ public class BookSelfPresenter extends RxPresenter<BookSelfContract.View> implem
     @Override
     public void findBookSelfList(Map<String, String> params) {
         if (params != null && params.size() > 0 && params.containsKey(USER_ID)) {
-            BookDao dao = greenDaoManager.getDaoSession().getBookDao();
-            QueryBuilder<Book> build = dao.queryBuilder();
-            build.where(BookDao.Properties.User_id.eq(params.get(USER_ID)));
-            build.orderDesc(BookDao.Properties.Last_read_time);
+            MyBookDao dao = greenDaoManager.getDaoSession().getMyBookDao();
+            QueryBuilder<MyBook> build = dao.queryBuilder();
+            build.where(MyBookDao.Properties.User_id.eq(params.get(USER_ID)));
+            build.orderDesc(MyBookDao.Properties.Last_read_time);
             Subscription rxSubscription = build.rx().list()
-                    .compose(RxUtil.<List<Book>>rxSchedulerHelper())
-                    .subscribe(new Action1<List<Book>>() {
+                    .compose(RxUtil.<List<MyBook>>rxSchedulerHelper())
+                    .subscribe(new Action1<List<MyBook>>() {
                         @Override
-                        public void call(List<Book> books) {
+                        public void call(List<MyBook> books) {
                             mView.showBookSelfList(books);
                         }
                     }, new Action1<Throwable>() {
@@ -60,16 +59,16 @@ public class BookSelfPresenter extends RxPresenter<BookSelfContract.View> implem
     }
 
     @Override
-    public void insertBook(Book book) {
-        if (book == null) {
+    public void insertBook(MyBook myBook) {
+        if (myBook == null) {
             return;
         }
-        BookDao dao = greenDaoManager.getDaoSession().getBookDao();
-        Subscription rxSubscription = dao.rx().save(book)
-                .compose(RxUtil.<Book>rxSchedulerHelper())
-                .subscribe(new Action1<Book>() {
+        MyBookDao dao = greenDaoManager.getDaoSession().getMyBookDao();
+        Subscription rxSubscription = dao.rx().save(myBook)
+                .compose(RxUtil.<MyBook>rxSchedulerHelper())
+                .subscribe(new Action1<MyBook>() {
                     @Override
-                    public void call(Book book) {
+                    public void call(MyBook book) {
                         LogUtil.d("插入成功");
                     }
                 }, new Action1<Throwable>() {

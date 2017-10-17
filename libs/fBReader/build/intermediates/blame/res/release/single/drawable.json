@@ -1,0 +1,382 @@
+[
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\plugin_calibre_server_integration.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\plugin_calibre_server_integration.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_selector_button_folders_view_grid.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_selector_button_folders_view_grid.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\plugin_cbr.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\plugin_cbr.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_folder.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_folder.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\dropdown_selected.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\dropdown_selected.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\selector_button_kitkat.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\98085ceed5e233e8571208c1d0f28328774de508\\output\\res\\drawable\\selector_button_kitkat.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\plugin_litres.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\plugin_litres.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\plugin_tts_plus.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\plugin_tts_plus.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_favorites.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_favorites.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_selector_button_create_folder.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_selector_button_create_folder.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\selector_button_standard.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\98085ceed5e233e8571208c1d0f28328774de508\\output\\res\\drawable\\selector_button_standard.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\dropdown.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\dropdown.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\panel.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\panel.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\plugin_pdf.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\plugin_pdf.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_item_file.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_item_file.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\dropdown_pressed.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\dropdown_pressed.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\link_default.9.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\link_default.9.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\plugin_bookshelf.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\plugin_bookshelf.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_selector_button_folders_view_list.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_selector_button_folders_view_list.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_button_location_dark_pressed.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_button_location_dark_pressed.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\popup_copy.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\popup_copy.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_selector_button_location_dark.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_selector_button_location_dark.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\popup_translate.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\popup_translate.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\dropdown_normal.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\dropdown_normal.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\popup_share.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\popup_share.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\link_pressed.9.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\link_pressed.9.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\drag_icon.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\drag_icon.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_plus.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_plus.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\popup_forward.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\popup_forward.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_authors.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_authors.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_buy.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_buy.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_books.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_books.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_book.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_book.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\popup_close_large.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\popup_close_large.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_group_open.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_group_open.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_basket.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_basket.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_zip.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_zip.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_tag.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_tag.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\selector_button_lollipop.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\98085ceed5e233e8571208c1d0f28328774de508\\output\\res\\drawable\\selector_button_lollipop.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_selector_button_ok_saveas.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_selector_button_ok_saveas.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\popup_back.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\popup_back.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_selector_button_sort_as.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_selector_button_sort_as.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_search.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_search.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_download.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_download.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_recent.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_recent.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_selector_button_sort_de.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_selector_button_sort_de.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\link.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\link.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_selector_button_navi_left.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_selector_button_navi_left.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_downloading.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_downloading.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_permission_denied.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_permission_denied.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_item_folder.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_item_folder.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\link_selected.9.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\link_selected.9.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_tags.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_tags.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_flag.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_flag.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_group_empty.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_group_empty.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\plugin_djvu.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\plugin_djvu.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ambilwarna_alphacheckered_tiled.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\d96d0017abc5d155b9e51578055a3348e0ebe9a2\\output\\res\\drawable\\ambilwarna_alphacheckered_tiled.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_group_closed.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_group_closed.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\afc_selector_button_navi_right.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\code\\build\\intermediates\\bundles\\default\\res\\drawable\\afc_selector_button_navi_right.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\qql\\.android\\build-cache\\86ce03e09fe71a8f8764701ff90eb665f78fb620\\output\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\ic_list_library_author.png",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\ic_list_library_author.png"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\popup_close.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\popup_close.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\release\\drawable\\popup_bookmark.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\drawable\\popup_bookmark.xml"
+    }
+]

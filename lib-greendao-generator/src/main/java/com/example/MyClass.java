@@ -25,7 +25,7 @@ public class MyClass {
      * @param schema
      */
     private static void addNewsDetail(Schema schema) {
-        Entity newsDetail = schema.addEntity("Book");
+        Entity newsDetail = schema.addEntity("MyBook");
         newsDetail.setHasKeepSections(true);
         newsDetail.addIdProperty().primaryKey().index();
         newsDetail.addStringProperty("user_id");//匹配用户

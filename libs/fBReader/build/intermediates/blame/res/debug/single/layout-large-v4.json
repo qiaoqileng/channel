@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\book_popup_night.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\layout-large\\book_popup_night.xml"
+    },
+    {
+        "merged": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\build\\intermediates\\res\\merged\\debug\\layout-large-v4\\book_popup.xml",
+        "source": "S:\\work\\android\\demo\\Dagger2Test\\libs\\fBReader\\src\\main\\res\\layout-large\\book_popup.xml"
+    }
+]

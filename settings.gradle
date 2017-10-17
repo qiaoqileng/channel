@@ -1,1 +1,3 @@
 include ':app', ':lib-greendao-generator',":grid-library"
+include ':libs:code'
+include ':libs:fBReader'

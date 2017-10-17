@@ -4,16 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.green.dao.output.Book;
+import com.green.dao.output.MyBook;
 import com.qql.dagger.recommend.R;
-
-import org.greenrobot.greendao.annotation.Id;
 
 import java.util.List;
 
@@ -23,19 +20,19 @@ import java.util.List;
 
 public class BookSelfAdapter {
     private Context context;
-    private List<Book> books;
+    private List<MyBook> myBooks;
 
-    public BookSelfAdapter(Context context, List<Book> books) {
+    public BookSelfAdapter(Context context, List<MyBook> myBooks) {
         this.context = context;
-        this.books = books;
+        this.myBooks = myBooks;
     }
 
     public int getCount() {
-        return books==null?0:books.size();
+        return myBooks ==null?0: myBooks.size();
     }
 
-    public Book getItem(int i) {
-        return books==null?null:books.get(i);
+    public MyBook getItem(int i) {
+        return myBooks ==null?null: myBooks.get(i);
     }
 
     public long getItemId(int i) {
@@ -56,13 +53,13 @@ public class BookSelfAdapter {
 //        } else {
 //            holder = (Holder) view.getTag();
 //        }
-        Book book = getItem(i);
-        if (book != null) {
-            holder.bookTitle.setText(book.getTitle());
-            holder.title.setText(book.getTitle());
-//            holder.format.setText(book.getFormats());
-            holder.readRate.setText("已读"+ book.getRead_rate() + "%");
-            Glide.with(context).load(book.getCover_url()).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
+        MyBook myBook = getItem(i);
+        if (myBook != null) {
+            holder.bookTitle.setText(myBook.getTitle());
+            holder.title.setText(myBook.getTitle());
+//            holder.format.setText(myBook.getFormats());
+            holder.readRate.setText("已读"+ myBook.getRead_rate() + "%");
+            Glide.with(context).load(myBook.getCover_url()).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.cover);
         }
         return view;

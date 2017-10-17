@@ -1,6 +1,6 @@
 package com.qql.dagger.recommend.presenter.contract;
 
-import com.green.dao.output.Book;
+import com.green.dao.output.MyBook;
 import com.qql.dagger.recommend.base.BasePresenter;
 import com.qql.dagger.recommend.base.BaseView;
 
@@ -14,12 +14,12 @@ import java.util.Map;
 public interface BookSelfContract {
     interface View extends BaseView {
 
-        void showBookSelfList(List<Book> bbs);
+        void showBookSelfList(List<MyBook> bbs);
     }
 
     interface Presenter extends BasePresenter<BookSelfContract.View> {
 
         void findBookSelfList(Map<String,String> params);
-        void insertBook(Book book);
+        void insertBook(MyBook myBook);
     }
 }

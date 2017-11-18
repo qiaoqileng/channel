@@ -1,6 +1,12 @@
 package com.qql.dagger.recommend.fragment;
 
+import android.app.SearchManager;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -12,17 +18,18 @@ import com.h6ah4i.android.widget.advrecyclerview.draggable.RecyclerViewDragDropM
 import com.h6ah4i.android.widget.advrecyclerview.utils.WrapperAdapterUtils;
 import com.qql.dagger.recommend.Constants;
 import com.qql.dagger.recommend.R;
+import com.qql.dagger.recommend.activity.BookLib2Activity;
 import com.qql.dagger.recommend.adapter.BookSelfsAdapter;
 import com.qql.dagger.recommend.base.BaseFragment;
 import com.qql.dagger.recommend.presenter.BookSelfPresenter;
 import com.qql.dagger.recommend.presenter.contract.BookSelfContract;
 
-import org.geometerplus.android.fbreader.library.LibraryActivity;
 import org.geometerplus.android.fbreader.library.LibrarySearchActivity;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.jar.Manifest;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -135,7 +142,7 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_bookself_new;
+        return R.layout.fragment_bookself;
     }
 
     @Override
@@ -163,12 +170,33 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
         int id = view.getId();
         if (R.id.search == id){
             // TODO: 2017/10/2 搜索逻辑
-            startActivity(new Intent(getActivity(), LibrarySearchActivity.class));
+//            startActivity(new Intent(getActivity(), LibrarySearchActivity.class));
+            startActivity(
+                    new Intent(Intent.ACTION_SEARCH)
+                            .setClass(getActivity(), LibrarySearchActivity.class)
+                            .putExtra(SearchManager.QUERY, "log"));
         } else if (R.id.menu == id){
             // TODO: 2017/10/2 菜单逻辑
-            startActivity(new Intent(getActivity(), LibraryActivity.class));
-
+            if (Build.VERSION.SDK_INT >= 23 && ContextCompat.checkSelfPermission(getActivity(),
+                    android.Manifest.permission.READ_EXTERNAL_STORAGE)!= PackageManager.PERMISSION_GRANTED){
+                requestPermissions(new String[]{
+                        android.Manifest.permission.READ_EXTERNAL_STORAGE},1);
+            } else {
+                gotoLib();
+            }
         }
+
     }
 
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            gotoLib();
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    private void gotoLib() {
+        startActivity(new Intent(getActivity(), BookLib2Activity.class));
+    }
 }

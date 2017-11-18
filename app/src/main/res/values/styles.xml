@@ -13,24 +13,24 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="AppTheme.NoActionBar.AppBarOverlay"
-           parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.NoActionBar.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+    <style name="AppTheme.NoActionBar.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    
+
     <style name="text_category_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textSize">@dimen/text_little_big</item>
         <item name="android:textColor">@color/text_black</item>
         <item name="android:layout_gravity">center_horizontal</item>
-        <item name="com.qql.dagger.recommend:type_face">moda</item>
+        <item name="com.qql.dagger.recommend:type_face">normal</item>
     </style>
+
     <style name="text_category_item_title">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -40,6 +40,7 @@
         <item name="android:gravity">center</item>
         <item name="com.qql.dagger.recommend:type_face">moda</item>
     </style>
+
     <style name="text_item_bottom">
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_width">wrap_content</item>

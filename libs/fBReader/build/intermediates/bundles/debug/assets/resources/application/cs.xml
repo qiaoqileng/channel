@@ -355,7 +355,7 @@
 		<node name="sync" value="Synchronizace">
 			<node name="summary" value="Nastavení síťové knihovny"/>
 			<node name="site" value="Přečtěte si více o synchronizaci">
-				<node name="url" value="https://myBooks.fbreader.org/help.html"/>
+				<node name="url" value="https://books.fbreader.org/help.html"/>
 			</node>
 			<node name="enable" value="Povolit synchronizaci">
 				<node name="summaryOn" value="Synchronizovat mou knihovnu se serverem síťové knihovny FBReaderu"/>
@@ -1261,7 +1261,7 @@
 		<node name="simple">
 			<node name="selectIcon" value="Vyberte ikonu widgetu"/>
 			<node name="selectAction" value="Vyberte akci"/>
-			<node name="myBook" value="Číst knihu"/>
+			<node name="book" value="Číst knihu"/>
 			<node name="library" value="Otevřít knihovnu"/>
 		</node>
 	</node>

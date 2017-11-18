@@ -79,7 +79,7 @@
 		<node name="tryAgain" value="Try again" toBeTranslated="true"/>
 	</node>
 	<node name="networkLibrary" value="FBReadereko sare-liburutegia">
-		<node name="sync" value="FBReader® myBook network" toBeTranslated="true">
+		<node name="sync" value="FBReader® book network" toBeTranslated="true">
 			<node name="summary" value="My personal catalogue" toBeTranslated="true"/>
 		</node>
 		<node name="byAuthor" value="Egileagatik">
@@ -346,28 +346,28 @@
 		<node name="sync" value="Synchronisation" toBeTranslated="true">
 			<node name="summary" value="Book network settings" toBeTranslated="true"/>
 			<node name="site" value="Read more about synchronisation" toBeTranslated="true">
-				<node name="url" value="https://myBooks.fbreader.org/help.html" toBeTranslated="true"/>
+				<node name="url" value="https://books.fbreader.org/help.html" toBeTranslated="true"/>
 			</node>
 			<node name="enable" value="Enable synchronisation" toBeTranslated="true">
-				<node name="summaryOn" value="Synchronise my library with FBReader myBook network server" toBeTranslated="true"/>
+				<node name="summaryOn" value="Synchronise my library with FBReader book network server" toBeTranslated="true"/>
 				<node name="summaryOnWithAccount" value="Synchronise my library as %s" toBeTranslated="true"/>
-				<node name="summaryOff" value="Do not synchronise my library with FBReader myBook network server" toBeTranslated="true"/>
+				<node name="summaryOff" value="Do not synchronise my library with FBReader book network server" toBeTranslated="true"/>
 			</node>
 			<node name="values">
 				<node name="always" value="Always" toBeTranslated="true"/>
 				<node name="viaWifi" value="If device is connected via Wi-Fi" toBeTranslated="true"/>
 				<node name="never" value="Never" toBeTranslated="true"/>
 			</node>
-			<node name="uploadAllBooks" value="Upload all myBooks to server" toBeTranslated="true"/>
-			<node name="downloadAllBooks" value="Download all myBooks from server" toBeTranslated="true"/>
-			<node name="downloadCurrentBook" value="Download current myBook from server" toBeTranslated="true"/>
+			<node name="uploadAllBooks" value="Upload all books to server" toBeTranslated="true"/>
+			<node name="downloadAllBooks" value="Download all books from server" toBeTranslated="true"/>
+			<node name="downloadCurrentBook" value="Download current book from server" toBeTranslated="true"/>
 			<node name="positions" value="Synchronise reading positions" toBeTranslated="true"/>
 			<node name="bookmarks" value="Synchronise bookmarks" toBeTranslated="true"/>
 			<node name="customShelves" value="Synchronise custom shelves" toBeTranslated="true"/>
 			<node name="metainfo" value="Synchronise metainfo (title, tags, etc.)" toBeTranslated="true"/>
-			<node name="changeCurrentBook" value="Change current myBook" toBeTranslated="true">
-				<node name="summaryOn" value="Open same myBook on all devices" toBeTranslated="true"/>
-				<node name="summaryOff" value="Synchronise reading positions, but do not open same myBook on all devices" toBeTranslated="true"/>
+			<node name="changeCurrentBook" value="Change current book" toBeTranslated="true">
+				<node name="summaryOn" value="Open same book on all devices" toBeTranslated="true"/>
+				<node name="summaryOff" value="Synchronise reading positions, but do not open same book on all devices" toBeTranslated="true"/>
 			</node>
 		</node>
 		<node name="directories" value="Direktorioak">
@@ -375,7 +375,7 @@
 			<node name="bookPath" value="Liburuen direktorioak">
 				<node name="chooserTitle" value="Liburuen direktorioa"/>
 			</node>
-			<node name="downloadDir" value="Where to store downloaded myBooks" toBeTranslated="true">
+			<node name="downloadDir" value="Where to store downloaded books" toBeTranslated="true">
 				<node name="chooserTitle" value="Liburuen direktorioa"/>
 			</node>
 			<node name="fontPath" value="Letra-tipoen direktorioak">
@@ -438,9 +438,9 @@
 				<node name="summaryOn" value="Pantaila esekitzea eragotzi gailua kargatzen baldin badago"/>
 				<node name="summaryOff" value="Pantaila eseki gailua kargatzen baldin badago ere"/>
 			</node>
-			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the myBook menu" toBeTranslated="true">
-				<node name="summaryOn" value="Swipe in from the left edge to open myBook menu" toBeTranslated="true"/>
-				<node name="summaryOff" value="Use three-line (“hamburger”) button to open myBook menu" toBeTranslated="true"/>
+			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the book menu" toBeTranslated="true">
+				<node name="summaryOn" value="Swipe in from the left edge to open book menu" toBeTranslated="true"/>
+				<node name="summaryOff" value="Use three-line (“hamburger”) button to open book menu" toBeTranslated="true"/>
 			</node>
 		</node>
 		<node name="text" value="Testua">
@@ -827,12 +827,12 @@
 		</node>
 		<node name="menu" value="Menu" toBeTranslated="true">
 			<node name="summary" value="Configure main screen menu" toBeTranslated="true"/>
-			<node name="backgroundCover" value="Use myBook cover as background" toBeTranslated="true">
-				<node name="summaryOn" value="Show cover in the myBook menu" toBeTranslated="true"/>
+			<node name="backgroundCover" value="Use book cover as background" toBeTranslated="true">
+				<node name="summaryOn" value="Show cover in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Keep background clear" toBeTranslated="true"/>
 			</node>
 			<node name="bookMenuStatusItem" value="Status item" toBeTranslated="true">
-				<node name="summaryOn" value="Show status item in the myBook menu" toBeTranslated="true"/>
+				<node name="summaryOn" value="Show status item in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Hide status item" toBeTranslated="true"/>
 			</node>
 			<node name="items" value="Menu items" toBeTranslated="true">
@@ -962,7 +962,7 @@
 			<node name="message" value="Liburuaren fitxategia behin betiko ezabatuko da. Ziur zaude?"/>
 		</node>
 		<node name="deleteMultipleBookBox">
-			<node name="title" value="Delete myBooks" toBeTranslated="true"/>
+			<node name="title" value="Delete books" toBeTranslated="true"/>
 			<node name="message" value="%s files will be removed permanently. Are you sure?" toBeTranslated="true"/>
 		</node>
 		<node name="redownloadFileBox">
@@ -1143,7 +1143,7 @@
 		<node name="emptyNetworkSearchResults" value="Ez da libururik aurkitu, barkatu"/>
 		<node name="videoServiceNotWorking" value="Video service is not available" toBeTranslated="true"/>
 		<node name="videoPlayerNotFound" value="No video player installed on this device" toBeTranslated="true"/>
-		<node name="bookIsMissingTitle" value="Missing myBook" toBeTranslated="true"/>
+		<node name="bookIsMissingTitle" value="Missing book" toBeTranslated="true"/>
 		<node name="bookIsMissing" value="Book '%s' is not found on the device" toBeTranslated="true"/>
 		<node name="downloadFailed" value="Huts egin du deskargak"/>
 	</node>
@@ -1196,10 +1196,10 @@
 			<node name="summary" value="PDF formatuan dauden liburuak irakurri"/>
 		</node>
 		<node name="djvu" value="DjVu" toBeTranslated="true">
-			<node name="summary" value="Read myBooks in DjVu format" toBeTranslated="true"/>
+			<node name="summary" value="Read books in DjVu format" toBeTranslated="true"/>
 		</node>
 		<node name="cbr" value="Comic Books" toBeTranslated="true">
-			<node name="summary" value="Read comic myBooks (CBR, CBZ)" toBeTranslated="true"/>
+			<node name="summary" value="Read comic books (CBR, CBZ)" toBeTranslated="true"/>
 		</node>
 	</node>
 	<node name="drm">
@@ -1252,7 +1252,7 @@
 		<node name="simple">
 			<node name="selectIcon" value="Select widget icon" toBeTranslated="true"/>
 			<node name="selectAction" value="Select action" toBeTranslated="true"/>
-			<node name="myBook" value="Read myBook" toBeTranslated="true"/>
+			<node name="book" value="Read book" toBeTranslated="true"/>
 			<node name="library" value="Open library" toBeTranslated="true"/>
 		</node>
 	</node>

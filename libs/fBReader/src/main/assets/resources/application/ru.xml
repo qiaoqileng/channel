@@ -351,7 +351,7 @@
 		<node name="sync" value="Синхронизация">
 			<node name="summary" value="Настройки книжной сети"/>
 			<node name="site" value="Как работает синхронизация FBReader">
-				<node name="url" value="https://myBooks.fbreader.org/help.html"/>
+				<node name="url" value="https://books.fbreader.org/help.html"/>
 			</node>
 			<node name="enable" value="Включить синхронизацию">
 				<node name="summaryOn" value="Синхронизировать мою библиотеку с сервером книжной сети"/>
@@ -837,7 +837,7 @@
 				<node name="summaryOff" value="Выключить фон в меню"/>
 			</node>
 			<node name="bookMenuStatusItem" value="Status item" toBeTranslated="true">
-				<node name="summaryOn" value="Show status item in the myBook menu" toBeTranslated="true"/>
+				<node name="summaryOn" value="Show status item in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Hide status item" toBeTranslated="true"/>
 			</node>
 			<node name="items" value="Пункты меню">
@@ -1260,7 +1260,7 @@
 		<node name="simple">
 			<node name="selectIcon" value="Выберите иконку"/>
 			<node name="selectAction" value="Выберите действие"/>
-			<node name="myBook" value="Читать книгу"/>
+			<node name="book" value="Читать книгу"/>
 			<node name="library" value="Открыть библиотеку"/>
 		</node>
 	</node>

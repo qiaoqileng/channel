@@ -63,13 +63,13 @@ public abstract class ZLFile implements InputStreamHolder {
 		}
 		*/
 		int archiveType = ArchiveType.NONE;
-		if ("zip".equals(myExtension)) {
+		if (myExtension == "zip") {
 			archiveType |= ArchiveType.ZIP;
-		} else if ("oebzip".equals(myExtension)) {
+		} else if (myExtension == "oebzip") {
 			archiveType |= ArchiveType.ZIP;
-		} else if ("epub".equals(myExtension)) {
+		} else if (myExtension == "epub") {
 			archiveType |= ArchiveType.ZIP;
-		} else if ("tar".equals(myExtension)) {
+		} else if (myExtension == "tar") {
 			archiveType |= ArchiveType.TAR;
 		//} else if (lowerCaseName.endsWith(".tgz")) {
 			//nothing to-do myNameWithoutExtension = myNameWithoutExtension.substr(0, myNameWithoutExtension.length() - 3) + "tar";

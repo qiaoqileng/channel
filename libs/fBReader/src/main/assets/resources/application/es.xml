@@ -352,7 +352,7 @@
 		<node name="sync" value="Sincronización">
 			<node name="summary" value="Ajustes de la Biblioteca en red"/>
 			<node name="site" value="Leer más sobre Sincronización">
-				<node name="url" value="https://myBooks.fbreader.org/help.html"/>
+				<node name="url" value="https://books.fbreader.org/help.html"/>
 			</node>
 			<node name="enable" value="Activar sincronización">
 				<node name="summaryOn" value="Sincronizar mi biblioteca con el servidor de la Biblioteca en red de FBReader"/>
@@ -444,9 +444,9 @@
 				<node name="summaryOn" value="Impedir que la pantalla se apague si el dispositivo se está cargando"/>
 				<node name="summaryOff" value="Apagar la pantalla incluso si el dispositivo se está cargando"/>
 			</node>
-			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the myBook menu" toBeTranslated="true">
-				<node name="summaryOn" value="Swipe in from the left edge to open myBook menu" toBeTranslated="true"/>
-				<node name="summaryOff" value="Use three-line (“hamburger”) button to open myBook menu" toBeTranslated="true"/>
+			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the book menu" toBeTranslated="true">
+				<node name="summaryOn" value="Swipe in from the left edge to open book menu" toBeTranslated="true"/>
+				<node name="summaryOff" value="Use three-line (“hamburger”) button to open book menu" toBeTranslated="true"/>
 			</node>
 		</node>
 		<node name="text" value="Texto">
@@ -833,12 +833,12 @@
 		</node>
 		<node name="menu" value="Menu" toBeTranslated="true">
 			<node name="summary" value="Configure main screen menu" toBeTranslated="true"/>
-			<node name="backgroundCover" value="Use myBook cover as background" toBeTranslated="true">
-				<node name="summaryOn" value="Show cover in the myBook menu" toBeTranslated="true"/>
+			<node name="backgroundCover" value="Use book cover as background" toBeTranslated="true">
+				<node name="summaryOn" value="Show cover in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Keep background clear" toBeTranslated="true"/>
 			</node>
 			<node name="bookMenuStatusItem" value="Status item" toBeTranslated="true">
-				<node name="summaryOn" value="Show status item in the myBook menu" toBeTranslated="true"/>
+				<node name="summaryOn" value="Show status item in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Hide status item" toBeTranslated="true"/>
 			</node>
 			<node name="items" value="Menu items" toBeTranslated="true">
@@ -1258,7 +1258,7 @@
 		<node name="simple">
 			<node name="selectIcon" value="Select widget icon" toBeTranslated="true"/>
 			<node name="selectAction" value="Select action" toBeTranslated="true"/>
-			<node name="myBook" value="Read myBook" toBeTranslated="true"/>
+			<node name="book" value="Read book" toBeTranslated="true"/>
 			<node name="library" value="Open library" toBeTranslated="true"/>
 		</node>
 	</node>

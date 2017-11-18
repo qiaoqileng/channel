@@ -352,7 +352,7 @@
 		<node name="sync" value="Սինքրոնացում">
 			<node name="summary" value="Գրադարակների կարգավորումներ"/>
 			<node name="site" value="Ավելին սինքրոնացման մասին">
-				<node name="url" value="https://myBooks.fbreader.org/help.html"/>
+				<node name="url" value="https://books.fbreader.org/help.html"/>
 			</node>
 			<node name="enable" value="Միացնել սինքրոնացումը">
 				<node name="summaryOn" value="Սինքրոնացնել իմ գրադարանը FBReader-ի գրադարակների սպասարկչի հետ"/>
@@ -444,9 +444,9 @@
 				<node name="summaryOn" value="Երբեք չանջատել էկրանը, եթե մարտկոցը լիցքավորվում է"/>
 				<node name="summaryOff" value="Էկրանն անջատել անգամ լիցքավորման ժամանակ"/>
 			</node>
-			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the myBook menu" toBeTranslated="true">
-				<node name="summaryOn" value="Swipe in from the left edge to open myBook menu" toBeTranslated="true"/>
-				<node name="summaryOff" value="Use three-line (“hamburger”) button to open myBook menu" toBeTranslated="true"/>
+			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the book menu" toBeTranslated="true">
+				<node name="summaryOn" value="Swipe in from the left edge to open book menu" toBeTranslated="true"/>
+				<node name="summaryOff" value="Use three-line (“hamburger”) button to open book menu" toBeTranslated="true"/>
 			</node>
 		</node>
 		<node name="text" value="Գրվածք">
@@ -833,12 +833,12 @@
 		</node>
 		<node name="menu" value="Menu" toBeTranslated="true">
 			<node name="summary" value="Configure main screen menu" toBeTranslated="true"/>
-			<node name="backgroundCover" value="Use myBook cover as background" toBeTranslated="true">
-				<node name="summaryOn" value="Show cover in the myBook menu" toBeTranslated="true"/>
+			<node name="backgroundCover" value="Use book cover as background" toBeTranslated="true">
+				<node name="summaryOn" value="Show cover in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Keep background clear" toBeTranslated="true"/>
 			</node>
 			<node name="bookMenuStatusItem" value="Status item" toBeTranslated="true">
-				<node name="summaryOn" value="Show status item in the myBook menu" toBeTranslated="true"/>
+				<node name="summaryOn" value="Show status item in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Hide status item" toBeTranslated="true"/>
 			</node>
 			<node name="items" value="Menu items" toBeTranslated="true">
@@ -1053,7 +1053,7 @@
 			<node name="catalogUrl" value="URL"/>
 			<node name="catalogSummary" value="Նկարագրություն"/>
 			<node name="catalogTitleExample" value="Օր.՝ Epub գրքեր"/>
-			<node name="catalogUrlExample" value="Օր.՝ https://armebooks.fbreader.org/myBooks/index.xml"/>
+			<node name="catalogUrlExample" value="Օր.՝ https://armebooks.fbreader.org/books/index.xml"/>
 			<node name="catalogSummaryExample" value="Օր.՝ Հայերեն էլ. գրքեր"/>
 			<node name="titleIsEmpty" value="Անվանումը չի կարող դատարկ լինել"/>
 			<node name="urlIsEmpty" value="URL-ը չի կարող դատարկ լինել"/>
@@ -1258,7 +1258,7 @@
 		<node name="simple">
 			<node name="selectIcon" value="Select widget icon" toBeTranslated="true"/>
 			<node name="selectAction" value="Select action" toBeTranslated="true"/>
-			<node name="myBook" value="Read myBook" toBeTranslated="true"/>
+			<node name="book" value="Read book" toBeTranslated="true"/>
 			<node name="library" value="Open library" toBeTranslated="true"/>
 		</node>
 	</node>

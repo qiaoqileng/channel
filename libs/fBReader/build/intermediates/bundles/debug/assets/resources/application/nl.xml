@@ -346,7 +346,7 @@
 		<node name="sync" value="Synchronisatie">
 			<node name="summary" value="Boekennetwerk"/>
 			<node name="site" value="Lees verder over synchronisatie">
-				<node name="url" value="https://myBooks.fbreader.org/help.html"/>
+				<node name="url" value="https://books.fbreader.org/help.html"/>
 			</node>
 			<node name="enable" value="Synchronisatie inschakelen">
 				<node name="summaryOn" value="Synchroniseer mijn bibliotheek met het FBReader boekennetwerk"/>
@@ -438,9 +438,9 @@
 				<node name="summaryOn" value="Voorkom uitschakelen scherm tijdens het opladen"/>
 				<node name="summaryOff" value="Schakel scherm uit, zelfs tijdens het opladen"/>
 			</node>
-			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the myBook menu" toBeTranslated="true">
-				<node name="summaryOn" value="Swipe in from the left edge to open myBook menu" toBeTranslated="true"/>
-				<node name="summaryOff" value="Use three-line (“hamburger”) button to open myBook menu" toBeTranslated="true"/>
+			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the book menu" toBeTranslated="true">
+				<node name="summaryOn" value="Swipe in from the left edge to open book menu" toBeTranslated="true"/>
+				<node name="summaryOff" value="Use three-line (“hamburger”) button to open book menu" toBeTranslated="true"/>
 			</node>
 		</node>
 		<node name="text" value="Tekst">
@@ -1252,7 +1252,7 @@
 		<node name="simple">
 			<node name="selectIcon" value="Selecteer icoon"/>
 			<node name="selectAction" value="Selecteer actie"/>
-			<node name="myBook" value="Lees boek"/>
+			<node name="book" value="Lees boek"/>
 			<node name="library" value="Open bibliotheek"/>
 		</node>
 	</node>

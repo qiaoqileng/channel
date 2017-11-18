@@ -339,7 +339,7 @@
 		<node name="sync" value="Sincronizare">
 			<node name="summary" value="Setarile retelei de carti"/>
 			<node name="site" value="Citește mai multe despre sincronizare">
-				<node name="url" value="https://myBooks.fbreader.org/help.html"/>
+				<node name="url" value="https://books.fbreader.org/help.html"/>
 			</node>
 			<node name="enable" value="Activeaza sincronizarea">
 				<node name="summaryOn" value="Sincronizeaza-mi libraria cu serverul FBReader"/>
@@ -1245,7 +1245,7 @@
 		<node name="simple">
 			<node name="selectIcon" value="Alegeti icoana pentru widget"/>
 			<node name="selectAction" value="Alegeti actiunea"/>
-			<node name="myBook" value="Citeste cartea"/>
+			<node name="book" value="Citeste cartea"/>
 			<node name="library" value="Deschide biblioteca"/>
 		</node>
 	</node>

@@ -6,7 +6,6 @@
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/libs/code/code.iml" filepath="$PROJECT_DIR$/libs/code/code.iml" />
       <module fileurl="file://$PROJECT_DIR$/libs/fBReader/fBReader.iml" filepath="$PROJECT_DIR$/libs/fBReader/fBReader.iml" />
-      <module fileurl="file://$PROJECT_DIR$/grid-library/grid-library.iml" filepath="$PROJECT_DIR$/grid-library/grid-library.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-greendao-generator/lib-greendao-generator.iml" filepath="$PROJECT_DIR$/lib-greendao-generator/lib-greendao-generator.iml" />
       <module fileurl="file://$PROJECT_DIR$/libs/libs.iml" filepath="$PROJECT_DIR$/libs/libs.iml" />
     </modules>

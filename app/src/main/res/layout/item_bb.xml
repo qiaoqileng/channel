@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:padding="@dimen/margin_normal"
     android:background="@drawable/dialog_toast_bg"
@@ -17,12 +18,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <com.qql.dagger.recommend.view.TextViewTypeFace
             android:id="@+id/bb_name"
             style="@style/text_category_title"
             android:layout_width="match_parent"
             android:gravity="start|center_vertical"
-            android:text="優衣庫"/>
+            android:text="sjdadsa" />
         <RatingBar
             android:id="@+id/bb_score"
             android:layout_width="wrap_content"
@@ -67,7 +69,7 @@
             <android.support.v7.widget.AppCompatTextView
                 style="@style/text_item_bottom"
                 android:id="@+id/praise"
-                android:text="122"
+                android:text="dasdasdasd"
                 android:drawableLeft="@mipmap/praise"
                 /></FrameLayout>
         </LinearLayout>

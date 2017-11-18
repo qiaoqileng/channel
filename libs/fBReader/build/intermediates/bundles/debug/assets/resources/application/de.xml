@@ -351,7 +351,7 @@
 		<node name="sync" value="Synchronisation">
 			<node name="summary" value="Bücher Netzwerk Einstellungen"/>
 			<node name="site" value="Mehr über die Synchronisation erfahren">
-				<node name="url" value="https://myBooks.fbreader.org/help.html"/>
+				<node name="url" value="https://books.fbreader.org/help.html"/>
 			</node>
 			<node name="enable" value="Synchronisation aktivieren">
 				<node name="summaryOn" value="Synchronisiere meine Bibliothek mit dem FBReader Bücher Netzwerkserver"/>
@@ -443,9 +443,9 @@
 				<node name="summaryOn" value="Bildschirm nicht abschalten auch wenn das Geräte aufgeladen wird"/>
 				<node name="summaryOff" value="Bildschirm abschalten auch wenn das Geräte aufgeladen wird"/>
 			</node>
-			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the myBook menu" toBeTranslated="true">
-				<node name="summaryOn" value="Swipe in from the left edge to open myBook menu" toBeTranslated="true"/>
-				<node name="summaryOff" value="Use three-line (“hamburger”) button to open myBook menu" toBeTranslated="true"/>
+			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the book menu" toBeTranslated="true">
+				<node name="summaryOn" value="Swipe in from the left edge to open book menu" toBeTranslated="true"/>
+				<node name="summaryOff" value="Use three-line (“hamburger”) button to open book menu" toBeTranslated="true"/>
 			</node>
 		</node>
 		<node name="text" value="Textdarstellung">
@@ -1257,7 +1257,7 @@
 		<node name="simple">
 			<node name="selectIcon" value="Widget Icon auswählen"/>
 			<node name="selectAction" value="Auktion auswählen"/>
-			<node name="myBook" value="Buch lesen"/>
+			<node name="book" value="Buch lesen"/>
 			<node name="library" value="Bibliothek öffnen"/>
 		</node>
 	</node>

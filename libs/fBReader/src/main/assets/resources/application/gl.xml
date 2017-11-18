@@ -67,7 +67,7 @@
 		<node name="rescan" value="Rescan" toBeTranslated="true"/>
 		<node name="openBook" value="Abrir libro"/>
 		<node name="showBookInfo" value="Información do libro"/>
-		<node name="shareBook" value="Share myBook" toBeTranslated="true"/>
+		<node name="shareBook" value="Share book" toBeTranslated="true"/>
 		<node name="deleteBook" value="Eliminar libro"/>
 		<node name="addToFavorites" value="Engadir a preferidos"/>
 		<node name="removeFromFavorites" value="Retirar de preferidos"/>
@@ -79,7 +79,7 @@
 		<node name="tryAgain" value="Try again" toBeTranslated="true"/>
 	</node>
 	<node name="networkLibrary" value="FBReader network library" toBeTranslated="true">
-		<node name="sync" value="FBReader® myBook network" toBeTranslated="true">
+		<node name="sync" value="FBReader® book network" toBeTranslated="true">
 			<node name="summary" value="My personal catalogue" toBeTranslated="true"/>
 		</node>
 		<node name="byAuthor" value="Por autor">
@@ -95,7 +95,7 @@
 			<node name="summary" value="Books sorted by series" toBeTranslated="true"/>
 		</node>
 		<node name="search" value="Buscar">
-			<node name="summary" value="Search myBooks on %s" toBeTranslated="true"/>
+			<node name="summary" value="Search books on %s" toBeTranslated="true"/>
 			<node name="summaryAllCatalogs" value="Buscar libros nos catálogos"/>
 			<node name="summaryInProgress" value="Search in progress" toBeTranslated="true"/>
 		</node>
@@ -120,7 +120,7 @@
 		<node name="removeFromBasket" value="Remove from basket" toBeTranslated="true"/>
 		<node name="openBasket" value="Open basket" toBeTranslated="true"/>
 		<node name="clearBasket" value="Clear basket" toBeTranslated="true"/>
-		<node name="buyAllBooks" value="Buy all myBooks" toBeTranslated="true"/>
+		<node name="buyAllBooks" value="Buy all books" toBeTranslated="true"/>
 		<node name="openInBrowser" value="Abrir no navegador"/>
 		<node name="stopLoading" value="Deter a carga"/>
 		<node name="stopSearching" value="Deter a busca"/>
@@ -134,9 +134,9 @@
 		<node name="authorisationMenuTitle" value="Select action" toBeTranslated="true"/>
 		<node name="topupSummary" value="Actualmente: %s"/>
 		<node name="basket" value="Basket" toBeTranslated="true"/>
-		<node name="basketSummaryEmpty" value="No myBooks" toBeTranslated="true"/>
-		<node name="basketSummaryCountOnly" value="%0 myBooks" toBeTranslated="true"/>
-		<node name="basketSummary" value="%0 myBook(s) (%1)"/>
+		<node name="basketSummaryEmpty" value="No books" toBeTranslated="true"/>
+		<node name="basketSummaryCountOnly" value="%0 books" toBeTranslated="true"/>
+		<node name="basketSummary" value="%0 book(s) (%1)"/>
 		<node name="alreadyDownloading" value="O libro está a ser descargado"/>
 		<node name="alreadyDownloadingDemo" value="A mostra está a ser descargada"/>
 		<node name="stoppingCatalogLoading" value="Detendo a carga"/>
@@ -179,14 +179,14 @@
 			<node name="refreshCatalogsList" value="Actualizar catálogos"/>
 			<node name="manageCatalogs" value="Manage catalogues" toBeTranslated="true"/>
 			<node name="clearBasket" value="Clear basket" toBeTranslated="true"/>
-			<node name="buyAllBooks" value="Buy all myBooks" toBeTranslated="true"/>
+			<node name="buyAllBooks" value="Buy all books" toBeTranslated="true"/>
 		</node>
 	</node>
 	<node name="buyBook">
 		<node name="title" value="Comprar este libro"/>
-		<node name="titleSeveralBooks" value="Purchase myBooks" toBeTranslated="true"/>
+		<node name="titleSeveralBooks" value="Purchase books" toBeTranslated="true"/>
 		<node name="confirm" value="Está seguro de que quere comprar o libro&#10;«%s»?"/>
-		<node name="confirmSeveralBooks" value="Are you sure you want to buy %s myBooks?" toBeTranslated="true"/>
+		<node name="confirmSeveralBooks" value="Are you sure you want to buy %s books?" toBeTranslated="true"/>
 		<node name="alreadyBought" value="Este libro xa foi comprado"/>
 		<node name="notAuthorised" value="Authorisation required" toBeTranslated="true"/>
 		<node name="noAccountInformation" value="Cannot load account details" toBeTranslated="true"/>
@@ -256,7 +256,7 @@
 	<node name="cancelMenu">
 		<node name="library" value="Open library" toBeTranslated="true"/>
 		<node name="networkLibrary" value="Open network library" toBeTranslated="true"/>
-		<node name="previousBook" value="Open previous myBook" toBeTranslated="true"/>
+		<node name="previousBook" value="Open previous book" toBeTranslated="true"/>
 		<node name="returnTo" value="Return to …" toBeTranslated="true"/>
 		<node name="back" value="Back" toBeTranslated="true"/>
 		<node name="forward" value="Forward" toBeTranslated="true"/>
@@ -304,7 +304,7 @@
 			<node name="undo" value="Anterior"/>
 			<node name="redo" value="Seguinte"/>
 		</node>
-		<node name="shareBook" value="Share myBook" toBeTranslated="true"/>
+		<node name="shareBook" value="Share book" toBeTranslated="true"/>
 		<node name="search" value="Buscar"/>
 		<node name="rotate" value="Rotar a pantalla"/>
 		<node name="screenOrientation" value="Screen orientation" toBeTranslated="true"/>
@@ -336,36 +336,36 @@
 		<node name="sync" value="Synchronisation" toBeTranslated="true">
 			<node name="summary" value="Book network settings" toBeTranslated="true"/>
 			<node name="site" value="Read more about synchronisation" toBeTranslated="true">
-				<node name="url" value="https://myBooks.fbreader.org/help.html" toBeTranslated="true"/>
+				<node name="url" value="https://books.fbreader.org/help.html" toBeTranslated="true"/>
 			</node>
 			<node name="enable" value="Enable synchronisation" toBeTranslated="true">
-				<node name="summaryOn" value="Synchronise my library with FBReader myBook network server" toBeTranslated="true"/>
+				<node name="summaryOn" value="Synchronise my library with FBReader book network server" toBeTranslated="true"/>
 				<node name="summaryOnWithAccount" value="Synchronise my library as %s" toBeTranslated="true"/>
-				<node name="summaryOff" value="Do not synchronise my library with FBReader myBook network server" toBeTranslated="true"/>
+				<node name="summaryOff" value="Do not synchronise my library with FBReader book network server" toBeTranslated="true"/>
 			</node>
 			<node name="values">
 				<node name="always" value="Always" toBeTranslated="true"/>
 				<node name="viaWifi" value="If device is connected via Wi-Fi" toBeTranslated="true"/>
 				<node name="never" value="Never" toBeTranslated="true"/>
 			</node>
-			<node name="uploadAllBooks" value="Upload all myBooks to server" toBeTranslated="true"/>
-			<node name="downloadAllBooks" value="Download all myBooks from server" toBeTranslated="true"/>
-			<node name="downloadCurrentBook" value="Download current myBook from server" toBeTranslated="true"/>
+			<node name="uploadAllBooks" value="Upload all books to server" toBeTranslated="true"/>
+			<node name="downloadAllBooks" value="Download all books from server" toBeTranslated="true"/>
+			<node name="downloadCurrentBook" value="Download current book from server" toBeTranslated="true"/>
 			<node name="positions" value="Synchronise reading positions" toBeTranslated="true"/>
 			<node name="bookmarks" value="Synchronise bookmarks" toBeTranslated="true"/>
 			<node name="customShelves" value="Synchronise custom shelves" toBeTranslated="true"/>
 			<node name="metainfo" value="Synchronise metainfo (title, tags, etc.)" toBeTranslated="true"/>
-			<node name="changeCurrentBook" value="Change current myBook" toBeTranslated="true">
-				<node name="summaryOn" value="Open same myBook on all devices" toBeTranslated="true"/>
-				<node name="summaryOff" value="Synchronise reading positions, but do not open same myBook on all devices" toBeTranslated="true"/>
+			<node name="changeCurrentBook" value="Change current book" toBeTranslated="true">
+				<node name="summaryOn" value="Open same book on all devices" toBeTranslated="true"/>
+				<node name="summaryOff" value="Synchronise reading positions, but do not open same book on all devices" toBeTranslated="true"/>
 			</node>
 		</node>
 		<node name="directories" value="Cartafoles">
 			<node name="summary" value="Cartafoles para buscar ficheiros"/>
-			<node name="bookPath" value="Where to search for myBooks" toBeTranslated="true">
+			<node name="bookPath" value="Where to search for books" toBeTranslated="true">
 				<node name="chooserTitle" value="Cartafol de libros"/>
 			</node>
-			<node name="downloadDir" value="Where to store downloaded myBooks" toBeTranslated="true">
+			<node name="downloadDir" value="Where to store downloaded books" toBeTranslated="true">
 				<node name="chooserTitle" value="Cartafol de libros"/>
 			</node>
 			<node name="fontPath" value="Where to search for fonts" toBeTranslated="true">
@@ -428,9 +428,9 @@
 				<node name="summaryOn" value="Impedir que a pantalla se poña en modo suspendido se o dispositivo está en modo de carga"/>
 				<node name="summaryOff" value="Apagar a pantalla incluso se o dispositivo está en modo de carga"/>
 			</node>
-			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the myBook menu" toBeTranslated="true">
-				<node name="summaryOn" value="Swipe in from the left edge to open myBook menu" toBeTranslated="true"/>
-				<node name="summaryOff" value="Use three-line (“hamburger”) button to open myBook menu" toBeTranslated="true"/>
+			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the book menu" toBeTranslated="true">
+				<node name="summaryOn" value="Swipe in from the left edge to open book menu" toBeTranslated="true"/>
+				<node name="summaryOff" value="Use three-line (“hamburger”) button to open book menu" toBeTranslated="true"/>
 			</node>
 		</node>
 		<node name="text" value="Texto">
@@ -817,12 +817,12 @@
 		</node>
 		<node name="menu" value="Menu" toBeTranslated="true">
 			<node name="summary" value="Configure main screen menu" toBeTranslated="true"/>
-			<node name="backgroundCover" value="Use myBook cover as background" toBeTranslated="true">
-				<node name="summaryOn" value="Show cover in the myBook menu" toBeTranslated="true"/>
+			<node name="backgroundCover" value="Use book cover as background" toBeTranslated="true">
+				<node name="summaryOn" value="Show cover in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Keep background clear" toBeTranslated="true"/>
 			</node>
 			<node name="bookMenuStatusItem" value="Status item" toBeTranslated="true">
-				<node name="summaryOn" value="Show status item in the myBook menu" toBeTranslated="true"/>
+				<node name="summaryOn" value="Show status item in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Hide status item" toBeTranslated="true"/>
 			</node>
 			<node name="items" value="Menu items" toBeTranslated="true">
@@ -845,13 +845,13 @@
 				<node name="summaryOn" value="Show 'open network library' item" toBeTranslated="true"/>
 				<node name="summaryOff" value="Don't show 'open network library' item" toBeTranslated="true"/>
 			</node>
-			<node name="previousBook" value="Previous myBook" toBeTranslated="true">
-				<node name="summaryOn" value="Show 'return to previous myBook' item" toBeTranslated="true"/>
-				<node name="summaryOff" value="Don't show 'return to previous myBook' item" toBeTranslated="true"/>
+			<node name="previousBook" value="Previous book" toBeTranslated="true">
+				<node name="summaryOn" value="Show 'return to previous book' item" toBeTranslated="true"/>
+				<node name="summaryOff" value="Don't show 'return to previous book' item" toBeTranslated="true"/>
 			</node>
 			<node name="positions" value="Last 3 positions" toBeTranslated="true">
-				<node name="summaryOn" value="Show items for last 3 positions in the myBook" toBeTranslated="true"/>
-				<node name="summaryOff" value="Don't show items for last 3 positions in the myBook" toBeTranslated="true"/>
+				<node name="summaryOn" value="Show items for last 3 positions in the book" toBeTranslated="true"/>
+				<node name="summaryOff" value="Don't show items for last 3 positions in the book" toBeTranslated="true"/>
 			</node>
 			<node name="backKeyAction" value="Back key action" toBeTranslated="true">
 				<node name="exit" value="Close FBReader" toBeTranslated="true"/>
@@ -952,7 +952,7 @@
 			<node name="message" value="O ficheiro do libro vai a ser retirado de xeito irrecuperábel. Esta seguro?"/>
 		</node>
 		<node name="deleteMultipleBookBox">
-			<node name="title" value="Delete myBooks" toBeTranslated="true"/>
+			<node name="title" value="Delete books" toBeTranslated="true"/>
 			<node name="message" value="%s files will be removed permanently. Are you sure?" toBeTranslated="true"/>
 		</node>
 		<node name="redownloadFileBox">
@@ -993,7 +993,7 @@
 			<node name="signOut" value="Rexistrando. Agarde…"/>
 			<node name="purchaseBook" value="Comprando libro. Agarde…"/>
 			<node name="loadingCatalogInfo" value="Cargando a información do catálogo. Agarde…"/>
-			<node name="loadingNetworkBookInfo" value="Loading myBook information. Please wait…" toBeTranslated="true"/>
+			<node name="loadingNetworkBookInfo" value="Loading book information. Please wait…" toBeTranslated="true"/>
 			<node name="updatingCatalogsList" value="Actualizando a lista de catálogos. Agarde…"/>
 			<node name="updatingAccountInformation" value="Updating account information. Please wait…" toBeTranslated="true"/>
 			<node name="initDRMEngine" value="Initialising DRM engine. Please wait…" toBeTranslated="true"/>
@@ -1127,13 +1127,13 @@
 		<node name="dictionaryIsNotInstalled" value="O dicionario non está instalado"/>
 		<node name="permissionDenied" value="Permiso denegado"/>
 		<node name="noFavorites" value="A súa lista de preferencias está baleira"/>
-		<node name="noSeries" value="There are no myBooks in series" toBeTranslated="true"/>
+		<node name="noSeries" value="There are no books in series" toBeTranslated="true"/>
 		<node name="emptyCatalog" value="O catálogo está baleiro"/>
 		<node name="emptyBasket" value="Your basket is empty" toBeTranslated="true"/>
 		<node name="emptyNetworkSearchResults" value="Non se atopa ningún libro coincidente"/>
 		<node name="videoServiceNotWorking" value="Video service is not available" toBeTranslated="true"/>
 		<node name="videoPlayerNotFound" value="No video player installed on this device" toBeTranslated="true"/>
-		<node name="bookIsMissingTitle" value="Missing myBook" toBeTranslated="true"/>
+		<node name="bookIsMissingTitle" value="Missing book" toBeTranslated="true"/>
 		<node name="bookIsMissing" value="Book '%s' is not found on the device" toBeTranslated="true"/>
 		<node name="downloadFailed" value="Fallou a descarga do libro"/>
 	</node>
@@ -1162,7 +1162,7 @@
 	<node name="plugins" value="Install plugins" toBeTranslated="true">
 		<node name="noMorePlugins" value="We have no new plugins at the moment, sorry" toBeTranslated="true"/>
 		<node name="litres" value="LitRes" toBeTranslated="true">
-			<node name="summary" value="Russian myBook store" toBeTranslated="true"/>
+			<node name="summary" value="Russian book store" toBeTranslated="true"/>
 		</node>
 		<node name="tts_plus" value="TTS+" toBeTranslated="true">
 			<node name="summary" value="Read aloud" toBeTranslated="true"/>
@@ -1171,7 +1171,7 @@
 			<node name="summary" value="Connect to Calibre server in your local network" toBeTranslated="true"/>
 		</node>
 		<node name="local_opds_scanner" value="Local OPDS Scanner" toBeTranslated="true">
-			<node name="summary" value="Look for myBooks in the local network" toBeTranslated="true"/>
+			<node name="summary" value="Look for books in the local network" toBeTranslated="true"/>
 		</node>
 		<node name="bookshelf" value="Bookshelf" toBeTranslated="true">
 			<node name="summary" value="Thumbnail library view" toBeTranslated="true"/>
@@ -1180,23 +1180,23 @@
 			<node name="summary" value="Allow your device to act as server" toBeTranslated="true"/>
 		</node>
 		<node name="widgets" value="Widgets" toBeTranslated="true">
-			<node name="summary" value="Add myBooks to your home screen" toBeTranslated="true"/>
+			<node name="summary" value="Add books to your home screen" toBeTranslated="true"/>
 		</node>
 		<node name="pdf" value="PDF" toBeTranslated="true">
-			<node name="summary" value="Read myBooks in PDF format" toBeTranslated="true"/>
+			<node name="summary" value="Read books in PDF format" toBeTranslated="true"/>
 		</node>
 		<node name="djvu" value="DjVu" toBeTranslated="true">
-			<node name="summary" value="Read myBooks in DjVu format" toBeTranslated="true"/>
+			<node name="summary" value="Read books in DjVu format" toBeTranslated="true"/>
 		</node>
 		<node name="cbr" value="Comic Books" toBeTranslated="true">
-			<node name="summary" value="Read comic myBooks (CBR, CBZ)" toBeTranslated="true"/>
+			<node name="summary" value="Read comic books (CBR, CBZ)" toBeTranslated="true"/>
 		</node>
 	</node>
 	<node name="drm">
 		<node name="encryptedSection" value="Encrypted section" toBeTranslated="true"/>
 	</node>
 	<node name="yota">
-		<node name="frontScreenMessage" value="Turn the device over to read your myBook. To return text to this screen, press the button below." toBeTranslated="true"/>
+		<node name="frontScreenMessage" value="Turn the device over to read your book. To return text to this screen, press the button below." toBeTranslated="true"/>
 		<node name="frontScreenButton" value="Switch to this screen" toBeTranslated="true"/>
 	</node>
 	<node name="hint">
@@ -1242,7 +1242,7 @@
 		<node name="simple">
 			<node name="selectIcon" value="Select widget icon" toBeTranslated="true"/>
 			<node name="selectAction" value="Select action" toBeTranslated="true"/>
-			<node name="myBook" value="Read myBook" toBeTranslated="true"/>
+			<node name="book" value="Read book" toBeTranslated="true"/>
 			<node name="library" value="Open library" toBeTranslated="true"/>
 		</node>
 	</node>

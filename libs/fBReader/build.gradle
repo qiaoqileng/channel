@@ -37,7 +37,7 @@ dependencies {
         compile project(':libs:code')
     //    compile project(':library')
     //    compile project(':superToasts')
-    compile 'com.android.support:appcompat-v7:23.3.1'
+    compile 'com.android.support:support-v4:19.1.0'
     compile files('libs/LingvoIntegration_2.5.2.12.jar')
     compile files('libs/httpmime-4.2.5.jar')
     compile files('libs/json-simple-1.1.1.jar')

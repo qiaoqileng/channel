@@ -78,7 +78,7 @@
 		<node name="tryAgain" value=" تلاش دوباره"/>
 	</node>
 	<node name="networkLibrary" value="کتابخانه آنلاین">
-		<node name="sync" value="FBReader® myBook network" toBeTranslated="true">
+		<node name="sync" value="FBReader® book network" toBeTranslated="true">
 			<node name="summary" value="کاتالوگ شخصی من"/>
 		</node>
 		<node name="byAuthor" value="بر اساس نویسنده">
@@ -137,7 +137,7 @@
 		<node name="basketSummaryCountOnly" value="%0 کتابها">
 			<node condition="value 1" value="%0 کتابها"/>
 		</node>
-		<node name="basketSummary" value="%0 myBooks (%1)">
+		<node name="basketSummary" value="%0 books (%1)">
 			<node condition="value 1" value="%0 کتاب (%1)"/>
 		</node>
 		<node name="alreadyDownloading" value="کتاب درحال دانلود است"/>
@@ -345,7 +345,7 @@
 		<node name="sync" value="همگام سازی">
 			<node name="summary" value="تنظیمات شبکه کتاب"/>
 			<node name="site" value="Read more about synchronisation" toBeTranslated="true">
-				<node name="url" value="https://myBooks.fbreader.org/help.html" toBeTranslated="true"/>
+				<node name="url" value="https://books.fbreader.org/help.html" toBeTranslated="true"/>
 			</node>
 			<node name="enable" value="فعالسازی همگامسازی">
 				<node name="summaryOn" value="هماهنگی کتابخانه من با سرور شبکه کتاب برنامه"/>
@@ -437,9 +437,9 @@
 				<node name="summaryOn" value="وقتي دستگاه در حالت خواب است صفحه نمايش به خواب نرود"/>
 				<node name="summaryOff" value="حتی در حالت شارژ هم صفحه نمایش خاموش باشد"/>
 			</node>
-			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the myBook menu" toBeTranslated="true">
-				<node name="summaryOn" value="Swipe in from the left edge to open myBook menu" toBeTranslated="true"/>
-				<node name="summaryOff" value="Use three-line (“hamburger”) button to open myBook menu" toBeTranslated="true"/>
+			<node name="enableBookMenuSwipeGesture" value="Enable swipe gesture for the book menu" toBeTranslated="true">
+				<node name="summaryOn" value="Swipe in from the left edge to open book menu" toBeTranslated="true"/>
+				<node name="summaryOff" value="Use three-line (“hamburger”) button to open book menu" toBeTranslated="true"/>
 			</node>
 		</node>
 		<node name="text" value="متن">
@@ -826,12 +826,12 @@
 		</node>
 		<node name="menu" value="Menu" toBeTranslated="true">
 			<node name="summary" value="Configure main screen menu" toBeTranslated="true"/>
-			<node name="backgroundCover" value="Use myBook cover as background" toBeTranslated="true">
-				<node name="summaryOn" value="Show cover in the myBook menu" toBeTranslated="true"/>
+			<node name="backgroundCover" value="Use book cover as background" toBeTranslated="true">
+				<node name="summaryOn" value="Show cover in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Keep background clear" toBeTranslated="true"/>
 			</node>
 			<node name="bookMenuStatusItem" value="Status item" toBeTranslated="true">
-				<node name="summaryOn" value="Show status item in the myBook menu" toBeTranslated="true"/>
+				<node name="summaryOn" value="Show status item in the book menu" toBeTranslated="true"/>
 				<node name="summaryOff" value="Hide status item" toBeTranslated="true"/>
 			</node>
 			<node name="items" value="Menu items" toBeTranslated="true">
@@ -1251,7 +1251,7 @@
 		<node name="simple">
 			<node name="selectIcon" value="Select widget icon" toBeTranslated="true"/>
 			<node name="selectAction" value="Select action" toBeTranslated="true"/>
-			<node name="myBook" value="Read myBook" toBeTranslated="true"/>
+			<node name="book" value="Read book" toBeTranslated="true"/>
 			<node name="library" value="Open library" toBeTranslated="true"/>
 		</node>
 	</node>

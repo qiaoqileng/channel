@@ -10,6 +10,6 @@
 		<node name="RTF" value="RTF"/>
 		<node name="PDF" value="PDF"/>
 		<node name="DjVu" value="DjVu"/>
-		<node name="CBZ" value="Comic myBook archive (cbz, cbr)"/>
+		<node name="CBZ" value="Comic book archive (cbz, cbr)"/>
 	</node>
 </resources>

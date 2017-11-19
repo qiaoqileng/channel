@@ -10,13 +10,16 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.green.dao.output.MyBook;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.DraggableItemAdapter;
 import com.h6ah4i.android.widget.advrecyclerview.draggable.ItemDraggableRange;
 import com.h6ah4i.android.widget.advrecyclerview.utils.AbstractDraggableItemViewHolder;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.utils.CommonUtils;
 import com.qql.dagger.recommend.utils.LogUtil;
+
+import org.geometerplus.android.fbreader.FBReader;
+import org.geometerplus.android.fbreader.library.BookInfoActivity;
+import org.geometerplus.fbreader.book.Book;
 
 import java.util.List;
 
@@ -29,9 +32,9 @@ import butterknife.ButterKnife;
 
 public class BookSelfsAdapter extends RecyclerView.Adapter<BookSelfsAdapter.MyViewHolder>
         implements DraggableItemAdapter<BookSelfsAdapter.MyViewHolder>, View.OnClickListener {
-    private List<MyBook> myBooks;
+    private List<Book> myBooks;
     private Context context;
-    public BookSelfsAdapter(List<MyBook> myBooks) {
+    public BookSelfsAdapter(List<Book> myBooks) {
         this.myBooks = myBooks;
         setHasStableIds(true);
     }
@@ -46,16 +49,17 @@ public class BookSelfsAdapter extends RecyclerView.Adapter<BookSelfsAdapter.MyVi
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        MyBook myBook = myBooks.get(position);
+        Book myBook = myBooks.get(position);
         if (myBook != null) {
             holder.bookTitle.setText(myBook.getTitle());
             holder.title.setText(myBook.getTitle());
 //            holder.format.setText(myBook.getFormats());
-            holder.readRate.setText("已读"+ myBook.getRead_rate() + "%");
+            float progress = myBook.getProgress() == null?0f:myBook.getProgress().toFloat();
+            holder.readRate.setText("已读"+  progress + "%");
             holder.cover.setTag(position);
             holder.cover.setOnClickListener(this);
-            Glide.with(context).load(myBook.getCover_url()).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
-                    .into(holder.cover);
+//            Glide.with(context).load(myBook.getCover_url()).asBitmap().diskCacheStrategy(DiskCacheStrategy.ALL)
+//                    .into(holder.cover);
         }
     }
 
@@ -101,8 +105,8 @@ public class BookSelfsAdapter extends RecyclerView.Adapter<BookSelfsAdapter.MyVi
     public void onClick(View v) {
         try{
             int position = (int) v.getTag();
-            MyBook myBook = myBooks.get(position);
-
+            Book myBook = myBooks.get(position);
+            FBReader.openBookActivity(context, myBook, null);
         }catch (Exception e){
             LogUtil.printException(e);
         }

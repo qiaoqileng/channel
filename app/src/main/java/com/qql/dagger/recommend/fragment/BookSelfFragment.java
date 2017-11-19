@@ -2,7 +2,6 @@ package com.qql.dagger.recommend.fragment;
 
 import android.app.SearchManager;
 import android.content.Intent;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -25,11 +24,12 @@ import com.qql.dagger.recommend.presenter.BookSelfPresenter;
 import com.qql.dagger.recommend.presenter.contract.BookSelfContract;
 
 import org.geometerplus.android.fbreader.library.LibrarySearchActivity;
+import org.geometerplus.android.fbreader.libraryService.BookCollectionShadow;
+import org.geometerplus.fbreader.book.Book;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.jar.Manifest;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -43,12 +43,12 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
 //    DraggableGridView draggableGridView;
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
-    private List<MyBook> myBooks;
+    private List<Book> myBooks;
     private GridLayoutManager mLayoutManager;
     private RecyclerViewDragDropManager mRecyclerViewDragDropManager;
     private BookSelfsAdapter adapter;
     private RecyclerView.Adapter mWrappedAdapter;
-
+    private BookCollectionShadow myCollection;
     //    private BookSelfAdapter adapter;
     @Override
     public void showError(String msg) {
@@ -57,11 +57,51 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
 
     @Override
     public void showBookSelfList(List<MyBook> bbs) {
-        myBooks = bbs;
-        initView();
+//        myBooks = bbs;
+//        initView();
 //        adapter = new BookSelfAdapter(getActivity(),bbs);
 //        draggableGridView.setAdapter(adapter);
 //        setListeners();
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // we use this local variable to be sure collection is not null inside the runnable
+        final BookCollectionShadow collection = new BookCollectionShadow();
+        myCollection = collection;
+        collection.bindToService(getActivity(), new Runnable() {
+            @Override
+            public void run() {
+                Map<String,String> param = new HashMap<>();
+                param.put(Constants.USER_ID,"qql");
+                if (mPresenter!=null){
+                    mPresenter.findBookSelfList(myCollection,param);
+                }
+            }
+        });
+    }
+
+    @Override
+    public void onDestroy() {
+        if (myCollection!=null){
+            myCollection.unbind();
+        }
+        super.onDestroy();
+    }
+
+    @Override
+    public void onStop() {
+        if (myCollection != null) {
+            myCollection.unbind();
+            myCollection = null;
+        }
+        super.onStop();
+    }
+
+    @Override
+    public void showZLBooks(List<Book> books) {
+        myBooks = books;
+        initView();
     }
 
     private void initView() {
@@ -148,9 +188,7 @@ public class BookSelfFragment extends BaseFragment<BookSelfPresenter> implements
     @Override
     protected void initEventAndData() {
 //        testBooks();
-        Map<String,String> param = new HashMap<>();
-        param.put(Constants.USER_ID,"qql");
-        mPresenter.findBookSelfList(param);
+
     }
 
     private void testBooks(){

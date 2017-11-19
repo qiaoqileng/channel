@@ -24,7 +24,7 @@ import java.io.*;
 
 public final class ZLPhysicalFile extends ZLFile {
 	private final File myFile;
-
+	private boolean isSelected;
 	ZLPhysicalFile(String path) {
 		this(new File(path));
 	}
@@ -32,6 +32,14 @@ public final class ZLPhysicalFile extends ZLFile {
 	public ZLPhysicalFile(File file) {
 		myFile = file;
 		init();
+	}
+
+	public boolean isSelected() {
+		return isSelected;
+	}
+
+	public void setSelected(boolean selected) {
+		isSelected = selected;
 	}
 
 	@Override

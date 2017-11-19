@@ -23,6 +23,7 @@
         android:textSize="@dimen/text_little_big"
         android:background="@color/colorPrimary"
         android:gravity="center"
+        android:onClick="export"
         android:padding="@dimen/margin_normal"
         android:text="导入书架"/>
 </LinearLayout>

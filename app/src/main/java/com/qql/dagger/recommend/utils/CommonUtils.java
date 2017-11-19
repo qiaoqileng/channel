@@ -1,6 +1,7 @@
 package com.qql.dagger.recommend.utils;
 
-import com.green.dao.output.MyBook;
+
+import org.geometerplus.fbreader.book.Book;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -11,12 +12,12 @@ import java.util.List;
 
 public class CommonUtils {
 
-    public static void move(List<MyBook> myBooks, int fromPosition, int toPosition){
+    public static void move(List<Book> myBooks, int fromPosition, int toPosition){
         if (fromPosition == toPosition || myBooks == null || myBooks.size() < 1) {
             return;
         }
 
-        final MyBook item = myBooks.remove(fromPosition);
+        final Book item = myBooks.remove(fromPosition);
 
         myBooks.add(toPosition, item);
     }

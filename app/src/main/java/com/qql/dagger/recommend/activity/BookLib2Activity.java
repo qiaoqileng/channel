@@ -25,6 +25,8 @@ import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.adapter.BookLibAdapter;
 import com.qql.dagger.recommend.adapter.BookLibHeadAdapter;
 import com.qql.dagger.recommend.base.UMActivity;
+import com.qql.dagger.recommend.utils.LogUtil;
+import com.qql.dagger.recommend.utils.ToastUtil;
 
 import org.geometerplus.android.fbreader.api.FBReaderIntents;
 import org.geometerplus.android.fbreader.library.BookInfoActivity;
@@ -53,15 +55,7 @@ public class BookLib2Activity extends UMActivity
         // we use this local variable to be sure collection is not null inside the runnable
         final BookCollectionShadow collection = new BookCollectionShadow();
         myCollection = collection;
-        collection.bindToService(this, new Runnable() {
-            public void run() {
-//                final CancelActivity.ActionListAdapter adapter = new CancelActivity.ActionListAdapter(
-//                        new CancelMenuHelper().getActionsList(collection)
-//                );
-//                setListAdapter(adapter);
-//                getListView().setOnItemClickListener(adapter);
-            }
-        });
+        collection.bindToService(this, null);
     }
 
     @Override
@@ -94,12 +88,14 @@ public class BookLib2Activity extends UMActivity
     }
 
     private BookCollectionShadow getCollection() {
-        return (BookCollectionShadow)myCollection;
+        return myCollection;
     }
 
     @Override
     protected void onDestroy() {
-        getCollection().unbind();
+        if (getCollection()!=null){
+            getCollection().unbind();
+        }
         super.onDestroy();
     }
 
@@ -267,7 +263,7 @@ public class BookLib2Activity extends UMActivity
     }
 
     @OnClick(R.id.export)
-    public void onClick(View view){
+    public void export(View view){
         int id = view.getId();
         if (R.id.export == id){
             // TODO: 2017/11/7 导入书架
@@ -277,6 +273,26 @@ public class BookLib2Activity extends UMActivity
 
     private void exportBookSelf() {
         List<ZLPhysicalFile> files = libAdapter.getDataSource();
+        for (ZLPhysicalFile file:files){
+            try {
+                if (!file.isSelected()){
+                    continue;
+                }
+                Book currBook = myCollection.getBookByFile(file.getPath());
+                if (currBook == null){
+                    continue;
+                }
+                boolean flag = myCollection.saveBook(currBook);
+                if (flag){
+                    ToastUtil.show("导入成功");
+                    finish();
+                } else {
+                    ToastUtil.show("导入失败");
+                }
+            }catch (Exception e){
+                LogUtil.printException(e);
+            }
+        }
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

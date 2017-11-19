@@ -88,10 +88,10 @@ public abstract class BookLibAdapter extends RecyclerView.Adapter<BookLibAdapter
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         LogUtil.d(isChecked);
                         holder.radio.setChecked(isChecked);
-//                        file.setSelect(isChecked);
+                        file.setSelected(isChecked);
                     }
                 });
-//                holder.radio.setChecked(file.isSelect());
+                holder.radio.setChecked(file.isSelected());
             }
         }
         holder.ll_view.setTag(position);

@@ -20,8 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar"
         tools:replace="android:allowBackup">
-        <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.ImageDetailActivity" />
         <activity android:name=".activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +28,7 @@
             </intent-filter>
         </activity>
 
-        <meta-metadata
+        <meta-data
             android:name="UMENG_APPKEY"
             android:value="${umeng_appkey}" />
 
@@ -41,10 +39,6 @@
         <activity
             android:name=".activity.BBListActivity"
             android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar"/>
-        <activity
-            android:name=".activity.BookLib2Activity"
-            android:label="@string/title_activity_book_lib2"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

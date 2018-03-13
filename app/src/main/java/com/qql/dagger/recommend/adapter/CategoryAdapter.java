@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.model.bean.CategoryBean;
+import com.qql.dagger.recommend.option.GlideOptions;
 
 import java.util.List;
 
@@ -61,7 +62,7 @@ public class CategoryAdapter extends BaseAdapter {
         if (!TextUtils.isEmpty(url)) {
             Glide.with(context).load(url).into(holder.imageView);
         } else {
-            Glide.with(context).load(R.color.toast_bg).asBitmap().into(holder.imageView);
+            Glide.with(context).asBitmap().load(R.color.toast_bg).apply(GlideOptions.defaultOption()).into(holder.imageView);
         }
         holder.textView.setText(categoryBean.getTitle());
         return view;

@@ -9,4 +9,6 @@
     <color name="text_black">#333333</color>
     <color name="light_line">#F9F9F9</color>
     <color name="search_color">#FAFAFA</color>
+    <item name="primary" type="color">#444444</item>
+    <item name="primary_dark" type="color">#222222</item>
 </resources>

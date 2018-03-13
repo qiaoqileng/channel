@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.model.bean.BBBean;
+import com.qql.dagger.recommend.option.GlideOptions;
 
 import java.util.List;
 
@@ -57,7 +58,7 @@ public class BBAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         BBBean bean = getItem(i);
-        Glide.with(context).load(bean.getMainImgUrl()).asBitmap().into(holder.bbImag);
+        Glide.with(context).asBitmap().load(bean.getMainImgUrl()).apply(GlideOptions.defaultOption()).into(holder.bbImag);
         holder.bbName.setText(bean.getName());
         holder.bbScore.setProgress(bean.getScore());
         holder.collectNum.setText(bean.getCollections()+"");

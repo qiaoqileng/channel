@@ -10,13 +10,18 @@ import android.graphics.RectF;
 
 import com.bumptech.glide.load.engine.bitmap_recycle.BitmapPool;
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation;
+import com.qql.dagger.recommend.BuildConfig;
+
+import java.security.MessageDigest;
 
 /**
  * Created by qql on 2017/3/29.
  */
 //圆角图片
 public class GlideRoundTransform extends BitmapTransformation {
-
+    private static final int VERSION = 1;
+    private static final String ID = BuildConfig.APPLICATION_ID+"GlideRoundedCornersTransform." + VERSION;
+    private static final byte[] ID_BYTES = ID.getBytes(CHARSET);
     private static float radius = 0f;
 
     public GlideRoundTransform(Context context) {
@@ -49,7 +54,19 @@ public class GlideRoundTransform extends BitmapTransformation {
         return result;
     }
 
-    @Override public String getId() {
-        return getClass().getName() + Math.round(radius);
+    @Override
+    public boolean equals(Object o) {
+        return o instanceof GlideCircleTransform;
+    }
+
+
+    @Override
+    public int hashCode() {
+        return ID.hashCode();
+    }
+
+    @Override
+    public void updateDiskCacheKey(MessageDigest messageDigest) {
+        messageDigest.update(ID_BYTES);
     }
 }

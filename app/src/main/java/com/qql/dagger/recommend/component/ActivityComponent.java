@@ -5,6 +5,7 @@ import android.app.Activity;
 
 import com.qql.dagger.recommend.activity.BBListActivity;
 import com.qql.dagger.recommend.activity.HomeActivity;
+import com.qql.dagger.recommend.activity.JoinUsActivity;
 import com.qql.dagger.recommend.annotation.ActivityScope;
 import com.qql.dagger.recommend.module.ActivityModule;
 
@@ -24,4 +25,5 @@ public interface ActivityComponent {
 
     void inject(BBListActivity activity);
 
+    void inject(JoinUsActivity joinUsActivity);
 }

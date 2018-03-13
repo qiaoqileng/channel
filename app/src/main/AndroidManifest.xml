@@ -40,6 +40,8 @@
             android:name=".activity.BBListActivity"
             android:label="@string/title_activity_scrolling"
             android:theme="@style/AppTheme.NoActionBar"/>
+        <activity android:name=".activity.JoinUsActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

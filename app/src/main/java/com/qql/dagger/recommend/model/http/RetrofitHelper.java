@@ -115,6 +115,10 @@ public class RetrofitHelper {
         return myRetrofit.create(MyApis.class);
     }
 
+    public Observable<GankHttpResponse<String>> joinUs(Map<String,String> params) {
+        return myApiService.joinUs(params);
+    }
+
     private static GankApis getGankApiService() {
         Retrofit gankRetrofit = new Retrofit.Builder()
                 .baseUrl(GankApis.HOST)

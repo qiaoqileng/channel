@@ -2,15 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://D:\work\demo\channel\Dagger2Test.iml" filepath="D:\work\demo\channel\Dagger2Test.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://D:\work\demo\channel\app\app.iml" filepath="D:\work\demo\channel\app\app.iml" />
       <module fileurl="file://$PROJECT_DIR$/channel.iml" filepath="$PROJECT_DIR$/channel.iml" />
-      <module fileurl="file://D:\work\demo\channel\libs\code\code.iml" filepath="D:\work\demo\channel\libs\code\code.iml" />
-      <module fileurl="file://D:\work\demo\channel\libs\fBReader\fBReader.iml" filepath="D:\work\demo\channel\libs\fBReader\fBReader.iml" />
       <module fileurl="file://$PROJECT_DIR$/lib-greendao-generator/lib-greendao-generator.iml" filepath="$PROJECT_DIR$/lib-greendao-generator/lib-greendao-generator.iml" />
-      <module fileurl="file://D:\work\demo\channel\lib-greendao-generator\lib-greendao-generator.iml" filepath="D:\work\demo\channel\lib-greendao-generator\lib-greendao-generator.iml" />
-      <module fileurl="file://D:\work\demo\channel\libs\libs.iml" filepath="D:\work\demo\channel\libs\libs.iml" />
     </modules>
   </component>
 </project>

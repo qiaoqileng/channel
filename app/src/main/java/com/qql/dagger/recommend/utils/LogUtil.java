@@ -3,6 +3,7 @@ package com.qql.dagger.recommend.utils;
 import android.util.Log;
 
 import com.qql.dagger.recommend.App;
+import com.qql.dagger.recommend.BuildConfig;
 import com.qql.dagger.recommend.Constants;
 
 /**
@@ -11,7 +12,7 @@ import com.qql.dagger.recommend.Constants;
 
 public class LogUtil {
 
-    private static final boolean isDebug = true;
+    private static final boolean isDebug = BuildConfig.DEBUG;
 
     private static final int stackLevel = 4;
 

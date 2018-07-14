@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,14 +7,45 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.qql.dagger.recommend.activity.BBListActivity"
     tools:showIn="@layout/activity_scrolling">
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/join_in"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:drawableRight="@mipmap/ic_list_group_closed"
-        android:padding="@dimen/text_larger"
-        android:text="@string/join_in"
-        android:textColor="@color/text_black"
-        android:textSize="@dimen/text_little_big" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/join_in"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_list_group_closed"
+            android:paddingLeft="@dimen/text_larger"
+            android:paddingRight="@dimen/text_larger"
+            android:paddingTop="@dimen/text_larger"
+            android:text="@string/join_in"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_little_big" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/seller_center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_list_group_closed"
+            android:paddingLeft="@dimen/text_larger"
+            android:paddingRight="@dimen/text_larger"
+            android:paddingTop="@dimen/text_larger"
+            android:text="@string/seller_center"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_little_big" />
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/download"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableRight="@mipmap/ic_list_group_closed"
+            android:paddingLeft="@dimen/text_larger"
+            android:paddingRight="@dimen/text_larger"
+            android:paddingTop="@dimen/text_larger"
+            android:text="@string/download"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_little_big" />
+    </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

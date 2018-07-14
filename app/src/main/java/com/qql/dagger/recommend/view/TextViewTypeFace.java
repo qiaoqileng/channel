@@ -38,8 +38,8 @@ public class TextViewTypeFace extends AppCompatTextView {
     private void switchFace(Context context) {
         switch (typeFace) {
             case 1:
-                Typeface typeFace = Typeface.createFromAsset(context.getAssets(),"fonts/Bernardo-Moda.ttf");
-                this.setTypeface(typeFace);
+//                Typeface typeFace = Typeface.createFromAsset(context.getAssets(),"fonts/Bernardo-Moda.ttf");
+//                this.setTypeface(typeFace);
                 break;
             case 0:
             default:

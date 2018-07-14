@@ -4,6 +4,8 @@ import android.app.Activity;
 
 import com.qql.dagger.recommend.annotation.FragmentScope;
 import com.qql.dagger.recommend.fragment.HomeFragment;
+import com.qql.dagger.recommend.fragment.MyFragment;
+import com.qql.dagger.recommend.fragment.SellCenterFragment;
 import com.qql.dagger.recommend.module.FragmentModule;
 
 import dagger.Component;
@@ -19,4 +21,7 @@ public interface FragmentComponent {
 
     void inject(HomeFragment fragment);
 
+    void inject(MyFragment myFragment);
+
+    void inject(SellCenterFragment sellCenterFragment);
 }

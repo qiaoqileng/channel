@@ -191,4 +191,6 @@
     <string name="hint_QQ">QQ</string>
     <string name="hint_email">email</string>
     <string name="confirm">确定</string>
+    <string name="seller_center">商家中心</string>
+    <string name="download">下载</string>
 </resources>

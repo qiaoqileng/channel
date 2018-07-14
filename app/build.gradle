@@ -56,14 +56,32 @@ android {
     }
 }
 
+repositories {
+    flatDir {
+        dirs 'src/main/libs'
+    }
+}
+
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile fileTree(include: ['*.jar'], dir: 'src/main/libs')
 
         compile ('com.h6ah4i.android.widget.advrecyclerview:advrecyclerview:0.10.6@aar'){
 
             transitive=true
 
         }
+    compile 'com.taobao.android:securityguardaar3:5.1.81@aar'
+    //deviceID，主要用于计算设备的uttid， 设备唯一标识 （67kb）
+    compile 'com.taobao.android:utdid4all:1.1.5'
+    // UT，用于组件、接口可用性统计（337kb）
+    compile 'com.alibaba.mtl:app-monitor-sdk:2.5.1.3_for_bc_proguard@jar'
+    compile 'com.ali.auth.sdk:alibabauth_core:1.1.4@jar'
+    compile 'com.ali.auth.sdk:alibabauth_ui:1.1.4@aar'
+    compile 'com.ali.auth.sdk:alibabauth_ext:1.1.4@jar'
+    compile 'com.alibaba.sdk.android:alibc_trade_sdk:3.1.1.11@aar'
+    compile 'com.taobao.android:mtopsdk_allinone_open:1.2.2.4@jar'
+    compile 'com.taobao.android:alibc_applink:2.0.0.2@jar'
+
     compile 'com.android.support:appcompat-v7:25.3.0'
     compile 'com.android.support:design:25.0.0'
     compile 'com.android.support:cardview-v7:25.0.0'
@@ -72,9 +90,10 @@ dependencies {
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'com.umeng.analytics:analytics:latest.integration'
     compile 'com.squareup.okhttp3:okhttp:3.7.0'
-    compile 'com.squareup.okhttp3:logging-interceptor:3.4.2'
-    compile 'com.github.bumptech.glide:glide:4.0.0'
-    compile 'com.github.bumptech.glide:okhttp3-integration:1.4.0@aar'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.7.0'
+    compile 'com.github.bumptech.glide:glide:4.3.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
+    compile 'com.github.bumptech.glide:okhttp3-integration:4.3.1'
     compile 'org.greenrobot:greendao:3.2.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
@@ -85,6 +104,7 @@ dependencies {
     compile 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.0@aar'
     compile 'com.bigkoo:convenientbanner:2.0.5'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.github.Bakumon:StatusLayoutManager:1.0.1'
     annotationProcessor  'com.google.dagger:dagger-compiler:2.8'
     annotationProcessor  'com.jakewharton:butterknife-compiler:8.8.0'
 }

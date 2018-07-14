@@ -6,6 +6,7 @@ import com.qql.dagger.recommend.App;
 import com.qql.dagger.recommend.annotation.ContextLife;
 import com.qql.dagger.recommend.cache.DataCache;
 import com.qql.dagger.recommend.model.http.RetrofitHelper;
+import com.tencent.tauth.Tencent;
 
 import javax.inject.Singleton;
 
@@ -47,6 +48,12 @@ public class AppModule {
     @Provides
     @Singleton
     DataCache provideDataCache() {
-        return new DataCache(application);
+        return new DataCache(application,provideThirdLogin(),provideRetrofitHelper());
+    }
+
+    @Provides
+    @Singleton
+    Tencent provideThirdLogin() {
+        return Tencent.createInstance("1106673467",application);
     }
 }

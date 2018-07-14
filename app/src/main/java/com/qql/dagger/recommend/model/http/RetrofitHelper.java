@@ -1,8 +1,6 @@
 package com.qql.dagger.recommend.model.http;
 
 
-import android.support.annotation.NonNull;
-
 import com.qql.dagger.recommend.BuildConfig;
 import com.qql.dagger.recommend.Constants;
 import com.qql.dagger.recommend.model.bean.BBBean;
@@ -10,6 +8,8 @@ import com.qql.dagger.recommend.model.bean.BannerBean;
 import com.qql.dagger.recommend.model.bean.CategoryBean;
 import com.qql.dagger.recommend.model.bean.GankItemBean;
 import com.qql.dagger.recommend.model.bean.VersionBean;
+import com.qql.dagger.recommend.model.entity.User;
+import com.qql.dagger.recommend.option.LogIntercept;
 import com.qql.dagger.recommend.utils.SystemUtil;
 
 import java.io.File;
@@ -17,10 +17,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 import okhttp3.Cache;
 import okhttp3.CacheControl;
@@ -57,8 +54,7 @@ public class RetrofitHelper {
         OkHttpClient.Builder builder = new OkHttpClient.Builder();
         if (BuildConfig.DEBUG) {
             // https://drakeet.me/retrofit-2-0-okhttp-3-0-config
-            HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-            loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+            LogIntercept loggingInterceptor = new LogIntercept();
             builder.addInterceptor(loggingInterceptor);
         }
         // http://www.jianshu.com/p/93153b34310e
@@ -117,6 +113,10 @@ public class RetrofitHelper {
 
     public Observable<GankHttpResponse<String>> joinUs(Map<String,String> params) {
         return myApiService.joinUs(params);
+    }
+
+    public Observable<GankHttpResponse<User>> login(Map<String,String> params) {
+        return myApiService.login(params);
     }
 
     private static GankApis getGankApiService() {

@@ -42,6 +42,30 @@
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".activity.JoinUsActivity"
             android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:noHistory="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="tencent1106673467" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activity.RegisterActivity" />
+        <activity android:name=".activity.SellerCenterActivity" />
+        <activity android:name=".activity.MainActivity" />
+
+        <service
+            android:name="com.qql.dagger.recommend.utils.download.DownloadService"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 
 </manifest>

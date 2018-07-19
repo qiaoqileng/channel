@@ -1,8 +1,12 @@
 package com.qql.dagger.recommend.model.http;
 
+import com.qql.dagger.recommend.model.bean.Page;
+import com.qql.dagger.recommend.model.bean.Product;
+import com.qql.dagger.recommend.model.bean.Type;
 import com.qql.dagger.recommend.model.bean.VersionBean;
 import com.qql.dagger.recommend.model.entity.User;
 
+import java.util.List;
 import java.util.Map;
 
 import retrofit2.http.FieldMap;
@@ -32,5 +36,10 @@ public interface MyApis {
     @FormUrlEncoded
     @POST("lifting/user/login")
     Observable<GankHttpResponse<User>> login(@FieldMap Map<String, String> params);
+    @FormUrlEncoded
+    @GET("lifting/product/list")
+    Observable<GankHttpResponse<Page<Product>>> productList(@FieldMap Map<String, String> params);
+    @GET("lifting/product/typeList")
+    Observable<GankHttpResponse<List<Type>>> typeList();
 }
 

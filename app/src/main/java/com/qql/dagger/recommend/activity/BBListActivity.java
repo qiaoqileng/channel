@@ -1,13 +1,8 @@
 package com.qql.dagger.recommend.activity;
 
 import android.content.Intent;
-import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -17,16 +12,21 @@ import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.adapter.BBAdapter;
 import com.qql.dagger.recommend.base.BaseActivity;
 import com.qql.dagger.recommend.model.bean.BBBean;
-import com.qql.dagger.recommend.model.bean.CategoryBean;
+import com.qql.dagger.recommend.model.bean.Page;
+import com.qql.dagger.recommend.model.bean.Product;
+import com.qql.dagger.recommend.model.bean.Type;
 import com.qql.dagger.recommend.presenter.BBPresenter;
-import com.qql.dagger.recommend.presenter.MainPresenter;
 import com.qql.dagger.recommend.presenter.contract.BBListContract;
-import com.qql.dagger.recommend.presenter.contract.MainContract;
+import com.qql.dagger.recommend.utils.CommonUtils;
 import com.qql.dagger.recommend.utils.SnackbarUtil;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
+import me.bakumon.statuslayoutmanager.library.OnStatusChildClickListener;
+import me.bakumon.statuslayoutmanager.library.StatusLayoutManager;
 
 public class BBListActivity extends BaseActivity<BBPresenter> implements BBListContract.View{
     @BindView(R.id.tab_layout)
@@ -36,6 +36,7 @@ public class BBListActivity extends BaseActivity<BBPresenter> implements BBListC
     @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout swipeRefreshLayout;
     private long currentCategoryId;
+    private StatusLayoutManager statusLayoutManager;
 
     @Override
     protected void initInject() {
@@ -55,6 +56,25 @@ public class BBListActivity extends BaseActivity<BBPresenter> implements BBListC
     @Override
     protected void initEventAndData() {
         initIntentData();
+        statusLayoutManager = new StatusLayoutManager.Builder(listView)
+                .setOnStatusChildClickListener(new OnStatusChildClickListener() {
+                    @Override
+                    public void onEmptyChildClick(View view) {
+                        statusLayoutManager.showLoadingLayout();
+                        refresh();
+                    }
+
+                    @Override
+                    public void onErrorChildClick(View view) {
+                        statusLayoutManager.showLoadingLayout();
+                        refresh();
+                    }
+
+                    @Override
+                    public void onCustomerChildClick(View view) {
+                    }
+                })
+                .build();
         mPresenter.getCategories();
     }
 
@@ -63,7 +83,7 @@ public class BBListActivity extends BaseActivity<BBPresenter> implements BBListC
     }
 
     @Override
-    public void showBBList(List<BBBean> bbs) {
+    public void showBBList(Page<Product> bbs) {
         BBAdapter adapter = new BBAdapter(this,bbs);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -75,14 +95,14 @@ public class BBListActivity extends BaseActivity<BBPresenter> implements BBListC
     }
 
     @Override
-    public void showCategories(List<CategoryBean> categories) {
-        if (categories == null || categories.size() == 0) {
+    public void showCategories(List<Type> categories) {
+        if (CommonUtils.isEmptyList(categories)) {
             //TODO  未获取到分类信息
         } else {
             for (int i=0;i<categories.size();i++) {
-                CategoryBean bean = categories.get(i);
+                Type bean = categories.get(i);
                 TabLayout.Tab tab = tabLayout.newTab();
-                tab.setText(bean.getTitle());
+                tab.setText(bean.getType_name());
                 tab.setTag(bean);
                 if (currentCategoryId == bean.getId()) {
                     tab.select();
@@ -93,7 +113,7 @@ public class BBListActivity extends BaseActivity<BBPresenter> implements BBListC
                 currentCategoryId = categories.get(0).getId();
             }
             tabLayout.addOnTabSelectedListener(tabSelectListener);
-            mPresenter.findBB(null);
+
         }
     }
 
@@ -101,7 +121,7 @@ public class BBListActivity extends BaseActivity<BBPresenter> implements BBListC
         @Override
         public void onTabSelected(TabLayout.Tab tab) {
             SnackbarUtil.show(tabLayout,tab.getText().toString());
-            CategoryBean bean = (CategoryBean) tab.getTag();
+            Type bean = (Type) tab.getTag();
             currentCategoryId = bean.getId();
             refresh();
         }
@@ -119,6 +139,10 @@ public class BBListActivity extends BaseActivity<BBPresenter> implements BBListC
 
     private void refresh() {
         //TODO refresh
+        Map<String,String> params = new HashMap<>();
+        params.put("typeId",currentCategoryId + "");
+        params.put("page","1");
+        mPresenter.findBB(params);
     }
 
     @Override

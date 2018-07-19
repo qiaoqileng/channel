@@ -10,7 +10,7 @@
         android:id="@+id/bb_img"
         android:layout_marginRight="@dimen/margin_normal"
         android:layout_width="@dimen/item_img_height"
-        android:layout_height="match_parent"
+        android:layout_height="@dimen/item_img_height"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_launcher"
         />
@@ -24,19 +24,43 @@
             style="@style/text_category_title"
             android:layout_width="match_parent"
             android:gravity="start|center_vertical"
-            android:text="sjdadsa" />
-        <RatingBar
-            android:id="@+id/bb_score"
-            android:layout_width="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="家居拖鞋女夏2018新款防滑外穿室内时尚居家用浴室情侣女士凉拖男大大" />
+        <com.qql.dagger.recommend.view.TextViewTypeFace
+            android:id="@+id/price"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:numStars="5"
-            android:rating="2"
-            android:max="5"
-            android:stepSize="1"
-            style="?android:ratingBarStyleIndicator"/>
+            style="@style/style_price"
+            android:gravity="start"
+            android:layout_marginTop="@dimen/margin_little_short"
+            android:text="$ 999"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.qql.dagger.recommend.view.TextViewTypeFace
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/shop_name"
+                android:text="乔家大院"
+                android:gravity="start"
+                style="@style/text_category_item_title"
+                />
+            <com.qql.dagger.recommend.view.TextViewTypeFace
+                android:layout_marginLeft="@dimen/margin_little_short"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="进店 >"
+                android:gravity="start"
+                style="@style/text_category_item_title"
+                android:layout_weight="1"
+                />
+        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/item_bb_bottom"
+            android:visibility="gone"
             android:orientation="horizontal">
 
             <FrameLayout

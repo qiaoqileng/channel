@@ -1,37 +1,17 @@
 package com.qql.dagger.recommend.presenter;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.os.Message;
 import android.support.v4.app.Fragment;
-import android.text.TextUtils;
 
 import com.qql.dagger.recommend.base.RxPresenter;
 import com.qql.dagger.recommend.cache.DataCache;
-import com.qql.dagger.recommend.model.bean.BannerBean;
-import com.qql.dagger.recommend.model.bean.CategoryBean;
 import com.qql.dagger.recommend.model.entity.User;
-import com.qql.dagger.recommend.model.http.GankHttpResponse;
 import com.qql.dagger.recommend.model.http.RetrofitHelper;
-import com.qql.dagger.recommend.presenter.contract.HomeContract;
 import com.qql.dagger.recommend.presenter.contract.MyContract;
-import com.qql.dagger.recommend.utils.LogUtil;
-import com.qql.dagger.recommend.utils.RxUtil;
-import com.tencent.connect.UserInfo;
-import com.tencent.connect.common.Constants;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
-import com.tencent.tauth.UiError;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.List;
 
 import javax.inject.Inject;
-
-import rx.Subscription;
-import rx.functions.Action1;
 
 /**
  * Created by qql on 2016/12/22.

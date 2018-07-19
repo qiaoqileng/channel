@@ -2,11 +2,8 @@ package com.qql.dagger.recommend.presenter.contract;
 
 import com.qql.dagger.recommend.base.BasePresenter;
 import com.qql.dagger.recommend.base.BaseView;
-import com.qql.dagger.recommend.model.bean.BBBean;
-import com.qql.dagger.recommend.model.bean.CategoryBean;
 import com.qql.dagger.recommend.model.bean.SMSMsg;
 
-import java.util.List;
 import java.util.Map;
 
 /**

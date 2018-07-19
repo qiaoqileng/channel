@@ -12,6 +12,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.qql.dagger.recommend.R;
 import com.qql.dagger.recommend.model.bean.BBBean;
+import com.qql.dagger.recommend.model.bean.Page;
+import com.qql.dagger.recommend.model.bean.Product;
 import com.qql.dagger.recommend.option.GlideOptions;
 
 import java.util.List;
@@ -25,21 +27,21 @@ import butterknife.ButterKnife;
 
 public class BBAdapter extends BaseAdapter {
     private Context context;
-    private List<BBBean> datas;
+    private Page<Product> datas;
 
-    public BBAdapter(Context context, List<BBBean> datas) {
+    public BBAdapter(Context context, Page<Product> datas) {
         this.context = context;
         this.datas = datas;
     }
 
     @Override
     public int getCount() {
-        return datas==null?0:datas.size();
+        return datas==null?0:datas.getPageSize();
     }
 
     @Override
-    public BBBean getItem(int i) {
-        return datas.get(i);
+    public Product getItem(int i) {
+        return datas.getList().get(i);
     }
 
     @Override
@@ -57,13 +59,11 @@ public class BBAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) view.getTag();
         }
-        BBBean bean = getItem(i);
-        Glide.with(context).asBitmap().load(bean.getMainImgUrl()).apply(GlideOptions.defaultOption()).into(holder.bbImag);
+        Product bean = getItem(i);
+        Glide.with(context).asBitmap().load(bean.getHead_img()).apply(GlideOptions.defaultOption()).into(holder.bbImag);
         holder.bbName.setText(bean.getName());
-        holder.bbScore.setProgress(bean.getScore());
-        holder.collectNum.setText(bean.getCollections()+"");
-        holder.followNum.setText(bean.getFollow()+"");
-        holder.pariseNum.setText(bean.getPraise()+"");
+        holder.price.setText(String.format("¥ %s", bean.getPrice()));
+        holder.shopName.setText(bean.getTb_shop_name());
         return view;
     }
 
@@ -72,14 +72,10 @@ public class BBAdapter extends BaseAdapter {
         ImageView bbImag;
         @BindView(R.id.bb_name)
         TextView bbName;
-        @BindView(R.id.bb_score)
-        RatingBar bbScore;
-        @BindView(R.id.follow)
-        TextView followNum;
-        @BindView(R.id.collect)
-        TextView collectNum;
-        @BindView(R.id.praise)
-        TextView pariseNum;
+        @BindView(R.id.shop_name)
+        TextView shopName;
+        @BindView(R.id.price)
+        TextView price;
 
         public ViewHolder(View view) {
             ButterKnife.bind(this,view);

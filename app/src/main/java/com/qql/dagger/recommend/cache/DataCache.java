@@ -6,8 +6,7 @@ import android.text.TextUtils;
 
 import com.qql.dagger.recommend.App;
 import com.qql.dagger.recommend.base.RxPresenter;
-import com.qql.dagger.recommend.model.bean.BBBean;
-import com.qql.dagger.recommend.model.bean.CategoryBean;
+import com.qql.dagger.recommend.model.bean.Type;
 import com.qql.dagger.recommend.model.entity.User;
 import com.qql.dagger.recommend.model.http.GankHttpResponse;
 import com.qql.dagger.recommend.model.http.RetrofitHelper;
@@ -38,7 +37,7 @@ public class DataCache extends RxPresenter{
     private final RetrofitHelper retrofitHelper;
     private App app;
     private final Tencent tencent;
-    private List<CategoryBean> categories;
+    private List<Type> categories;
     private User user;
     private LoginListener loginListener;
     private String token;
@@ -94,11 +93,11 @@ public class DataCache extends RxPresenter{
         helper = new SharedPrefHelper();
     }
 
-    public List<CategoryBean> getCategories() {
+    public List<Type> getCategories() {
         return categories;
     }
 
-    public void setCategories(List<CategoryBean> categories) {
+    public void setCategories(List<Type> categories) {
         this.categories = categories;
     }
 

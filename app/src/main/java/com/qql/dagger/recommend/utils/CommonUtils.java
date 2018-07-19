@@ -2,6 +2,7 @@ package com.qql.dagger.recommend.utils;
 
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * Created by T-46 on 2017/8/2.
@@ -28,4 +29,7 @@ public class CommonUtils {
         return (returnValue + "KB");
     }
 
+    public static boolean isEmptyList(List list){
+        return list == null || list.size() == 0;
+    }
 }

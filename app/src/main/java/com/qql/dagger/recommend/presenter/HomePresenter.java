@@ -3,13 +3,12 @@ package com.qql.dagger.recommend.presenter;
 import com.qql.dagger.recommend.base.RxPresenter;
 import com.qql.dagger.recommend.cache.DataCache;
 import com.qql.dagger.recommend.model.bean.BannerBean;
-import com.qql.dagger.recommend.model.bean.CategoryBean;
+import com.qql.dagger.recommend.model.bean.Type;
 import com.qql.dagger.recommend.model.http.GankHttpResponse;
 import com.qql.dagger.recommend.model.http.RetrofitHelper;
 import com.qql.dagger.recommend.presenter.contract.HomeContract;
 import com.qql.dagger.recommend.utils.RxUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -54,11 +53,11 @@ public class HomePresenter extends RxPresenter<HomeContract.View> implements Hom
     public void getCategory() {
         if (dataCache.isCategoryEmpty()) {
             Subscription rxSubscription = mRetrofitHelper.getCategories()
-                    .compose(RxUtil.<GankHttpResponse<List<CategoryBean>>>rxSchedulerHelper())
-                    .compose(RxUtil.<List<CategoryBean>>handleResult())
-                    .subscribe(new Action1<List<CategoryBean>>() {
+                    .compose(RxUtil.<GankHttpResponse<List<Type>>>rxSchedulerHelper())
+                    .compose(RxUtil.<List<Type>>handleResult())
+                    .subscribe(new Action1<List<Type>>() {
                         @Override
-                        public void call(List<CategoryBean> gankItemBeen) {
+                        public void call(List<Type> gankItemBeen) {
                             dataCache.setCategories(gankItemBeen);
                             mView.showCategory(gankItemBeen);
                         }

@@ -3,7 +3,7 @@ package com.qql.dagger.recommend.presenter.contract;
 import com.qql.dagger.recommend.base.BasePresenter;
 import com.qql.dagger.recommend.base.BaseView;
 import com.qql.dagger.recommend.model.bean.BannerBean;
-import com.qql.dagger.recommend.model.bean.CategoryBean;
+import com.qql.dagger.recommend.model.bean.Type;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ public interface HomeContract {
 
         void showDailyBanners(List<BannerBean> banners);
 
-        void showCategory(List<CategoryBean> categories);
+        void showCategory(List<Type> categories);
     }
 
     interface Presenter extends BasePresenter<HomeContract.View> {

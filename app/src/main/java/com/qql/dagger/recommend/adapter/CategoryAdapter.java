@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.qql.dagger.recommend.R;
-import com.qql.dagger.recommend.model.bean.CategoryBean;
+import com.qql.dagger.recommend.model.bean.Type;
 import com.qql.dagger.recommend.option.GlideOptions;
 
 import java.util.List;
@@ -24,10 +24,10 @@ import butterknife.ButterKnife;
  */
 
 public class CategoryAdapter extends BaseAdapter {
-    private List<CategoryBean> datas;
+    private List<Type> datas;
     private Context context;
 
-    public CategoryAdapter(List<CategoryBean> datas, Context context) {
+    public CategoryAdapter(List<Type> datas, Context context) {
         this.datas = datas;
         this.context = context;
     }
@@ -38,7 +38,7 @@ public class CategoryAdapter extends BaseAdapter {
     }
 
     @Override
-    public CategoryBean getItem(int i) {
+    public Type getItem(int i) {
         return null;
     }
 
@@ -57,14 +57,14 @@ public class CategoryAdapter extends BaseAdapter {
         } else {
             holder = (ViewHolder) view.getTag();
         }
-        CategoryBean  categoryBean = datas.get(i);
+        Type  categoryBean = datas.get(i);
         String url = categoryBean.getUrl();
         if (!TextUtils.isEmpty(url)) {
             Glide.with(context).load(url).into(holder.imageView);
         } else {
             Glide.with(context).asBitmap().load(R.color.toast_bg).apply(GlideOptions.defaultOption()).into(holder.imageView);
         }
-        holder.textView.setText(categoryBean.getTitle());
+        holder.textView.setText(categoryBean.getType_name());
         return view;
     }
 

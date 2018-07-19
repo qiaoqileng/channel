@@ -7,7 +7,6 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.TextView;
 
 import com.bigkoo.convenientbanner.ConvenientBanner;
 import com.bigkoo.convenientbanner.holder.CBViewHolderCreator;
@@ -19,13 +18,12 @@ import com.qql.dagger.recommend.adapter.CategoryAdapter;
 import com.qql.dagger.recommend.animotion.ZoomInTransformer;
 import com.qql.dagger.recommend.base.BaseFragment;
 import com.qql.dagger.recommend.model.bean.BannerBean;
-import com.qql.dagger.recommend.model.bean.CategoryBean;
+import com.qql.dagger.recommend.model.bean.Type;
 import com.qql.dagger.recommend.model.holder.NetImageHolder;
 import com.qql.dagger.recommend.presenter.HomePresenter;
 import com.qql.dagger.recommend.presenter.contract.HomeContract;
 import com.qql.dagger.recommend.utils.SnackbarUtil;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -76,7 +74,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
     }
 
     @Override
-    public void showCategory(final List<CategoryBean> categories) {
+    public void showCategory(final List<Type> categories) {
         //TODO 显示分类
         if (categories == null || categories.size() == 0){
             return;
@@ -85,7 +83,7 @@ public class HomeFragment extends BaseFragment<HomePresenter> implements HomeCon
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                CategoryBean categoryBean = categories.get(i);
+                Type categoryBean = categories.get(i);
                 toBBList(categoryBean.getId());
             }
         });
